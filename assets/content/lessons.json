@@ -1,0 +1,1134 @@
+{
+ "source": "prototype/contents/App-Content.pdf",
+ "categories": [
+  {
+   "id": "foundation",
+   "title": "Foundational Vocabulary",
+   "topics": [
+    {
+     "title": "Alphabet",
+     "signs": [
+      {
+       "term": "Letter A"
+      },
+      {
+       "term": "Letter B"
+      },
+      {
+       "term": "Letter C"
+      },
+      {
+       "term": "Letter D"
+      },
+      {
+       "term": "Letter E"
+      },
+      {
+       "term": "Letter F"
+      },
+      {
+       "term": "Letter G"
+      },
+      {
+       "term": "Letter H"
+      },
+      {
+       "term": "Letter I"
+      },
+      {
+       "term": "Letter J"
+      },
+      {
+       "term": "Letter K"
+      },
+      {
+       "term": "Letter L"
+      },
+      {
+       "term": "Letter M"
+      },
+      {
+       "term": "Letter N"
+      },
+      {
+       "term": "Letter O"
+      },
+      {
+       "term": "Letter P"
+      },
+      {
+       "term": "Letter Q"
+      },
+      {
+       "term": "Letter R"
+      },
+      {
+       "term": "Letter S"
+      },
+      {
+       "term": "Letter T"
+      },
+      {
+       "term": "Letter U"
+      },
+      {
+       "term": "Letter V"
+      },
+      {
+       "term": "Letter W"
+      },
+      {
+       "term": "Letter X"
+      },
+      {
+       "term": "Letter Y"
+      },
+      {
+       "term": "Letter Z"
+      }
+     ]
+    },
+    {
+     "title": "Numbers",
+     "signs": [
+      {
+       "term": "Number 1"
+      },
+      {
+       "term": "Number 2"
+      },
+      {
+       "term": "Number 3"
+      },
+      {
+       "term": "Number 4"
+      },
+      {
+       "term": "Number 5"
+      },
+      {
+       "term": "Number 6"
+      },
+      {
+       "term": "Number 7"
+      },
+      {
+       "term": "Number 8"
+      },
+      {
+       "term": "Number 9"
+      },
+      {
+       "term": "Number 10"
+      },
+      {
+       "term": "Number 11"
+      },
+      {
+       "term": "Number 12"
+      },
+      {
+       "term": "Number 13"
+      },
+      {
+       "term": "Number 14"
+      },
+      {
+       "term": "Number 15"
+      },
+      {
+       "term": "Number 20"
+      },
+      {
+       "term": "Number 30"
+      },
+      {
+       "term": "Number 40"
+      },
+      {
+       "term": "Number 50"
+      },
+      {
+       "term": "Number 60"
+      },
+      {
+       "term": "Number 70"
+      },
+      {
+       "term": "Number 80"
+      },
+      {
+       "term": "Number 90"
+      },
+      {
+       "term": "Number 100"
+      },
+      {
+       "term": "Number 1000"
+      },
+      {
+       "term": "Number 1,000,000 (Million)"
+      }
+     ]
+    },
+    {
+     "title": "Time",
+     "signs": [
+      {
+       "term": "Now/Today"
+      },
+      {
+       "term": "Yesterday"
+      },
+      {
+       "term": "Tomorrow"
+      },
+      {
+       "term": "Always"
+      },
+      {
+       "term": "Daily/Everyday"
+      },
+      {
+       "term": "Once"
+      },
+      {
+       "term": "Twice"
+      },
+      {
+       "term": "Time"
+      },
+      {
+       "term": "Second"
+      },
+      {
+       "term": "Minute"
+      },
+      {
+       "term": "Hour"
+      }
+     ]
+    },
+    {
+     "title": "Dates",
+     "signs": [
+      {
+       "term": "Week"
+      },
+      {
+       "term": "Monday"
+      },
+      {
+       "term": "Tuesday"
+      },
+      {
+       "term": "Wednesday"
+      },
+      {
+       "term": "Thursday"
+      },
+      {
+       "term": "Friday"
+      },
+      {
+       "term": "Saturday"
+      },
+      {
+       "term": "Sunday"
+      },
+      {
+       "term": "Month"
+      },
+      {
+       "term": "January"
+      },
+      {
+       "term": "February"
+      },
+      {
+       "term": "March"
+      },
+      {
+       "term": "April"
+      },
+      {
+       "term": "May"
+      },
+      {
+       "term": "June"
+      },
+      {
+       "term": "July"
+      },
+      {
+       "term": "August"
+      },
+      {
+       "term": "September"
+      },
+      {
+       "term": "October"
+      },
+      {
+       "term": "November"
+      },
+      {
+       "term": "December"
+      },
+      {
+       "term": "Year"
+      },
+      {
+       "term": "1900"
+      },
+      {
+       "term": "2000"
+      }
+     ]
+    },
+    {
+     "title": "Colors",
+     "signs": [
+      {
+       "term": "Red"
+      },
+      {
+       "term": "Blue"
+      },
+      {
+       "term": "Green"
+      },
+      {
+       "term": "Orange"
+      },
+      {
+       "term": "Yellow"
+      },
+      {
+       "term": "Violet"
+      },
+      {
+       "term": "Pink"
+      },
+      {
+       "term": "Brown"
+      },
+      {
+       "term": "Black"
+      },
+      {
+       "term": "White"
+      },
+      {
+       "term": "Light"
+      },
+      {
+       "term": "Dark"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "basic",
+   "title": "Basic Conversational Sign",
+   "topics": [
+    {
+     "title": "Common Greetings & Introduction",
+     "signs": [
+      {
+       "term": "Hello"
+      },
+      {
+       "term": "Good morning"
+      },
+      {
+       "term": "Good afternoon"
+      },
+      {
+       "term": "Good evening"
+      },
+      {
+       "term": "Goodbye"
+      },
+      {
+       "term": "Welcome"
+      },
+      {
+       "term": "My name"
+      },
+      {
+       "term": "Nice to meet you"
+      },
+      {
+       "term": "Take care"
+      }
+     ]
+    },
+    {
+     "title": "Courtesies",
+     "signs": [
+      {
+       "term": "Please"
+      },
+      {
+       "term": "Thank you"
+      },
+      {
+       "term": "You're welcome"
+      },
+      {
+       "term": "Excuse me"
+      },
+      {
+       "term": "Sorry"
+      },
+      {
+       "term": "I'm fine"
+      }
+     ]
+    },
+    {
+     "title": "Simple Responses",
+     "signs": [
+      {
+       "term": "Yes"
+      },
+      {
+       "term": "No"
+      },
+      {
+       "term": "Maybe"
+      },
+      {
+       "term": "I understand"
+      },
+      {
+       "term": "I don't understand"
+      },
+      {
+       "term": "Please repeat"
+      },
+      {
+       "term": "Please wait"
+      }
+     ]
+    },
+    {
+     "title": "Questions",
+     "signs": [
+      {
+       "term": "What?"
+      },
+      {
+       "term": "Where?"
+      },
+      {
+       "term": "When?"
+      },
+      {
+       "term": "Why?"
+      },
+      {
+       "term": "How?"
+      },
+      {
+       "term": "Who?"
+      },
+      {
+       "term": "Which?"
+      },
+      {
+       "term": "How many?",
+       "facial_expression": "WH question: furrow eyebrows"
+      },
+      {
+       "term": "How long?",
+       "facial_expression": "WH question: furrow eyebrows"
+      },
+      {
+       "term": "What is your name?",
+       "sign_order": "YOUR + NAME + WHAT?",
+       "facial_expression": "WH question: furrow eyebrows"
+      },
+      {
+       "term": "How old are you?",
+       "sign_order": "YOUR + AGE + HOW-MANY?",
+       "facial_expression": "WH-question: furrow eyebrows"
+      },
+      {
+       "term": "What is your occupation?",
+       "sign_order": "YOUR + WORK + WHAT?",
+       "facial_expression": "WH-question: furrow eyebrows"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "triage",
+   "title": "Basic Medical and Triage Information",
+   "topics": [
+    {
+     "title": "Vital Signs",
+     "signs": [
+      {
+       "term": "Blood Pressure / BP"
+      },
+      {
+       "term": "Heart Rate"
+      },
+      {
+       "term": "Temperature"
+      },
+      {
+       "term": "Respiratory Rate"
+      }
+     ]
+    },
+    {
+     "title": "Blood Pressure Values",
+     "signs": [
+      {
+       "term": "Normal BP: Below 120/80"
+      },
+      {
+       "term": "Elevated BP: 120–129 / Below 80"
+      },
+      {
+       "term": "Stage 1 High BP: 130–139 / 80–89"
+      },
+      {
+       "term": "Stage 2 High BP: 140/90 or higher"
+      },
+      {
+       "term": "Emergency BP: Above 180/120"
+      }
+     ]
+    },
+    {
+     "title": "Chief Complaints",
+     "signs": [
+      {
+       "term": "Pain / Ache"
+      },
+      {
+       "term": "Fever"
+      },
+      {
+       "term": "Cough and Cold"
+      },
+      {
+       "term": "Headache"
+      },
+      {
+       "term": "Stomach Ache / Abdominal discomfort"
+      },
+      {
+       "term": "Fatigue"
+      },
+      {
+       "term": "Nausea / Vomiting"
+      },
+      {
+       "term": "Diarrhea"
+      },
+      {
+       "term": "Bleeding / Blood"
+      },
+      {
+       "term": "Wound / Cut / Injury"
+      },
+      {
+       "term": "Where does it hurt?",
+       "sign_order": "HURT + WHERE?",
+       "facial_expression": "WH question: furrow eyebrows"
+      },
+      {
+       "term": "When did it start?",
+       "sign_order": "START + WHEN?",
+       "facial_expression": "WH question: furrow eyebrows"
+      },
+      {
+       "term": "How do you feel?",
+       "sign_order": "YOU + FEEL + HOW?",
+       "facial_expression": "WH question: furrow eyebrows"
+      },
+      {
+       "term": "How many days?",
+       "sign_order": "DAY + HOW-MANY?",
+       "facial_expression": "WH question: furrow eyebrows"
+      },
+      {
+       "term": "Why are you here today?",
+       "sign_order": "TODAY + YOU + HERE + WHY?",
+       "facial_expression": "WH question: furrow eyebrow"
+      },
+      {
+       "term": "Are you dizzy?",
+       "sign_order": "YOU + DIZZY?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      }
+     ]
+    },
+    {
+     "title": "Red-Flag Symptoms (Hypertension)",
+     "signs": [
+      {
+       "term": "Do you know the warning signs that need immediate medical attention?",
+       "sign_order": "WARNING SIGNS + IMMEDIATE MEDICAL ATTENTION + YOU + KNOW?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      },
+      {
+       "term": "Seek help if you experience chest pain.",
+       "sign_order": "CHEST + PAIN + EXPERIENCE + SEEK-HELP + IMMEDIATELY"
+      },
+      {
+       "term": "Severe Headache"
+      },
+      {
+       "term": "Shortness of Breath / Difficulty Breathing"
+      },
+      {
+       "term": "Chest Pain / Tightness"
+      },
+      {
+       "term": "Numbness or Face/Arm Weakness"
+      },
+      {
+       "term": "Blurry or Sudden Vision Loss"
+      },
+      {
+       "term": "Speech Difficulty / Slurred Speech"
+      },
+      {
+       "term": "Severe Dizziness / Loss of Balance"
+      },
+      {
+       "term": "Severe Swelling of Feet or Ankles"
+      }
+     ]
+    },
+    {
+     "title": "Healthcare Roles and Areas",
+     "signs": [
+      {
+       "term": "Nurse"
+      },
+      {
+       "term": "Doctor"
+      },
+      {
+       "term": "Patient"
+      },
+      {
+       "term": "Student"
+      },
+      {
+       "term": "Sign Language Interpreter"
+      },
+      {
+       "term": "Healthcare Worker"
+      },
+      {
+       "term": "Hospital"
+      },
+      {
+       "term": "Clinic"
+      }
+     ]
+    },
+    {
+     "title": "Body Parts",
+     "signs": [
+      {
+       "term": "Head"
+      },
+      {
+       "term": "Hair"
+      },
+      {
+       "term": "Face"
+      },
+      {
+       "term": "Neck"
+      },
+      {
+       "term": "Chest"
+      },
+      {
+       "term": "Heart"
+      },
+      {
+       "term": "Arm"
+      },
+      {
+       "term": "Hand"
+      },
+      {
+       "term": "Stomach"
+      },
+      {
+       "term": "Leg"
+      },
+      {
+       "term": "Foot"
+      },
+      {
+       "term": "Eye"
+      },
+      {
+       "term": "Ear"
+      },
+      {
+       "term": "Nose"
+      },
+      {
+       "term": "Tooth/Teeth"
+      },
+      {
+       "term": "Mouth"
+      },
+      {
+       "term": "Shoulder"
+      },
+      {
+       "term": "Elbow"
+      },
+      {
+       "term": "Knee"
+      },
+      {
+       "term": "Toe"
+      },
+      {
+       "term": "Tongue"
+      }
+     ]
+    },
+    {
+     "title": "Senses",
+     "signs": [
+      {
+       "term": "Sight"
+      },
+      {
+       "term": "Hearing"
+      },
+      {
+       "term": "Touch"
+      },
+      {
+       "term": "Taste"
+      },
+      {
+       "term": "Smell"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "medical_family",
+   "title": "Medical & Family History",
+   "topics": [
+    {
+     "title": "Family Relationships",
+     "signs": [
+      {
+       "term": "Mother"
+      },
+      {
+       "term": "Father"
+      },
+      {
+       "term": "Sibling"
+      },
+      {
+       "term": "Grandparent"
+      },
+      {
+       "term": "Child"
+      },
+      {
+       "term": "Family"
+      },
+      {
+       "term": "Single"
+      },
+      {
+       "term": "Married"
+      },
+      {
+       "term": "Separated"
+      },
+      {
+       "term": "\"Does anyone in your family have high blood pressure?\"",
+       "sign_order": "YOUR + FAMILY + SOMEONE + HIGH BLOOD PRESSURE + HAVE?",
+       "facial_expression": "Raised eyebrows (Yes/No question)"
+      }
+     ]
+    },
+    {
+     "title": "General Health History",
+     "signs": [
+      {
+       "term": "Healthy"
+      },
+      {
+       "term": "Sick"
+      },
+      {
+       "term": "Blurred vision"
+      },
+      {
+       "term": "Do you have hypertension?",
+       "sign_order": "YOU + HYPERTENSION + HAVE?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      },
+      {
+       "term": "When were you diagnosed with hypertension?",
+       "sign_order": "HYPERTENSION + DIAGNOSED + WHEN?",
+       "facial_expression": "WH-question: furrow eyebrows"
+      },
+      {
+       "term": "Have you ever been hospitalized?",
+       "sign_order": "BEFORE + YOU + HOSPITALIZED?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      },
+      {
+       "term": "Have you undergone surgery?",
+       "sign_order": "BEFORE + YOU + SURGERY + EXPERIENCE?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      },
+      {
+       "term": "Do you have other illnesses?",
+       "sign_order": "YOU + OTHER + ILLNESS + HAVE?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      }
+     ]
+    },
+    {
+     "title": "Hypertension-Related Conditions",
+     "signs": [
+      {
+       "term": "High Blood Pressure / Hypertension"
+      },
+      {
+       "term": "Diabetes / High Sugar"
+      },
+      {
+       "term": "Kidney Disease"
+      },
+      {
+       "term": "Stroke"
+      },
+      {
+       "term": "Heart Attack"
+      },
+      {
+       "term": "Heart Disease"
+      }
+     ]
+    },
+    {
+     "title": "Medications",
+     "signs": [
+      {
+       "term": "Are you taking medicine for hypertension?",
+       "sign_order": "YOU + HYPERTENSION + MEDICINE + TAKE?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      },
+      {
+       "term": "Do you take other medicines or herbal supplements?",
+       "sign_order": "YOU + OTHER MEDICINE + HERBAL MEDICINE + TAKE?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      },
+      {
+       "term": "Do not stop taking your medicine without asking your doctor.",
+       "sign_order": "DOCTOR + ADVICE + WITHOUT + MEDICINE + STOP + DON'T"
+      },
+      {
+       "term": "Did you take your medicine?",
+       "sign_order": "YOUR + MEDICINE + TAKE?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      },
+      {
+       "term": "Maintenance Medicine"
+      },
+      {
+       "term": "Vitamins"
+      },
+      {
+       "term": "Painkiller / Pain Medicine"
+      },
+      {
+       "term": "Vaccination"
+      }
+     ]
+    },
+    {
+     "title": "Allergies",
+     "signs": [
+      {
+       "term": "Do you have any allergies?",
+       "sign_order": "YOU + ALLERGY + HAVE?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      },
+      {
+       "term": "What are you allergic to?",
+       "sign_order": "YOU + ALLERGY + WHAT?",
+       "facial_expression": "WH-question: furrow eyebrows"
+      },
+      {
+       "term": "Drug / Medicine Allergy"
+      },
+      {
+       "term": "Food Allergy"
+      },
+      {
+       "term": "Itching"
+      },
+      {
+       "term": "Swelling"
+      },
+      {
+       "term": "Rashes"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "nutrition",
+   "title": "Nutritional & Lifestyle History",
+   "topics": [
+    {
+     "title": "Dietary Habits",
+     "signs": [
+      {
+       "term": "Eat / Meals"
+      },
+      {
+       "term": "Water"
+      },
+      {
+       "term": "Salty Food"
+      },
+      {
+       "term": "Oily / Fatty Food"
+      },
+      {
+       "term": "Sweet Food"
+      },
+      {
+       "term": "Vegetables"
+      },
+      {
+       "term": "Fruits"
+      },
+      {
+       "term": "Avoid salty and processed foods.",
+       "sign_order": "SALTY FOOD + PROCESSED FOOD + AVOID"
+      },
+      {
+       "term": "Do you regularly or always drink coffee?",
+       "sign_order": "YOU + COFFEE + DRINK + REGULARLY?",
+       "facial_expression": "Yes/no question: raise eyebrows"
+      },
+      {
+       "term": "Eat more vegetables and fruits.",
+       "sign_order": "VEGETABLES + FRUITS + MORE + EAT"
+      }
+     ]
+    },
+    {
+     "title": "Fluid Intake & Output",
+     "signs": [
+      {
+       "term": "Daily Water Intake"
+      },
+      {
+       "term": "Urination Frequency"
+      },
+      {
+       "term": "Painful Urination"
+      },
+      {
+       "term": "Urine Color"
+      },
+      {
+       "term": "Excessive Sweating"
+      },
+      {
+       "term": "How many glasses of water do you drink every day?",
+       "sign_order": "EVERYDAY + YOU + WATER + DRINK + HOW-MANY-GLASSES?",
+       "facial_expression": "WH-question: furrow eyebrows"
+      },
+      {
+       "term": "How many times do you urinate in a day?",
+       "sign_order": "EVERYDAY + YOU + URINATE + HOW-MANY-TIMES?",
+       "facial_expression": "WH-question: furrow eyebrows"
+      }
+     ]
+    },
+    {
+     "title": "Vices & Risk Screening",
+     "signs": [
+      {
+       "term": "Smoking / Vaping"
+      },
+      {
+       "term": "Alcohol Drinking"
+      },
+      {
+       "term": "Illegal Drugs / Substance Use"
+      },
+      {
+       "term": "Coffee/ Caffeine"
+      },
+      {
+       "term": "Lack of Exercise"
+      },
+      {
+       "term": "Poor Sleep"
+      },
+      {
+       "term": "Staying Up Late"
+      },
+      {
+       "term": "High Stress Levels"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "procedures",
+   "title": "Procedures & Health Advice",
+   "topics": [
+    {
+     "title": "Pre-Measurement Instructions (BP Taking)",
+     "signs": [
+      {
+       "term": "Rest for 5 minutes"
+      },
+      {
+       "term": "Empty bladder / Urinate first"
+      },
+      {
+       "term": "No coffee / caffeine (30 mins before)"
+      },
+      {
+       "term": "No heavy exercise (30 mins before)"
+      },
+      {
+       "term": "No smoking (30 mins before)"
+      },
+      {
+       "term": "Keep feet flat on the floor"
+      },
+      {
+       "term": "Bare the arm / Roll up sleeve"
+      },
+      {
+       "term": "Support arm on table at heart level"
+      },
+      {
+       "term": "Put cuff on arm"
+      }
+     ]
+    },
+    {
+     "title": "Medical Procedures",
+     "signs": [
+      {
+       "term": "Blood Test"
+      },
+      {
+       "term": "Urine Test"
+      },
+      {
+       "term": "ECG"
+      },
+      {
+       "term": "Laboratory"
+      },
+      {
+       "term": "Physical Examination"
+      },
+      {
+       "term": "Check Eyes / Vision Screening"
+      },
+      {
+       "term": "Take Pulse / Check Heart Rate"
+      }
+     ]
+    },
+    {
+     "title": "Hypertension Prevention & Nursing Advice",
+     "signs": [
+      {
+       "term": "Eat less salty food.",
+       "sign_order": "YOU + SALTY FOOD + EAT + LESS"
+      },
+      {
+       "term": "Eat more fruits and vegetables.",
+       "sign_order": "YOU + FRUITS + VEGETABLES + EAT + MORE"
+      },
+      {
+       "term": "Drink plenty of water every day.",
+       "sign_order": "EVERY-DAY + WATER + PLENTY + DRINK"
+      },
+      {
+       "term": "Exercise regularly.",
+       "sign_order": "YOU + EXERCISE + REGULARLY"
+      },
+      {
+       "term": "Avoid drinking too much alcohol.",
+       "sign_order": "YOU + ALCOHOL + DRINK + TOO-MUCH + AVOID"
+      },
+      {
+       "term": "Limit coffee and other drinks with caffeine.",
+       "sign_order": "YOU + COFFEE + CAFFEINE + DRINK + LESS"
+      },
+      {
+       "term": "Get enough sleep.",
+       "sign_order": "YOU + SLEEP + ENOUGH"
+      },
+      {
+       "term": "Avoid too much stress.",
+       "sign_order": "YOU + STRESS + TOO-MUCH + AVOID"
+      },
+      {
+       "term": "Check your blood pressure regularly.",
+       "sign_order": "YOU + BLOOD PRESSURE + CHECK + REGULARLY"
+      },
+      {
+       "term": "Take your medicine on time.",
+       "sign_order": "YOUR + MEDICINE + TAKE + RIGHT-TIME"
+      },
+      {
+       "term": "Eat Healthy Foods"
+      },
+      {
+       "term": "Weight Control / Healthy Weight"
+      },
+      {
+       "term": "Control Cholesterol & Sugar"
+      },
+      {
+       "term": "Manage Stress & Rest"
+      },
+      {
+       "term": "Get Enough Sleep (7–8 Hours)"
+      },
+      {
+       "term": "Regular Medical Checkup"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
