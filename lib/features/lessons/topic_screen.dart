@@ -2,27 +2,79 @@ import 'package:flutter/material.dart';
 
 import '../../data/learning_content.dart';
 import '../../data/lesson_models.dart';
+import '../../data/study_repository.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
-import '../../widgets/media_placeholder.dart';
 import '../../widgets/pressable.dart';
+import '../../widgets/sign_media.dart';
 import '../../widgets/staggered_entrance.dart';
+import 'bookmark_button.dart';
+import 'bookmarked_keys.dart';
 import 'category_screen.dart';
 
 /// Signs in one topic as an accordion, after the "Alphabets" mockup. One sign
-/// is open at a time; opening another closes the previous one.
+/// is open at a time; opening another closes the previous one. Opening a
+/// sign counts it as studied.
 class TopicScreen extends StatefulWidget {
-  const TopicScreen({super.key, required this.category, required this.topic});
+  const TopicScreen({
+    super.key,
+    required this.category,
+    required this.topic,
+    required this.study,
+    this.initialSignKey,
+  });
 
   final LessonCategory category;
   final LessonTopic topic;
+  final StudyRepository study;
+
+  /// Sign to open (and scroll to) first, e.g. from search or bookmarks.
+  final String? initialSignKey;
 
   @override
   State<TopicScreen> createState() => _TopicScreenState();
 }
 
-class _TopicScreenState extends State<TopicScreen> {
-  int? _open = 0;
+class _TopicScreenState extends State<TopicScreen>
+    with BookmarkedKeys<TopicScreen> {
+  late int? _open;
+  final _openKey = GlobalKey();
+
+  @override
+  StudyRepository get study => widget.study;
+
+  @override
+  void initState() {
+    super.initState();
+    final signs = widget.topic.signs;
+    final i = signs.indexWhere((s) => s.key == widget.initialSignKey);
+    _open = signs.isEmpty ? null : (i < 0 ? 0 : i);
+    _markOpenViewed();
+    if (i > 0) {
+      // Wait for the entrance animation to lay the list out, then scroll.
+      Future.delayed(const Duration(milliseconds: 450), () {
+        final ctx = _openKey.currentContext;
+        if (mounted && ctx != null && ctx.mounted) {
+          Scrollable.ensureVisible(
+            ctx,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeOutCubic,
+            alignment: 0.1,
+          );
+        }
+      });
+    }
+  }
+
+  void _markOpenViewed() {
+    final i = _open;
+    if (i != null) widget.study.markViewed(widget.topic.signs[i].key);
+  }
+
+  void _toggle(int i) {
+    setState(() => _open = _open == i ? null : i);
+    _markOpenViewed();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,14 +119,32 @@ class _TopicScreenState extends State<TopicScreen> {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(4, 12, 4, 16),
-              child: Text(
-                '${widget.category.fullTitle} · ${topic.signs.length} '
-                '${topic.signs.length == 1 ? 'sign' : 'signs'}',
-                style: const TextStyle(
-                  fontSize: 13,
-                  color: AppColors.sage,
-                  fontWeight: FontWeight.w500,
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (topic.tagalog != null)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 2),
+                      child: Text(
+                        topic.tagalog!,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontStyle: FontStyle.italic,
+                          color: AppColors.teal,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  Text(
+                    '${widget.category.fullTitle} · ${topic.signs.length} '
+                    '${topic.signs.length == 1 ? 'sign' : 'signs'}',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      color: AppColors.sage,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
             ),
             StaggeredEntrance(
@@ -84,12 +154,14 @@ class _TopicScreenState extends State<TopicScreen> {
               children: [
                 for (var i = 0; i < topic.signs.length; i++)
                   Padding(
+                    key: _open == i ? _openKey : null,
                     padding: const EdgeInsets.only(bottom: 12),
                     child: SignTile(
                       sign: topic.signs[i],
                       open: _open == i,
-                      onToggle: () =>
-                          setState(() => _open = _open == i ? null : i),
+                      onToggle: () => _toggle(i),
+                      bookmarked: isBookmarked(topic.signs[i].key),
+                      onBookmark: () => toggleBookmark(topic.signs[i].key),
                     ),
                   ),
               ],
@@ -107,11 +179,15 @@ class SignTile extends StatelessWidget {
     required this.sign,
     required this.open,
     required this.onToggle,
+    required this.bookmarked,
+    required this.onBookmark,
   });
 
   final Sign sign;
   final bool open;
   final VoidCallback onToggle;
+  final bool bookmarked;
+  final VoidCallback onBookmark;
 
   @override
   Widget build(BuildContext context) {
@@ -140,51 +216,87 @@ class SignTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             if (open)
-              const AspectRatio(
+              AspectRatio(
                 aspectRatio: 16 / 10,
-                child: MediaPlaceholder(
-                  kind: MediaKind.video,
-                  color: AppColors.seafoam,
+                child: SignMedia(
+                  asset: sign.media,
+                  label: 'How to sign ${sign.term}',
                 ),
               ),
-            Semantics(
-              button: true,
-              expanded: open,
-              label: sign.term,
-              excludeSemantics: true,
-              child: Pressable(
-                onTap: onToggle,
-                scale: 0.98,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(22, 16, 16, 16),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          sign.term,
-                          style: const TextStyle(
-                            fontFamily: AppFonts.display,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                            color: AppColors.teal,
-                            height: 1.2,
-                          ),
+            // The expand button and the bookmark are siblings, not nested,
+            // so each is its own tap target and screen-reader button.
+            Row(
+              children: [
+                Expanded(
+                  child: Semantics(
+                    button: true,
+                    expanded: open,
+                    label: sign.tagalog == null
+                        ? sign.term
+                        : '${sign.term}, in Filipino: ${sign.tagalog}',
+                    excludeSemantics: true,
+                    child: Pressable(
+                      onTap: onToggle,
+                      scale: 0.98,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(22, 10, 0, 10),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    sign.term,
+                                    style: const TextStyle(
+                                      fontFamily: AppFonts.display,
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 20,
+                                      color: AppColors.teal,
+                                      height: 1.2,
+                                    ),
+                                  ),
+                                  if (sign.tagalog != null)
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 2),
+                                      child: Text(
+                                        sign.tagalog!,
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          fontStyle: FontStyle.italic,
+                                          color: AppColors.slate,
+                                          height: 1.25,
+                                        ),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                            AnimatedRotation(
+                              turns: open ? 0.5 : 0,
+                              duration: const Duration(milliseconds: 320),
+                              curve: Curves.easeOutBack,
+                              child: const Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color: AppColors.teal,
+                                size: 34,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      AnimatedRotation(
-                        turns: open ? 0.5 : 0,
-                        duration: const Duration(milliseconds: 320),
-                        curve: Curves.easeOutBack,
-                        child: const Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          color: AppColors.teal,
-                          size: 34,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 10),
+                  child: BookmarkButton(
+                    term: sign.term,
+                    bookmarked: bookmarked,
+                    onTap: onBookmark,
+                  ),
+                ),
+              ],
             ),
             if (open) _Details(sign: sign),
           ],
@@ -214,7 +326,9 @@ class _Details extends StatelessWidget {
           label: 'Facial expression',
           value: sign.facialExpression!,
         ),
-      if (sign.signOrder == null && sign.facialExpression == null)
+      if (sign.signOrder == null &&
+          sign.facialExpression == null &&
+          sign.media == null)
         const _DetailRow(
           icon: Icons.back_hand_rounded,
           label: 'How to sign',

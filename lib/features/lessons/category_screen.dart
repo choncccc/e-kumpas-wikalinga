@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../data/learning_content.dart';
 import '../../data/lesson_models.dart';
 import '../../data/lesson_repository.dart';
+import '../../data/study_repository.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/media_placeholder.dart';
@@ -17,10 +18,12 @@ class CategoryScreen extends StatefulWidget {
     super.key,
     required this.category,
     required this.lessons,
+    required this.study,
   });
 
   final LessonCategory category;
   final LessonRepository lessons;
+  final StudyRepository study;
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
@@ -127,6 +130,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                   builder: (_) => TopicScreen(
                                     category: category,
                                     topic: topics[i],
+                                    study: widget.study,
                                   ),
                                 ),
                               ),

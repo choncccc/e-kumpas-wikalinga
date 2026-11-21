@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'data/lesson_repository.dart';
 import 'data/photo_picker.dart';
+import 'data/study_repository.dart';
 import 'data/user_profile.dart';
 import 'data/user_repository.dart';
 import 'features/onboarding/onboarding_screen.dart';
@@ -19,10 +20,12 @@ void main() {
       statusBarIconBrightness: Brightness.dark,
     ),
   );
+  final lessons = SqliteLessonRepository();
   runApp(
     EKumpasApp(
       repository: SqliteUserRepository(),
-      lessons: SqliteLessonRepository(),
+      lessons: lessons,
+      study: SqliteStudyRepository(lessons),
       photoPicker: DevicePhotoPicker(),
     ),
   );
@@ -33,11 +36,13 @@ class EKumpasApp extends StatelessWidget {
     super.key,
     required this.repository,
     required this.lessons,
+    required this.study,
     required this.photoPicker,
   });
 
   final UserRepository repository;
   final LessonRepository lessons;
+  final StudyRepository study;
   final PhotoPicker photoPicker;
 
   @override
@@ -49,6 +54,7 @@ class EKumpasApp extends StatelessWidget {
       home: LaunchGate(
         repository: repository,
         lessons: lessons,
+        study: study,
         photoPicker: photoPicker,
       ),
     );
@@ -61,11 +67,13 @@ class LaunchGate extends StatefulWidget {
     super.key,
     required this.repository,
     required this.lessons,
+    required this.study,
     required this.photoPicker,
   });
 
   final UserRepository repository;
   final LessonRepository lessons;
+  final StudyRepository study;
   final PhotoPicker photoPicker;
 
   @override
@@ -103,6 +111,9 @@ class _LaunchGateState extends State<LaunchGate> {
     _phase = _Phase.home;
   });
 
+  void _onProfileChanged(UserProfile profile) =>
+      setState(() => _profile = profile);
+
   @override
   Widget build(BuildContext context) {
     final Widget child = switch (_phase) {
@@ -121,6 +132,10 @@ class _LaunchGateState extends State<LaunchGate> {
         key: const ValueKey('home'),
         profile: _profile!,
         lessons: widget.lessons,
+        study: widget.study,
+        users: widget.repository,
+        photoPicker: widget.photoPicker,
+        onProfileChanged: _onProfileChanged,
       ),
     };
 

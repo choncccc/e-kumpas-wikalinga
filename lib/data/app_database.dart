@@ -15,7 +15,7 @@ class AppDatabase {
   final String? _path;
 
   static const _fileName = 'ekumpas_wikalinga.db';
-  static const version = 3;
+  static const version = 6;
 
   Database? _db;
 
@@ -44,6 +44,7 @@ class AppDatabase {
           )
         ''');
         await _createLessonTables(db);
+        await _createStudyTables(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -51,7 +52,21 @@ class AppDatabase {
             'ALTER TABLE user_profile ADD COLUMN photo_path TEXT',
           );
         }
-        if (oldVersion < 3) await _createLessonTables(db);
+        if (oldVersion < 3) {
+          await _createLessonTables(db);
+        } else if (oldVersion < 4) {
+          // Filled in by the reseed that contentVersion 2 triggers.
+          await db.execute('ALTER TABLE sign ADD COLUMN sign_key TEXT');
+          await _createSignKeyIndex(db);
+        }
+        if (oldVersion < 4) await _createStudyTables(db);
+        if (oldVersion >= 4 && oldVersion < 6) await _createGameTable(db);
+        if (oldVersion >= 3 && oldVersion < 5) {
+          // Filled in by the reseed that contentVersion 3 triggers.
+          await db.execute('ALTER TABLE lesson_topic ADD COLUMN tagalog TEXT');
+          await db.execute('ALTER TABLE sign ADD COLUMN tagalog TEXT');
+          await db.execute('ALTER TABLE sign ADD COLUMN media TEXT');
+        }
       },
     );
   }
@@ -77,7 +92,8 @@ class AppDatabase {
         id          INTEGER PRIMARY KEY AUTOINCREMENT,
         category_id TEXT    NOT NULL REFERENCES lesson_category(id),
         position    INTEGER NOT NULL,
-        title       TEXT    NOT NULL
+        title       TEXT    NOT NULL,
+        tagalog     TEXT
       )
     ''');
     await db.execute('''
@@ -87,7 +103,10 @@ class AppDatabase {
         position          INTEGER NOT NULL,
         term              TEXT    NOT NULL,
         sign_order        TEXT,
-        facial_expression TEXT
+        facial_expression TEXT,
+        sign_key          TEXT,
+        tagalog           TEXT,
+        media             TEXT
       )
     ''');
     await db.execute(
@@ -95,5 +114,48 @@ class AppDatabase {
     );
     await db.execute('CREATE INDEX idx_sign_topic ON sign(topic_id, position)');
     await db.execute('CREATE INDEX idx_sign_term ON sign(term COLLATE NOCASE)');
+    await _createSignKeyIndex(db);
+  }
+
+  static Future<void> _createSignKeyIndex(Database db) =>
+      db.execute('CREATE UNIQUE INDEX idx_sign_key ON sign(sign_key)');
+
+  /// Memory Card Flip: one row per level the learner has cleared.
+  static Future<void> _createGameTable(Database db) => db.execute('''
+    CREATE TABLE game_level (
+      level        INTEGER PRIMARY KEY,
+      best_seconds INTEGER NOT NULL,
+      cleared_at   TEXT    NOT NULL
+    )
+  ''');
+
+  /// The learner's own data. Rows point at signs by `sign_key`, never by row
+  /// id, so they survive a content reseed.
+  static Future<void> _createStudyTables(Database db) async {
+    await db.execute('''
+      CREATE TABLE bookmark (
+        sign_key   TEXT PRIMARY KEY,
+        created_at TEXT NOT NULL
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE sign_view (
+        sign_key        TEXT PRIMARY KEY,
+        first_viewed_at TEXT NOT NULL,
+        last_viewed_at  TEXT NOT NULL
+      )
+    ''');
+    await db.execute(
+      'CREATE INDEX idx_sign_view_last ON sign_view(last_viewed_at)',
+    );
+    await _createGameTable(db);
+    await db.execute('''
+      CREATE TABLE quiz_result (
+        id       INTEGER PRIMARY KEY AUTOINCREMENT,
+        taken_at TEXT    NOT NULL,
+        score    INTEGER NOT NULL,
+        total    INTEGER NOT NULL
+      )
+    ''');
   }
 }

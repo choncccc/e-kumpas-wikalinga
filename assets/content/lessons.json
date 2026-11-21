@@ -9,323 +9,525 @@
      "title": "Alphabet",
      "signs": [
       {
-       "term": "Letter A"
+       "term": "Letter A",
+       "media": "assets/signs/foundation/alphabet__letter_a.jpg"
       },
       {
-       "term": "Letter B"
+       "term": "Letter B",
+       "media": "assets/signs/foundation/alphabet__letter_b.jpg"
       },
       {
-       "term": "Letter C"
+       "term": "Letter C",
+       "media": "assets/signs/foundation/alphabet__letter_c.jpg"
       },
       {
-       "term": "Letter D"
+       "term": "Letter D",
+       "media": "assets/signs/foundation/alphabet__letter_d.jpg"
       },
       {
-       "term": "Letter E"
+       "term": "Letter E",
+       "media": "assets/signs/foundation/alphabet__letter_e.jpg"
       },
       {
-       "term": "Letter F"
+       "term": "Letter F",
+       "media": "assets/signs/foundation/alphabet__letter_f.jpg"
       },
       {
-       "term": "Letter G"
+       "term": "Letter G",
+       "media": "assets/signs/foundation/alphabet__letter_g.jpg"
       },
       {
-       "term": "Letter H"
+       "term": "Letter H",
+       "media": "assets/signs/foundation/alphabet__letter_h.jpg"
       },
       {
-       "term": "Letter I"
+       "term": "Letter I",
+       "media": "assets/signs/foundation/alphabet__letter_i.jpg"
       },
       {
-       "term": "Letter J"
+       "term": "Letter J",
+       "media": "assets/signs/foundation/alphabet__letter_j.mp4"
       },
       {
-       "term": "Letter K"
+       "term": "Letter K",
+       "media": "assets/signs/foundation/alphabet__letter_k.jpg"
       },
       {
-       "term": "Letter L"
+       "term": "Letter L",
+       "media": "assets/signs/foundation/alphabet__letter_l.jpg"
       },
       {
-       "term": "Letter M"
+       "term": "Letter M",
+       "media": "assets/signs/foundation/alphabet__letter_m.jpg"
       },
       {
-       "term": "Letter N"
+       "term": "Letter N",
+       "media": "assets/signs/foundation/alphabet__letter_n.jpg"
       },
       {
-       "term": "Letter O"
+       "term": "Letter O",
+       "media": "assets/signs/foundation/alphabet__letter_o.jpg"
       },
       {
-       "term": "Letter P"
+       "term": "Letter P",
+       "media": "assets/signs/foundation/alphabet__letter_p.jpg"
       },
       {
-       "term": "Letter Q"
+       "term": "Letter Q",
+       "media": "assets/signs/foundation/alphabet__letter_q.jpg"
       },
       {
-       "term": "Letter R"
+       "term": "Letter R",
+       "media": "assets/signs/foundation/alphabet__letter_r.jpg"
       },
       {
-       "term": "Letter S"
+       "term": "Letter S",
+       "media": "assets/signs/foundation/alphabet__letter_s.jpg"
       },
       {
-       "term": "Letter T"
+       "term": "Letter T",
+       "media": "assets/signs/foundation/alphabet__letter_t.jpg"
       },
       {
-       "term": "Letter U"
+       "term": "Letter U",
+       "media": "assets/signs/foundation/alphabet__letter_u.jpg"
       },
       {
-       "term": "Letter V"
+       "term": "Letter V",
+       "media": "assets/signs/foundation/alphabet__letter_v.jpg"
       },
       {
-       "term": "Letter W"
+       "term": "Letter W",
+       "media": "assets/signs/foundation/alphabet__letter_w.jpg"
       },
       {
-       "term": "Letter X"
+       "term": "Letter X",
+       "media": "assets/signs/foundation/alphabet__letter_x.jpg"
       },
       {
-       "term": "Letter Y"
+       "term": "Letter Y",
+       "media": "assets/signs/foundation/alphabet__letter_y.jpg"
       },
       {
-       "term": "Letter Z"
+       "term": "Letter Z",
+       "media": "assets/signs/foundation/alphabet__letter_z.mp4"
       }
-     ]
+     ],
+     "tagalog": "Alpabeto"
     },
     {
      "title": "Numbers",
      "signs": [
       {
-       "term": "Number 1"
+       "term": "Number 1",
+       "tagalog": "Isa",
+       "media": "assets/signs/foundation/numbers__number_1.jpg"
       },
       {
-       "term": "Number 2"
+       "term": "Number 2",
+       "tagalog": "Dalawa",
+       "media": "assets/signs/foundation/numbers__number_2.jpg"
       },
       {
-       "term": "Number 3"
+       "term": "Number 3",
+       "tagalog": "Tatlo",
+       "media": "assets/signs/foundation/numbers__number_3.jpg"
       },
       {
-       "term": "Number 4"
+       "term": "Number 4",
+       "tagalog": "Apat",
+       "media": "assets/signs/foundation/numbers__number_4.jpg"
       },
       {
-       "term": "Number 5"
+       "term": "Number 5",
+       "tagalog": "Lima",
+       "media": "assets/signs/foundation/numbers__number_5.jpg"
       },
       {
-       "term": "Number 6"
+       "term": "Number 6",
+       "tagalog": "Anim",
+       "media": "assets/signs/foundation/numbers__number_6.jpg"
       },
       {
-       "term": "Number 7"
+       "term": "Number 7",
+       "tagalog": "Pito",
+       "media": "assets/signs/foundation/numbers__number_7.jpg"
       },
       {
-       "term": "Number 8"
+       "term": "Number 8",
+       "tagalog": "Walo",
+       "media": "assets/signs/foundation/numbers__number_8.jpg"
       },
       {
-       "term": "Number 9"
+       "term": "Number 9",
+       "tagalog": "Siyam",
+       "media": "assets/signs/foundation/numbers__number_9.jpg"
       },
       {
-       "term": "Number 10"
+       "term": "Number 10",
+       "tagalog": "Sampu",
+       "media": "assets/signs/foundation/numbers__number_10.jpg"
       },
       {
-       "term": "Number 11"
+       "term": "Number 11",
+       "tagalog": "Labing-isa",
+       "media": "assets/signs/foundation/numbers__number_11.mp4"
       },
       {
-       "term": "Number 12"
+       "term": "Number 12",
+       "tagalog": "Labindalawa",
+       "media": "assets/signs/foundation/numbers__number_12.mp4"
       },
       {
-       "term": "Number 13"
+       "term": "Number 13",
+       "tagalog": "Labintatlo",
+       "media": "assets/signs/foundation/numbers__number_13.mp4"
       },
       {
-       "term": "Number 14"
+       "term": "Number 14",
+       "tagalog": "Labing-apat",
+       "media": "assets/signs/foundation/numbers__number_14.mp4"
       },
       {
-       "term": "Number 15"
+       "term": "Number 15",
+       "tagalog": "Labinlima",
+       "media": "assets/signs/foundation/numbers__number_15.mp4"
       },
       {
-       "term": "Number 20"
+       "term": "Number 16",
+       "tagalog": "Labing-anim",
+       "media": "assets/signs/foundation/numbers__number_16.mp4"
       },
       {
-       "term": "Number 30"
+       "term": "Number 17",
+       "tagalog": "Labimpito",
+       "media": "assets/signs/foundation/numbers__number_17.mp4"
       },
       {
-       "term": "Number 40"
+       "term": "Number 18",
+       "tagalog": "Labingwalo",
+       "media": "assets/signs/foundation/numbers__number_18.mp4"
       },
       {
-       "term": "Number 50"
+       "term": "Number 19",
+       "tagalog": "Labinsiyam",
+       "media": "assets/signs/foundation/numbers__number_19.mp4"
       },
       {
-       "term": "Number 60"
+       "term": "Number 20",
+       "tagalog": "Dalawampu",
+       "media": "assets/signs/foundation/numbers__number_20.mp4"
       },
       {
-       "term": "Number 70"
+       "term": "Number 30",
+       "tagalog": "Tatlumpu",
+       "media": "assets/signs/foundation/numbers__number_30.mp4"
       },
       {
-       "term": "Number 80"
+       "term": "Number 40",
+       "tagalog": "Apatnapu",
+       "media": "assets/signs/foundation/numbers__number_40.mp4"
       },
       {
-       "term": "Number 90"
+       "term": "Number 50",
+       "tagalog": "Limampu",
+       "media": "assets/signs/foundation/numbers__number_50.mp4"
       },
       {
-       "term": "Number 100"
+       "term": "Number 60",
+       "tagalog": "Animnapu",
+       "media": "assets/signs/foundation/numbers__number_60.mp4"
       },
       {
-       "term": "Number 1000"
+       "term": "Number 70",
+       "tagalog": "Pitumpu",
+       "media": "assets/signs/foundation/numbers__number_70.mp4"
       },
       {
-       "term": "Number 1,000,000 (Million)"
+       "term": "Number 80",
+       "tagalog": "Walumpu",
+       "media": "assets/signs/foundation/numbers__number_80.mp4"
+      },
+      {
+       "term": "Number 90",
+       "tagalog": "Siyamnapu",
+       "media": "assets/signs/foundation/numbers__number_90.mp4"
+      },
+      {
+       "term": "Number 100",
+       "tagalog": "Isang daan",
+       "media": "assets/signs/foundation/numbers__number_100.mp4"
+      },
+      {
+       "term": "Number 1000",
+       "tagalog": "Isang libo",
+       "media": "assets/signs/foundation/numbers__number_1000.mp4"
+      },
+      {
+       "term": "Number 1,000,000 (Million)",
+       "tagalog": "Isang milyon",
+       "media": "assets/signs/foundation/numbers__number_1_000_000_million.mp4"
       }
-     ]
+     ],
+     "tagalog": "Numero"
     },
     {
      "title": "Time",
      "signs": [
       {
-       "term": "Now/Today"
+       "term": "Now/Today",
+       "tagalog": "Ngayon",
+       "media": "assets/signs/foundation/time__now_today.mp4"
       },
       {
-       "term": "Yesterday"
+       "term": "Yesterday",
+       "tagalog": "Kahapon",
+       "media": "assets/signs/foundation/time__yesterday.mp4"
       },
       {
-       "term": "Tomorrow"
+       "term": "Tomorrow",
+       "tagalog": "Bukas",
+       "media": "assets/signs/foundation/time__tomorrow.mp4"
       },
       {
-       "term": "Always"
+       "term": "Always",
+       "tagalog": "Lagi / Palagi",
+       "media": "assets/signs/foundation/time__always.mp4"
       },
       {
-       "term": "Daily/Everyday"
+       "term": "Daily/Everyday",
+       "tagalog": "Araw-araw",
+       "media": "assets/signs/foundation/time__daily_everyday.mp4"
       },
       {
-       "term": "Once"
+       "term": "Once",
+       "tagalog": "Minsan / Isang beses",
+       "media": "assets/signs/foundation/time__once.mp4"
       },
       {
-       "term": "Twice"
+       "term": "Twice",
+       "tagalog": "Dalawang beses",
+       "media": "assets/signs/foundation/time__twice.mp4"
       },
       {
-       "term": "Time"
+       "term": "Thrice",
+       "tagalog": "Tatlong beses",
+       "media": "assets/signs/foundation/time__thrice.mp4"
       },
       {
-       "term": "Second"
+       "term": "Time",
+       "tagalog": "Oras / Panahon",
+       "media": "assets/signs/foundation/time__time.mp4"
       },
       {
-       "term": "Minute"
+       "term": "Second",
+       "tagalog": "Segundo",
+       "media": "assets/signs/foundation/time__second.mp4"
       },
       {
-       "term": "Hour"
+       "term": "Minute",
+       "tagalog": "Minuto",
+       "media": "assets/signs/foundation/time__minute.mp4"
+      },
+      {
+       "term": "Hour",
+       "tagalog": "Oras",
+       "media": "assets/signs/foundation/time__hour.mp4"
       }
-     ]
+     ],
+     "tagalog": "Oras"
     },
     {
      "title": "Dates",
      "signs": [
       {
-       "term": "Week"
+       "term": "Week",
+       "tagalog": "Linggo",
+       "media": "assets/signs/foundation/dates__week.mp4"
       },
       {
-       "term": "Monday"
+       "term": "Monday",
+       "tagalog": "Lunes",
+       "media": "assets/signs/foundation/dates__monday.mp4"
       },
       {
-       "term": "Tuesday"
+       "term": "Tuesday",
+       "tagalog": "Martes",
+       "media": "assets/signs/foundation/dates__tuesday.mp4"
       },
       {
-       "term": "Wednesday"
+       "term": "Wednesday",
+       "tagalog": "Miyerkules",
+       "media": "assets/signs/foundation/dates__wednesday.mp4"
       },
       {
-       "term": "Thursday"
+       "term": "Thursday",
+       "tagalog": "Huwebes",
+       "media": "assets/signs/foundation/dates__thursday.mp4"
       },
       {
-       "term": "Friday"
+       "term": "Friday",
+       "tagalog": "Biyernes",
+       "media": "assets/signs/foundation/dates__friday.mp4"
       },
       {
-       "term": "Saturday"
+       "term": "Saturday",
+       "tagalog": "Sabado",
+       "media": "assets/signs/foundation/dates__saturday.mp4"
       },
       {
-       "term": "Sunday"
+       "term": "Sunday",
+       "tagalog": "Linggo",
+       "media": "assets/signs/foundation/dates__sunday.mp4"
       },
       {
-       "term": "Month"
+       "term": "Month",
+       "tagalog": "Buwan",
+       "media": "assets/signs/foundation/dates__month.mp4"
       },
       {
-       "term": "January"
+       "term": "January",
+       "tagalog": "Enero",
+       "media": "assets/signs/foundation/dates__january.mp4"
       },
       {
-       "term": "February"
+       "term": "February",
+       "tagalog": "Pebrero",
+       "media": "assets/signs/foundation/dates__february.mp4"
       },
       {
-       "term": "March"
+       "term": "March",
+       "tagalog": "Marso",
+       "media": "assets/signs/foundation/dates__march.mp4"
       },
       {
-       "term": "April"
+       "term": "April",
+       "tagalog": "Abril",
+       "media": "assets/signs/foundation/dates__april.mp4"
       },
       {
-       "term": "May"
+       "term": "May",
+       "tagalog": "Mayo",
+       "media": "assets/signs/foundation/dates__may.mp4"
       },
       {
-       "term": "June"
+       "term": "June",
+       "tagalog": "Hunyo",
+       "media": "assets/signs/foundation/dates__june.mp4"
       },
       {
-       "term": "July"
+       "term": "July",
+       "tagalog": "Hulyo",
+       "media": "assets/signs/foundation/dates__july.mp4"
       },
       {
-       "term": "August"
+       "term": "August",
+       "tagalog": "Agosto",
+       "media": "assets/signs/foundation/dates__august.mp4"
       },
       {
-       "term": "September"
+       "term": "September",
+       "tagalog": "Setyembre",
+       "media": "assets/signs/foundation/dates__september.mp4"
       },
       {
-       "term": "October"
+       "term": "October",
+       "tagalog": "Oktubre",
+       "media": "assets/signs/foundation/dates__october.mp4"
       },
       {
-       "term": "November"
+       "term": "November",
+       "tagalog": "Nobyembre",
+       "media": "assets/signs/foundation/dates__november.mp4"
       },
       {
-       "term": "December"
+       "term": "December",
+       "tagalog": "Disyembre",
+       "media": "assets/signs/foundation/dates__december.mp4"
       },
       {
-       "term": "Year"
+       "term": "Year",
+       "tagalog": "Taon",
+       "media": "assets/signs/foundation/dates__year.mp4"
       },
       {
-       "term": "1900"
+       "term": "1900",
+       "tagalog": "Isang libo't siyam na raan",
+       "media": "assets/signs/foundation/dates__1900.mp4"
       },
       {
-       "term": "2000"
+       "term": "2000",
+       "tagalog": "Dalawang libo / Dos mil",
+       "media": "assets/signs/foundation/dates__2000.mp4"
       }
-     ]
+     ],
+     "tagalog": "Petsa"
     },
     {
      "title": "Colors",
      "signs": [
       {
-       "term": "Red"
+       "term": "Red",
+       "tagalog": "Pula",
+       "media": "assets/signs/foundation/colors__red.mp4"
       },
       {
-       "term": "Blue"
+       "term": "Blue",
+       "tagalog": "Asul / Bughaw",
+       "media": "assets/signs/foundation/colors__blue.mp4"
       },
       {
-       "term": "Green"
+       "term": "Green",
+       "tagalog": "Berde / Luntian",
+       "media": "assets/signs/foundation/colors__green.mp4"
       },
       {
-       "term": "Orange"
+       "term": "Orange",
+       "tagalog": "Kahel / Dalandan",
+       "media": "assets/signs/foundation/colors__orange.mp4"
       },
       {
-       "term": "Yellow"
+       "term": "Yellow",
+       "tagalog": "Dilaw",
+       "media": "assets/signs/foundation/colors__yellow.mp4"
       },
       {
-       "term": "Violet"
+       "term": "Violet",
+       "tagalog": "Ube",
+       "media": "assets/signs/foundation/colors__violet.mp4"
       },
       {
-       "term": "Pink"
+       "term": "Pink",
+       "tagalog": "Rosas",
+       "media": "assets/signs/foundation/colors__pink.mp4"
       },
       {
-       "term": "Brown"
+       "term": "Brown",
+       "tagalog": "Kayumanggi",
+       "media": "assets/signs/foundation/colors__brown.mp4"
       },
       {
-       "term": "Black"
+       "term": "Black",
+       "tagalog": "Itim",
+       "media": "assets/signs/foundation/colors__black.mp4"
       },
       {
-       "term": "White"
+       "term": "White",
+       "tagalog": "Puti",
+       "media": "assets/signs/foundation/colors__white.mp4"
       },
       {
-       "term": "Light"
+       "term": "Light",
+       "tagalog": "Maliwanag",
+       "media": "assets/signs/foundation/colors__light.mp4"
       },
       {
-       "term": "Dark"
+       "term": "Dark",
+       "tagalog": "Madilim",
+       "media": "assets/signs/foundation/colors__dark.mp4"
       }
-     ]
+     ],
+     "tagalog": "Kulay"
     }
    ]
   },
@@ -337,31 +539,49 @@
      "title": "Common Greetings & Introduction",
      "signs": [
       {
-       "term": "Hello"
+       "term": "Hello",
+       "tagalog": "Kumusta",
+       "media": "assets/signs/basic/common_greetings_introduction__hello.mp4"
       },
       {
-       "term": "Good morning"
+       "term": "Good morning",
+       "tagalog": "Magandang umaga",
+       "media": "assets/signs/basic/common_greetings_introduction__good_morning.mp4"
       },
       {
-       "term": "Good afternoon"
+       "term": "Good afternoon",
+       "tagalog": "Magandang hapon",
+       "media": "assets/signs/basic/common_greetings_introduction__good_afternoon.mp4"
       },
       {
-       "term": "Good evening"
+       "term": "Good evening",
+       "tagalog": "Magandang gabi",
+       "media": "assets/signs/basic/common_greetings_introduction__good_evening.mp4"
       },
       {
-       "term": "Goodbye"
+       "term": "Goodbye",
+       "tagalog": "Paalam",
+       "media": "assets/signs/basic/common_greetings_introduction__goodbye.mp4"
       },
       {
-       "term": "Welcome"
+       "term": "Welcome",
+       "tagalog": "Maligayang pagdating",
+       "media": "assets/signs/basic/common_greetings_introduction__welcome.mp4"
       },
       {
-       "term": "My name"
+       "term": "My name",
+       "tagalog": "Ang pangalan ko",
+       "media": "assets/signs/basic/common_greetings_introduction__my_name.mp4"
       },
       {
-       "term": "Nice to meet you"
+       "term": "Nice to meet you",
+       "tagalog": "Ikinagagalak kitang makilala",
+       "media": "assets/signs/basic/common_greetings_introduction__nice_to_meet_you.mp4"
       },
       {
-       "term": "Take care"
+       "term": "Take care",
+       "tagalog": "Ingat",
+       "media": "assets/signs/basic/common_greetings_introduction__take_care.mp4"
       }
      ]
     },
@@ -369,22 +589,34 @@
      "title": "Courtesies",
      "signs": [
       {
-       "term": "Please"
+       "term": "Please",
+       "tagalog": "Pakiusap",
+       "media": "assets/signs/basic/courtesies__please.mp4"
       },
       {
-       "term": "Thank you"
+       "term": "Thank you",
+       "tagalog": "Salamat",
+       "media": "assets/signs/basic/courtesies__thank_you.mp4"
       },
       {
-       "term": "You're welcome"
+       "term": "You're welcome",
+       "tagalog": "Walang anuman",
+       "media": "assets/signs/basic/courtesies__you_re_welcome.mp4"
       },
       {
-       "term": "Excuse me"
+       "term": "Excuse me",
+       "tagalog": "Makikiraan / Paumanhin",
+       "media": "assets/signs/basic/courtesies__excuse_me.mp4"
       },
       {
-       "term": "Sorry"
+       "term": "Sorry",
+       "tagalog": "Paumanhin / Pasensya na",
+       "media": "assets/signs/basic/courtesies__sorry.mp4"
       },
       {
-       "term": "I'm fine"
+       "term": "I'm fine",
+       "tagalog": "Mabuti naman ako / Ayos lang ako",
+       "media": "assets/signs/basic/courtesies__i_m_fine.mp4"
       }
      ]
     },
@@ -392,25 +624,39 @@
      "title": "Simple Responses",
      "signs": [
       {
-       "term": "Yes"
+       "term": "Yes",
+       "tagalog": "Oo",
+       "media": "assets/signs/basic/simple_responses__yes.mp4"
       },
       {
-       "term": "No"
+       "term": "No",
+       "tagalog": "Hindi",
+       "media": "assets/signs/basic/simple_responses__no.mp4"
       },
       {
-       "term": "Maybe"
+       "term": "Maybe",
+       "tagalog": "Siguro / Baka",
+       "media": "assets/signs/basic/simple_responses__maybe.mp4"
       },
       {
-       "term": "I understand"
+       "term": "I understand",
+       "tagalog": "Naiintindihan ko",
+       "media": "assets/signs/basic/simple_responses__i_understand.mp4"
       },
       {
-       "term": "I don't understand"
+       "term": "I don't understand",
+       "tagalog": "Hindi ko naiintindihan",
+       "media": "assets/signs/basic/simple_responses__i_don_t_understand.mp4"
       },
       {
-       "term": "Please repeat"
+       "term": "Please repeat",
+       "tagalog": "Pakiulit",
+       "media": "assets/signs/basic/simple_responses__please_repeat.mp4"
       },
       {
-       "term": "Please wait"
+       "term": "Please wait",
+       "tagalog": "Sandali lang / Pakihintay",
+       "media": "assets/signs/basic/simple_responses__please_wait.mp4"
       }
      ]
     },
@@ -418,48 +664,72 @@
      "title": "Questions",
      "signs": [
       {
-       "term": "What?"
+       "term": "What?",
+       "tagalog": "Ano?",
+       "media": "assets/signs/basic/questions__what.mp4"
       },
       {
-       "term": "Where?"
+       "term": "Where?",
+       "tagalog": "Saan?",
+       "media": "assets/signs/basic/questions__where.mp4"
       },
       {
-       "term": "When?"
+       "term": "When?",
+       "tagalog": "Kailan?",
+       "media": "assets/signs/basic/questions__when.mp4"
       },
       {
-       "term": "Why?"
+       "term": "Why?",
+       "tagalog": "Bakit?",
+       "media": "assets/signs/basic/questions__why.mp4"
       },
       {
-       "term": "How?"
+       "term": "How?",
+       "tagalog": "Paano?",
+       "media": "assets/signs/basic/questions__how.mp4"
       },
       {
-       "term": "Who?"
+       "term": "Who?",
+       "tagalog": "Sino?",
+       "media": "assets/signs/basic/questions__who.mp4"
       },
       {
-       "term": "Which?"
+       "term": "Which?",
+       "tagalog": "Alin?",
+       "media": "assets/signs/basic/questions__which.mp4"
       },
       {
        "term": "How many?",
-       "facial_expression": "WH question: furrow eyebrows"
+       "facial_expression": "WH question: furrow eyebrows",
+       "tagalog": "Ilan?",
+       "media": "assets/signs/basic/questions__how_many.mp4"
       },
       {
        "term": "How long?",
-       "facial_expression": "WH question: furrow eyebrows"
+       "facial_expression": "WH question: furrow eyebrows",
+       "tagalog": "Gaano katagal?",
+       "media": "assets/signs/basic/questions__how_long.mp4"
       },
       {
        "term": "What is your name?",
        "sign_order": "YOUR + NAME + WHAT?",
-       "facial_expression": "WH question: furrow eyebrows"
+       "facial_expression": "WH question: furrow eyebrows",
+       "tagalog": "Ano ang pangalan mo?",
+       "media": "assets/signs/basic/questions__what_is_your_name.mp4"
       },
       {
        "term": "How old are you?",
        "sign_order": "YOUR + AGE + HOW-MANY?",
-       "facial_expression": "WH-question: furrow eyebrows"
+       "facial_expression": "WH-question: furrow eyebrows",
+       "tagalog": "Ilang taon ka na?",
+       "media": "assets/signs/basic/questions__how_old_are_you.mp4"
       },
       {
        "term": "What is your occupation?",
        "sign_order": "YOUR + WORK + WHAT?",
-       "facial_expression": "WH-question: furrow eyebrows"
+       "facial_expression": "WH-question: furrow eyebrows",
+       "tagalog": "Ano ang trabaho mo?",
+       "media": "assets/signs/basic/questions__what_is_your_occupation.mp4"
       }
      ]
     }
@@ -473,16 +743,24 @@
      "title": "Vital Signs",
      "signs": [
       {
-       "term": "Blood Pressure / BP"
+       "term": "Blood Pressure / BP",
+       "tagalog": "Presyon ng Dugo / BP",
+       "media": "assets/signs/triage/vital_signs__blood_pressure_bp.mp4"
       },
       {
-       "term": "Heart Rate"
+       "term": "Heart Rate",
+       "tagalog": "Bilis ng Tibok ng Puso",
+       "media": "assets/signs/triage/vital_signs__heart_rate.mp4"
       },
       {
-       "term": "Temperature"
+       "term": "Temperature",
+       "tagalog": "Temperatura",
+       "media": "assets/signs/triage/vital_signs__temperature.mp4"
       },
       {
-       "term": "Respiratory Rate"
+       "term": "Respiratory Rate",
+       "tagalog": "Bilis ng Paghinga",
+       "media": "assets/signs/triage/vital_signs__respiratory_rate.mp4"
       }
      ]
     },
@@ -490,19 +768,24 @@
      "title": "Blood Pressure Values",
      "signs": [
       {
-       "term": "Normal BP: Below 120/80"
+       "term": "Normal BP: Below 120/80",
+       "media": "assets/signs/triage/blood_pressure_values__normal_bp_below_120_80.mp4"
       },
       {
-       "term": "Elevated BP: 120–129 / Below 80"
+       "term": "Elevated BP: 120–129 / Below 80",
+       "media": "assets/signs/triage/blood_pressure_values__elevated_bp_120129_below_80.mp4"
       },
       {
-       "term": "Stage 1 High BP: 130–139 / 80–89"
+       "term": "Stage 1 High BP: 130–139 / 80–89",
+       "media": "assets/signs/triage/blood_pressure_values__stage_1_high_bp_130139_8089.mp4"
       },
       {
-       "term": "Stage 2 High BP: 140/90 or higher"
+       "term": "Stage 2 High BP: 140/90 or higher",
+       "media": "assets/signs/triage/blood_pressure_values__stage_2_high_bp_140_90_or_higher.mp4"
       },
       {
-       "term": "Emergency BP: Above 180/120"
+       "term": "Emergency BP: Above 180/120",
+       "media": "assets/signs/triage/blood_pressure_values__emergency_bp_above_180_120.mp4"
       }
      ]
     },
@@ -510,66 +793,96 @@
      "title": "Chief Complaints",
      "signs": [
       {
-       "term": "Pain / Ache"
+       "term": "Pain / Ache",
+       "tagalog": "Sakit / Kirot",
+       "media": "assets/signs/triage/chief_complaints__pain_ache.mp4"
       },
       {
-       "term": "Fever"
+       "term": "Fever",
+       "tagalog": "Lagnat",
+       "media": "assets/signs/triage/chief_complaints__fever.mp4"
       },
       {
-       "term": "Cough and Cold"
+       "term": "Cough and Cold",
+       "tagalog": "Ubo at Sipon",
+       "media": "assets/signs/triage/chief_complaints__cough_and_cold.mp4"
       },
       {
-       "term": "Headache"
+       "term": "Headache",
+       "tagalog": "Sakit ng ulo",
+       "media": "assets/signs/triage/chief_complaints__headache.mp4"
       },
       {
-       "term": "Stomach Ache / Abdominal discomfort"
+       "term": "Stomach Ache / Abdominal discomfort",
+       "tagalog": "Sakit ng tiyan / Pananakit ng sikmura",
+       "media": "assets/signs/triage/chief_complaints__stomach_ache_abdominal_discomfort.mp4"
       },
       {
        "term": "Fatigue"
       },
       {
-       "term": "Nausea / Vomiting"
+       "term": "Nausea / Vomiting",
+       "tagalog": "Pagduduwal / Pagsusuka",
+       "media": "assets/signs/triage/chief_complaints__nausea_vomiting.mp4"
       },
       {
-       "term": "Diarrhea"
+       "term": "Diarrhea",
+       "tagalog": "Pagtatae"
       },
       {
-       "term": "Bleeding / Blood"
+       "term": "Bleeding / Blood",
+       "tagalog": "Pagdurugo / Dugo",
+       "media": "assets/signs/triage/chief_complaints__bleeding_blood.mp4"
       },
       {
-       "term": "Wound / Cut / Injury"
+       "term": "Wound / Cut / Injury",
+       "tagalog": "Sugat / Hiwa / Pinsala",
+       "media": "assets/signs/triage/chief_complaints__wound_cut_injury.mp4"
       },
       {
        "term": "Where does it hurt?",
        "sign_order": "HURT + WHERE?",
-       "facial_expression": "WH question: furrow eyebrows"
+       "facial_expression": "WH question: furrow eyebrows",
+       "tagalog": "Saan ang masakit?",
+       "media": "assets/signs/triage/chief_complaints__where_does_it_hurt.mp4"
       },
       {
        "term": "When did it start?",
        "sign_order": "START + WHEN?",
-       "facial_expression": "WH question: furrow eyebrows"
+       "facial_expression": "WH question: furrow eyebrows",
+       "tagalog": "Kailan ito nagsimula?",
+       "media": "assets/signs/triage/chief_complaints__when_did_it_start.mp4"
       },
       {
        "term": "How do you feel?",
        "sign_order": "YOU + FEEL + HOW?",
-       "facial_expression": "WH question: furrow eyebrows"
+       "facial_expression": "WH question: furrow eyebrows",
+       "tagalog": "Kumusta ang pakiramdam mo?",
+       "media": "assets/signs/triage/chief_complaints__how_do_you_feel.mp4"
       },
       {
        "term": "How many days?",
        "sign_order": "DAY + HOW-MANY?",
-       "facial_expression": "WH question: furrow eyebrows"
+       "facial_expression": "WH question: furrow eyebrows",
+       "tagalog": "Ilang araw na?",
+       "media": "assets/signs/triage/chief_complaints__how_many_days.mp4"
       },
       {
        "term": "Why are you here today?",
        "sign_order": "TODAY + YOU + HERE + WHY?",
-       "facial_expression": "WH question: furrow eyebrow"
+       "facial_expression": "WH question: furrow eyebrow",
+       "tagalog": "Bakit ka narito ngayon?",
+       "media": "assets/signs/triage/chief_complaints__why_are_you_here_today.mp4"
       },
       {
        "term": "Are you dizzy?",
        "sign_order": "YOU + DIZZY?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Nahihilo ka ba?",
+       "media": "assets/signs/triage/chief_complaints__are_you_dizzy.mp4"
       }
-     ]
+     ],
+     "tagalog": "Mga Pangunahing Reklamo / Nararamdaman"
     },
     {
      "title": "Red-Flag Symptoms (Hypertension)",
@@ -577,64 +890,100 @@
       {
        "term": "Do you know the warning signs that need immediate medical attention?",
        "sign_order": "WARNING SIGNS + IMMEDIATE MEDICAL ATTENTION + YOU + KNOW?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Alam mo ba ang mga babalang palatandaan na nangangailangan ng agarang atensyong medikal?",
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__do_you_know_the_warning_signs_that_need_immediate_medical_at.mp4"
       },
       {
        "term": "Seek help if you experience chest pain.",
-       "sign_order": "CHEST + PAIN + EXPERIENCE + SEEK-HELP + IMMEDIATELY"
+       "sign_order": "CHEST + PAIN + EXPERIENCE + SEEK-HELP + IMMEDIATELY",
+       "tagalog": "Humingi ng tulong kung makaranas ka ng pananakit ng dibdib.",
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__seek_help_if_you_experience_chest_pain.mp4"
       },
       {
-       "term": "Severe Headache"
+       "term": "Severe Headache",
+       "tagalog": "Matinding sakit ng ulo"
       },
       {
-       "term": "Shortness of Breath / Difficulty Breathing"
+       "term": "Shortness of Breath / Difficulty Breathing",
+       "tagalog": "Kinakapos sa paghinga / Hirap sa paghinga",
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__shortness_of_breath_difficulty_breathing.mp4"
       },
       {
-       "term": "Chest Pain / Tightness"
+       "term": "Chest Pain / Tightness",
+       "tagalog": "Pananakit / Paninikip ng dibdib",
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__chest_pain_tightness.mp4"
       },
       {
-       "term": "Numbness or Face/Arm Weakness"
+       "term": "Numbness or Face/Arm Weakness",
+       "tagalog": "Pamamanhid o panghihina ng mukha/braso",
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__numbness_or_face_arm_weakness.mp4"
       },
       {
-       "term": "Blurry or Sudden Vision Loss"
+       "term": "Blurry or Sudden Vision Loss",
+       "tagalog": "Malabong paningin o biglaang pagkawala ng paningin",
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__blurry_or_sudden_vision_loss.mp4"
       },
       {
-       "term": "Speech Difficulty / Slurred Speech"
+       "term": "Speech Difficulty / Slurred Speech",
+       "tagalog": "Hirap sa pagsasalita / Nabubulol na pagsasalita",
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__speech_difficulty_slurred_speech.mp4"
       },
       {
-       "term": "Severe Dizziness / Loss of Balance"
+       "term": "Severe Dizziness / Loss of Balance",
+       "tagalog": "Matinding pagkahilo / Pagkawala ng balanse",
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__severe_dizziness_loss_of_balance.mp4"
       },
       {
-       "term": "Severe Swelling of Feet or Ankles"
+       "term": "Severe Swelling of Feet or Ankles",
+       "tagalog": "Matinding pamamaga ng mga paa o bukung-bukong",
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__severe_swelling_of_feet_or_ankles.mp4"
       }
-     ]
+     ],
+     "tagalog": "Mga Mapanganib na Sintomas / Altapresyon"
     },
     {
      "title": "Healthcare Roles and Areas",
      "signs": [
       {
-       "term": "Nurse"
+       "term": "Nurse",
+       "tagalog": "Nars",
+       "media": "assets/signs/triage/healthcare_roles_and_areas__nurse.mp4"
       },
       {
-       "term": "Doctor"
+       "term": "Doctor",
+       "tagalog": "Doktor",
+       "media": "assets/signs/triage/healthcare_roles_and_areas__doctor.mp4"
       },
       {
-       "term": "Patient"
+       "term": "Patient",
+       "tagalog": "Pasyente",
+       "media": "assets/signs/triage/healthcare_roles_and_areas__patient.mp4"
       },
       {
-       "term": "Student"
+       "term": "Student",
+       "tagalog": "Estudyante / Mag-aaral",
+       "media": "assets/signs/triage/healthcare_roles_and_areas__student.mp4"
       },
       {
-       "term": "Sign Language Interpreter"
+       "term": "Sign Language Interpreter",
+       "tagalog": "Tagasalin ng Wikang Pasenyas",
+       "media": "assets/signs/triage/healthcare_roles_and_areas__sign_language_interpreter.mp4"
       },
       {
-       "term": "Healthcare Worker"
+       "term": "Healthcare Worker",
+       "tagalog": "Manggagawang Pangkalusugan",
+       "media": "assets/signs/triage/healthcare_roles_and_areas__healthcare_worker.mp4"
       },
       {
-       "term": "Hospital"
+       "term": "Hospital",
+       "tagalog": "Ospital",
+       "media": "assets/signs/triage/healthcare_roles_and_areas__hospital.mp4"
       },
       {
-       "term": "Clinic"
+       "term": "Clinic",
+       "tagalog": "Klinika",
+       "media": "assets/signs/triage/healthcare_roles_and_areas__clinic.mp4"
       }
      ]
     },
@@ -642,67 +991,105 @@
      "title": "Body Parts",
      "signs": [
       {
-       "term": "Head"
+       "term": "Head",
+       "tagalog": "Ulo",
+       "media": "assets/signs/triage/body_parts__head.mp4"
       },
       {
-       "term": "Hair"
+       "term": "Hair",
+       "tagalog": "Buhok",
+       "media": "assets/signs/triage/body_parts__hair.mp4"
       },
       {
-       "term": "Face"
+       "term": "Face",
+       "tagalog": "Mukha",
+       "media": "assets/signs/triage/body_parts__face.mp4"
       },
       {
-       "term": "Neck"
+       "term": "Neck",
+       "tagalog": "Leeg",
+       "media": "assets/signs/triage/body_parts__neck.mp4"
       },
       {
-       "term": "Chest"
+       "term": "Chest",
+       "tagalog": "Dibdib",
+       "media": "assets/signs/triage/body_parts__chest.mp4"
       },
       {
-       "term": "Heart"
+       "term": "Heart",
+       "tagalog": "Puso",
+       "media": "assets/signs/triage/body_parts__heart.mp4"
       },
       {
-       "term": "Arm"
+       "term": "Arm",
+       "tagalog": "Braso",
+       "media": "assets/signs/triage/body_parts__arm.mp4"
       },
       {
-       "term": "Hand"
+       "term": "Hand",
+       "tagalog": "Kamay",
+       "media": "assets/signs/triage/body_parts__hand.mp4"
       },
       {
-       "term": "Stomach"
+       "term": "Stomach",
+       "tagalog": "Tiyan",
+       "media": "assets/signs/triage/body_parts__stomach.mp4"
       },
       {
-       "term": "Leg"
+       "term": "Leg",
+       "tagalog": "Binti",
+       "media": "assets/signs/triage/body_parts__leg.mp4"
       },
       {
-       "term": "Foot"
+       "term": "Foot",
+       "tagalog": "Paa",
+       "media": "assets/signs/triage/body_parts__foot.mp4"
       },
       {
-       "term": "Eye"
+       "term": "Eye",
+       "tagalog": "Mata",
+       "media": "assets/signs/triage/body_parts__eye.mp4"
       },
       {
-       "term": "Ear"
+       "term": "Ear",
+       "tagalog": "Tainga",
+       "media": "assets/signs/triage/body_parts__ear.mp4"
       },
       {
-       "term": "Nose"
+       "term": "Nose",
+       "tagalog": "Ilong",
+       "media": "assets/signs/triage/body_parts__nose.mp4"
       },
       {
-       "term": "Tooth/Teeth"
+       "term": "Tooth/Teeth",
+       "tagalog": "Ngipin / Mga ngipin",
+       "media": "assets/signs/triage/body_parts__tooth_teeth.mp4"
       },
       {
-       "term": "Mouth"
+       "term": "Mouth",
+       "tagalog": "Bibig",
+       "media": "assets/signs/triage/body_parts__mouth.mp4"
       },
       {
        "term": "Shoulder"
       },
       {
-       "term": "Elbow"
+       "term": "Elbow",
+       "tagalog": "Siko",
+       "media": "assets/signs/triage/body_parts__elbow.mp4"
       },
       {
-       "term": "Knee"
+       "term": "Knee",
+       "tagalog": "Tuhod",
+       "media": "assets/signs/triage/body_parts__knee.mp4"
       },
       {
        "term": "Toe"
       },
       {
-       "term": "Tongue"
+       "term": "Tongue",
+       "tagalog": "Dila",
+       "media": "assets/signs/triage/body_parts__tongue.mp4"
       }
      ]
     },
@@ -710,19 +1097,29 @@
      "title": "Senses",
      "signs": [
       {
-       "term": "Sight"
+       "term": "Sight",
+       "tagalog": "Paningin",
+       "media": "assets/signs/triage/senses__sight.mp4"
       },
       {
-       "term": "Hearing"
+       "term": "Hearing",
+       "tagalog": "Pandinig",
+       "media": "assets/signs/triage/senses__hearing.mp4"
       },
       {
-       "term": "Touch"
+       "term": "Touch",
+       "tagalog": "Pandama / Paghipo",
+       "media": "assets/signs/triage/senses__touch.mp4"
       },
       {
-       "term": "Taste"
+       "term": "Taste",
+       "tagalog": "Panlasa",
+       "media": "assets/signs/triage/senses__taste.mp4"
       },
       {
-       "term": "Smell"
+       "term": "Smell",
+       "tagalog": "Pang-amoy",
+       "media": "assets/signs/triage/senses__smell.mp4"
       }
      ]
     }
@@ -736,100 +1133,166 @@
      "title": "Family Relationships",
      "signs": [
       {
-       "term": "Mother"
+       "term": "Mother",
+       "tagalog": "Nanay / Ina",
+       "media": "assets/signs/medical_family/family_relationships__mother.mp4"
       },
       {
-       "term": "Father"
+       "term": "Father",
+       "tagalog": "Tatay / Ama",
+       "media": "assets/signs/medical_family/family_relationships__father.mp4"
       },
       {
-       "term": "Sibling"
+       "term": "Sister",
+       "tagalog": "Kapatid na babae / Ate",
+       "media": "assets/signs/medical_family/family_relationships__sister.mp4"
       },
       {
-       "term": "Grandparent"
+       "term": "Brother",
+       "tagalog": "Kapatid na lalaki / Kuya",
+       "media": "assets/signs/medical_family/family_relationships__brother.mp4"
       },
       {
-       "term": "Child"
+       "term": "Grandfather",
+       "tagalog": "Lolo",
+       "media": "assets/signs/medical_family/family_relationships__grandfather.mp4"
       },
       {
-       "term": "Family"
+       "term": "Grandmother",
+       "tagalog": "Lola",
+       "media": "assets/signs/medical_family/family_relationships__grandmother.mp4"
       },
       {
-       "term": "Single"
+       "term": "Child",
+       "tagalog": "Anak",
+       "media": "assets/signs/medical_family/family_relationships__child.mp4"
       },
       {
-       "term": "Married"
+       "term": "Children",
+       "tagalog": "Mga anak",
+       "media": "assets/signs/medical_family/family_relationships__children.mp4"
       },
       {
-       "term": "Separated"
+       "term": "Family",
+       "tagalog": "Pamilya",
+       "media": "assets/signs/medical_family/family_relationships__family.mp4"
+      },
+      {
+       "term": "Single",
+       "tagalog": "Walang asawa / Dalaga / Binata",
+       "media": "assets/signs/medical_family/family_relationships__single.mp4"
+      },
+      {
+       "term": "Married",
+       "tagalog": "May asawa",
+       "media": "assets/signs/medical_family/family_relationships__married.mp4"
+      },
+      {
+       "term": "Separated",
+       "tagalog": "Hiwalay sa asawa",
+       "media": "assets/signs/medical_family/family_relationships__separated.mp4"
       },
       {
        "term": "\"Does anyone in your family have high blood pressure?\"",
        "sign_order": "YOUR + FAMILY + SOMEONE + HIGH BLOOD PRESSURE + HAVE?",
-       "facial_expression": "Raised eyebrows (Yes/No question)"
+       "facial_expression": "Raised eyebrows (Yes/No question)",
+       "tagalog": "Mayroon bang may altapresyon sa pamilya mo?",
+       "media": "assets/signs/medical_family/family_relationships__does_anyone_in_your_family_have_high_blood_pressure.mp4"
       }
-     ]
+     ],
+     "tagalog": "Relasyon sa Pamilya"
     },
     {
      "title": "General Health History",
      "signs": [
       {
-       "term": "Healthy"
+       "term": "Healthy",
+       "tagalog": "Malusog",
+       "media": "assets/signs/medical_family/general_health_history__healthy.mp4"
       },
       {
-       "term": "Sick"
+       "term": "Sick",
+       "tagalog": "May sakit",
+       "media": "assets/signs/medical_family/general_health_history__sick.mp4"
       },
       {
-       "term": "Blurred vision"
+       "term": "Blurred vision",
+       "tagalog": "Malabong paningin",
+       "media": "assets/signs/medical_family/general_health_history__blurred_vision.mp4"
       },
       {
        "term": "Do you have hypertension?",
        "sign_order": "YOU + HYPERTENSION + HAVE?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Mayroon ka bang altapresyon?",
+       "media": "assets/signs/medical_family/general_health_history__do_you_have_hypertension.mp4"
       },
       {
        "term": "When were you diagnosed with hypertension?",
        "sign_order": "HYPERTENSION + DIAGNOSED + WHEN?",
-       "facial_expression": "WH-question: furrow eyebrows"
+       "facial_expression": "WH-question: furrow eyebrows",
+       "tagalog": "Kailan ka nasuring may altapresyon?",
+       "media": "assets/signs/medical_family/general_health_history__when_were_you_diagnosed_with_hypertension.mp4"
       },
       {
        "term": "Have you ever been hospitalized?",
        "sign_order": "BEFORE + YOU + HOSPITALIZED?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Naospital ka na ba dati?",
+       "media": "assets/signs/medical_family/general_health_history__have_you_ever_been_hospitalized.mp4"
       },
       {
        "term": "Have you undergone surgery?",
        "sign_order": "BEFORE + YOU + SURGERY + EXPERIENCE?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Naoperahan ka na ba?",
+       "media": "assets/signs/medical_family/general_health_history__have_you_undergone_surgery.mp4"
       },
       {
        "term": "Do you have other illnesses?",
        "sign_order": "YOU + OTHER + ILLNESS + HAVE?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Mayroon ka bang ibang sakit?",
+       "media": "assets/signs/medical_family/general_health_history__do_you_have_other_illnesses.mp4"
       }
-     ]
+     ],
+     "tagalog": "Pangkalahatang Kasaysayan ng Kalusugan"
     },
     {
      "title": "Hypertension-Related Conditions",
      "signs": [
       {
-       "term": "High Blood Pressure / Hypertension"
+       "term": "High Blood Pressure / Hypertension",
+       "tagalog": "Altapresyon / Mataas na Presyon ng Dugo",
+       "media": "assets/signs/medical_family/hypertension_related_conditions__high_blood_pressure_hypertension.mp4"
       },
       {
-       "term": "Diabetes / High Sugar"
+       "term": "Diabetes / High Sugar",
+       "tagalog": "Diyabetis",
+       "media": "assets/signs/medical_family/hypertension_related_conditions__diabetes_high_sugar.mp4"
       },
       {
-       "term": "Kidney Disease"
+       "term": "Kidney Disease",
+       "tagalog": "Sakit sa Bato",
+       "media": "assets/signs/medical_family/hypertension_related_conditions__kidney_disease.mp4"
       },
       {
-       "term": "Stroke"
+       "term": "Stroke",
+       "tagalog": "Istrowk / Atake sa Utak",
+       "media": "assets/signs/medical_family/hypertension_related_conditions__stroke.mp4"
       },
       {
-       "term": "Heart Attack"
+       "term": "Heart Attack",
+       "tagalog": "Atake sa Puso",
+       "media": "assets/signs/medical_family/hypertension_related_conditions__heart_attack.mp4"
       },
       {
-       "term": "Heart Disease"
+       "term": "Heart Disease",
+       "tagalog": "Sakit sa Puso",
+       "media": "assets/signs/medical_family/hypertension_related_conditions__heart_disease.mp4"
       }
-     ]
+     ],
+     "tagalog": "Mga Kondisyong Kaugnay ng Altapresyon"
     },
     {
      "title": "Medications",
@@ -837,35 +1300,52 @@
       {
        "term": "Are you taking medicine for hypertension?",
        "sign_order": "YOU + HYPERTENSION + MEDICINE + TAKE?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Umiinom ka ba ng gamot para sa altapresyon?",
+       "media": "assets/signs/medical_family/medications__are_you_taking_medicine_for_hypertension.mp4"
       },
       {
        "term": "Do you take other medicines or herbal supplements?",
        "sign_order": "YOU + OTHER MEDICINE + HERBAL MEDICINE + TAKE?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Umiinom ka ba ng ibang gamot o halamang gamot / herbal?",
+       "media": "assets/signs/medical_family/medications__do_you_take_other_medicines_or_herbal_supplements.mp4"
       },
       {
        "term": "Do not stop taking your medicine without asking your doctor.",
-       "sign_order": "DOCTOR + ADVICE + WITHOUT + MEDICINE + STOP + DON'T"
+       "sign_order": "DOCTOR + ADVICE + WITHOUT + MEDICINE + STOP + DON'T",
+       "tagalog": "Huwag itigil ang pag-inom ng iyong gamot nang hindi nagtatanong sa iyong doktor.",
+       "media": "assets/signs/medical_family/medications__do_not_stop_taking_your_medicine_without_asking_your_doctor.mp4"
       },
       {
        "term": "Did you take your medicine?",
        "sign_order": "YOUR + MEDICINE + TAKE?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Nainom mo na ba ang gamot mo?",
+       "media": "assets/signs/medical_family/medications__did_you_take_your_medicine.mp4"
       },
       {
-       "term": "Maintenance Medicine"
+       "term": "Maintenance Medicine",
+       "tagalog": "Gamot na Maintenance / Pang-araw-araw na gamot",
+       "media": "assets/signs/medical_family/medications__maintenance_medicine.mp4"
       },
       {
-       "term": "Vitamins"
+       "term": "Vitamins",
+       "tagalog": "Bitamina",
+       "media": "assets/signs/medical_family/medications__vitamins.mp4"
       },
       {
-       "term": "Painkiller / Pain Medicine"
+       "term": "Painkiller / Pain Medicine",
+       "tagalog": "Gamot sa kirot / Pampaalis ng sakit",
+       "media": "assets/signs/medical_family/medications__painkiller_pain_medicine.mp4"
       },
       {
-       "term": "Vaccination"
+       "term": "Vaccination",
+       "tagalog": "Bakuna",
+       "media": "assets/signs/medical_family/medications__vaccination.mp4"
       }
-     ]
+     ],
+     "tagalog": "Mga Gamot"
     },
     {
      "title": "Allergies",
@@ -873,24 +1353,36 @@
       {
        "term": "Do you have any allergies?",
        "sign_order": "YOU + ALLERGY + HAVE?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Mayroon ka bang anumang allergy?",
+       "media": "assets/signs/medical_family/allergies__do_you_have_any_allergies.mp4"
       },
       {
        "term": "What are you allergic to?",
        "sign_order": "YOU + ALLERGY + WHAT?",
-       "facial_expression": "WH-question: furrow eyebrows"
+       "facial_expression": "WH-question: furrow eyebrows",
+       "tagalog": "Sa ano ka allergic?",
+       "media": "assets/signs/medical_family/allergies__what_are_you_allergic_to.mp4"
       },
       {
-       "term": "Drug / Medicine Allergy"
+       "term": "Drug / Medicine Allergy",
+       "tagalog": "Allergy sa gamot",
+       "media": "assets/signs/medical_family/allergies__drug_medicine_allergy.mp4"
       },
       {
-       "term": "Food Allergy"
+       "term": "Food Allergy",
+       "tagalog": "Allergy sa pagkain",
+       "media": "assets/signs/medical_family/allergies__food_allergy.mp4"
       },
       {
-       "term": "Itching"
+       "term": "Itching",
+       "tagalog": "Pangangati",
+       "media": "assets/signs/medical_family/allergies__itching.mp4"
       },
       {
-       "term": "Swelling"
+       "term": "Swelling",
+       "tagalog": "Pamamaga",
+       "media": "assets/signs/medical_family/allergies__swelling.mp4"
       },
       {
        "term": "Rashes"
@@ -907,99 +1399,157 @@
      "title": "Dietary Habits",
      "signs": [
       {
-       "term": "Eat / Meals"
+       "term": "Eat / Meals",
+       "tagalog": "Kumain / Mga Pagkain",
+       "media": "assets/signs/nutrition/dietary_habits__eat_meals.mp4"
       },
       {
-       "term": "Water"
+       "term": "Water",
+       "tagalog": "Tubig",
+       "media": "assets/signs/nutrition/dietary_habits__water.mp4"
       },
       {
-       "term": "Salty Food"
+       "term": "Salty Food",
+       "tagalog": "Maalat na Pagkain",
+       "media": "assets/signs/nutrition/dietary_habits__salty_food.mp4"
       },
       {
-       "term": "Oily / Fatty Food"
+       "term": "Oily / Fatty Food",
+       "tagalog": "Mamantika / Matabang Pagkain",
+       "media": "assets/signs/nutrition/dietary_habits__oily_fatty_food.mp4"
       },
       {
-       "term": "Sweet Food"
+       "term": "Sweet Food",
+       "tagalog": "Matamis na Pagkain",
+       "media": "assets/signs/nutrition/dietary_habits__sweet_food.mp4"
       },
       {
-       "term": "Vegetables"
+       "term": "Vegetables",
+       "tagalog": "Mga Gulay",
+       "media": "assets/signs/nutrition/dietary_habits__vegetables.mp4"
       },
       {
-       "term": "Fruits"
+       "term": "Fruits",
+       "tagalog": "Mga Prutas",
+       "media": "assets/signs/nutrition/dietary_habits__fruits.mp4"
       },
       {
        "term": "Avoid salty and processed foods.",
-       "sign_order": "SALTY FOOD + PROCESSED FOOD + AVOID"
+       "sign_order": "SALTY FOOD + PROCESSED FOOD + AVOID",
+       "tagalog": "Iwasan ang maalat at naprosesong pagkain.",
+       "media": "assets/signs/nutrition/dietary_habits__avoid_salty_and_processed_foods.mp4"
       },
       {
        "term": "Do you regularly or always drink coffee?",
        "sign_order": "YOU + COFFEE + DRINK + REGULARLY?",
-       "facial_expression": "Yes/no question: raise eyebrows"
+       "facial_expression": "Yes/no question: raise eyebrows",
+       "tagalog": "Regular o palagi ka bang umiinom ng kape?",
+       "media": "assets/signs/nutrition/dietary_habits__do_you_regularly_or_always_drink_coffee.mp4"
       },
       {
        "term": "Eat more vegetables and fruits.",
-       "sign_order": "VEGETABLES + FRUITS + MORE + EAT"
+       "sign_order": "VEGETABLES + FRUITS + MORE + EAT",
+       "tagalog": "Kumain ng mas maraming gulay at prutas.",
+       "media": "assets/signs/nutrition/dietary_habits__eat_more_vegetables_and_fruits.mp4"
       }
-     ]
+     ],
+     "tagalog": "Mga Gawi sa Pagkain"
     },
     {
      "title": "Fluid Intake & Output",
      "signs": [
       {
-       "term": "Daily Water Intake"
+       "term": "Drink",
+       "tagalog": "Inom / Uminom",
+       "media": "assets/signs/nutrition/fluid_intake_output__drink.mp4"
       },
       {
-       "term": "Urination Frequency"
+       "term": "Daily Water Intake",
+       "tagalog": "Araw-araw na pag-inom ng tubig",
+       "media": "assets/signs/nutrition/fluid_intake_output__daily_water_intake.mp4"
       },
       {
-       "term": "Painful Urination"
+       "term": "Urination Frequency",
+       "tagalog": "Dalas ng Pag-ihi",
+       "media": "assets/signs/nutrition/fluid_intake_output__urination_frequency.mp4"
       },
       {
-       "term": "Urine Color"
+       "term": "Painful Urination",
+       "tagalog": "Masakit na Pag-ihi",
+       "media": "assets/signs/nutrition/fluid_intake_output__painful_urination.mp4"
       },
       {
-       "term": "Excessive Sweating"
+       "term": "Urine Color",
+       "tagalog": "Kulay ng Ihi",
+       "media": "assets/signs/nutrition/fluid_intake_output__urine_color.mp4"
+      },
+      {
+       "term": "Excessive Sweating",
+       "tagalog": "Labis na Pagpapawis",
+       "media": "assets/signs/nutrition/fluid_intake_output__excessive_sweating.mp4"
       },
       {
        "term": "How many glasses of water do you drink every day?",
        "sign_order": "EVERYDAY + YOU + WATER + DRINK + HOW-MANY-GLASSES?",
-       "facial_expression": "WH-question: furrow eyebrows"
+       "facial_expression": "WH-question: furrow eyebrows",
+       "tagalog": "Ilang baso ng tubig ang iniinom mo araw-araw?",
+       "media": "assets/signs/nutrition/fluid_intake_output__how_many_glasses_of_water_do_you_drink_every_day.mp4"
       },
       {
        "term": "How many times do you urinate in a day?",
        "sign_order": "EVERYDAY + YOU + URINATE + HOW-MANY-TIMES?",
-       "facial_expression": "WH-question: furrow eyebrows"
+       "facial_expression": "WH-question: furrow eyebrows",
+       "tagalog": "Ilang beses ka umiihi sa isang araw?",
+       "media": "assets/signs/nutrition/fluid_intake_output__how_many_times_do_you_urinate_in_a_day.mp4"
       }
-     ]
+     ],
+     "tagalog": "Pag-inom ng Likido at Paglabas Nito"
     },
     {
      "title": "Vices & Risk Screening",
      "signs": [
       {
-       "term": "Smoking / Vaping"
+       "term": "Smoking / Vaping",
+       "tagalog": "Paninigarilyo",
+       "media": "assets/signs/nutrition/vices_risk_screening__smoking_vaping.mp4"
       },
       {
-       "term": "Alcohol Drinking"
+       "term": "Alcohol Drinking",
+       "tagalog": "Pag-inom ng Alak",
+       "media": "assets/signs/nutrition/vices_risk_screening__alcohol_drinking.mp4"
       },
       {
-       "term": "Illegal Drugs / Substance Use"
+       "term": "Illegal Drugs / Substance Use",
+       "tagalog": "Ilegal na Droga / Paggamit ng Ipinagbabawal na Gamot",
+       "media": "assets/signs/nutrition/vices_risk_screening__illegal_drugs_substance_use.mp4"
       },
       {
-       "term": "Coffee/ Caffeine"
+       "term": "Coffee/ Caffeine",
+       "tagalog": "Kape / Kapeina",
+       "media": "assets/signs/nutrition/vices_risk_screening__coffee_caffeine.mp4"
       },
       {
-       "term": "Lack of Exercise"
+       "term": "Lack of Exercise",
+       "tagalog": "Kakulangan sa Ehersisyo",
+       "media": "assets/signs/nutrition/vices_risk_screening__lack_of_exercise.mp4"
       },
       {
-       "term": "Poor Sleep"
+       "term": "Poor Sleep",
+       "tagalog": "Hindi Maayos na Tulog",
+       "media": "assets/signs/nutrition/vices_risk_screening__poor_sleep.mp4"
       },
       {
-       "term": "Staying Up Late"
+       "term": "Staying Up Late",
+       "tagalog": "Pagpupuyat",
+       "media": "assets/signs/nutrition/vices_risk_screening__staying_up_late.mp4"
       },
       {
-       "term": "High Stress Levels"
+       "term": "High Stress Levels",
+       "tagalog": "Mataas na Antas ng Stress",
+       "media": "assets/signs/nutrition/vices_risk_screening__high_stress_levels.mp4"
       }
-     ]
+     ],
+     "tagalog": "Mga Bisyo at Pagsusuri ng Panganib"
     }
    ]
   },
@@ -1011,31 +1561,49 @@
      "title": "Pre-Measurement Instructions (BP Taking)",
      "signs": [
       {
-       "term": "Rest for 5 minutes"
+       "term": "Rest for 5 minutes",
+       "tagalog": "Magpahinga nang 5 minuto",
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__rest_for_5_minutes.mp4"
       },
       {
-       "term": "Empty bladder / Urinate first"
+       "term": "Empty bladder / Urinate first",
+       "tagalog": "Umihi muna",
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__empty_bladder_urinate_first.mp4"
       },
       {
-       "term": "No coffee / caffeine (30 mins before)"
+       "term": "No coffee / caffeine (30 mins before)",
+       "tagalog": "Walang kape / kapeina 30 minuto bago kunin ang BP",
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__no_coffee_caffeine_30_mins_before.mp4"
       },
       {
-       "term": "No heavy exercise (30 mins before)"
+       "term": "No heavy exercise (30 mins before)",
+       "tagalog": "Walang mabigat na ehersisyo 30 minuto bago kunin ang BP",
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__no_heavy_exercise_30_mins_before.mp4"
       },
       {
-       "term": "No smoking (30 mins before)"
+       "term": "No smoking (30 mins before)",
+       "tagalog": "Walang paninigarilyo 30 minuto bago kunin ang BP",
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__no_smoking_30_mins_before.mp4"
       },
       {
-       "term": "Keep feet flat on the floor"
+       "term": "Keep feet flat on the floor",
+       "tagalog": "Ilapat nang maayos ang mga paa sa sahig",
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__keep_feet_flat_on_the_floor.mp4"
       },
       {
-       "term": "Bare the arm / Roll up sleeve"
+       "term": "Bare the arm / Roll up sleeve",
+       "tagalog": "Alisin ang takip ng braso / Itupi ang manggas",
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__bare_the_arm_roll_up_sleeve.mp4"
       },
       {
-       "term": "Support arm on table at heart level"
+       "term": "Support arm on table at heart level",
+       "tagalog": "Ipatong ang braso sa mesa",
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__support_arm_on_table_at_heart_level.mp4"
       },
       {
-       "term": "Put cuff on arm"
+       "term": "Put cuff on arm",
+       "tagalog": "Isuot ang cuff sa braso",
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__put_cuff_on_arm.mp4"
       }
      ]
     },
@@ -1043,25 +1611,39 @@
      "title": "Medical Procedures",
      "signs": [
       {
-       "term": "Blood Test"
+       "term": "Blood Test",
+       "tagalog": "Pagsusuri sa Dugo",
+       "media": "assets/signs/procedures/medical_procedures__blood_test.mp4"
       },
       {
-       "term": "Urine Test"
+       "term": "Urine Test",
+       "tagalog": "Pagsusuri sa Ihi",
+       "media": "assets/signs/procedures/medical_procedures__urine_test.mp4"
       },
       {
-       "term": "ECG"
+       "term": "ECG",
+       "tagalog": "ECG / Pagsusuri sa Tibok ng Puso",
+       "media": "assets/signs/procedures/medical_procedures__ecg.mp4"
       },
       {
-       "term": "Laboratory"
+       "term": "Laboratory",
+       "tagalog": "Laboratoryo",
+       "media": "assets/signs/procedures/medical_procedures__laboratory.mp4"
       },
       {
-       "term": "Physical Examination"
+       "term": "Physical Examination",
+       "tagalog": "Pisikal na Eksaminasyon",
+       "media": "assets/signs/procedures/medical_procedures__physical_examination.mp4"
       },
       {
-       "term": "Check Eyes / Vision Screening"
+       "term": "Check Eyes / Vision Screening",
+       "tagalog": "Suriin ang mga Mata / Pagsusuri sa Paningin",
+       "media": "assets/signs/procedures/medical_procedures__check_eyes_vision_screening.mp4"
       },
       {
-       "term": "Take Pulse / Check Heart Rate"
+       "term": "Take Pulse / Check Heart Rate",
+       "tagalog": "Suriin ang Bilis ng Tibok ng Puso",
+       "media": "assets/signs/procedures/medical_procedures__take_pulse_check_heart_rate.mp4"
       }
      ]
     },
@@ -1070,61 +1652,93 @@
      "signs": [
       {
        "term": "Eat less salty food.",
-       "sign_order": "YOU + SALTY FOOD + EAT + LESS"
+       "sign_order": "YOU + SALTY FOOD + EAT + LESS",
+       "tagalog": "Kumain ng mas kaunting maalat na pagkain.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__eat_less_salty_food.mp4"
       },
       {
        "term": "Eat more fruits and vegetables.",
-       "sign_order": "YOU + FRUITS + VEGETABLES + EAT + MORE"
+       "sign_order": "YOU + FRUITS + VEGETABLES + EAT + MORE",
+       "tagalog": "Kumain ng mas maraming prutas at gulay.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__eat_more_fruits_and_vegetables.mp4"
       },
       {
        "term": "Drink plenty of water every day.",
-       "sign_order": "EVERY-DAY + WATER + PLENTY + DRINK"
+       "sign_order": "EVERY-DAY + WATER + PLENTY + DRINK",
+       "tagalog": "Uminom ng maraming tubig araw-araw.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__drink_plenty_of_water_every_day.mp4"
       },
       {
        "term": "Exercise regularly.",
-       "sign_order": "YOU + EXERCISE + REGULARLY"
+       "sign_order": "YOU + EXERCISE + REGULARLY",
+       "tagalog": "Mag-ehersisyo nang regular.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__exercise_regularly.mp4"
       },
       {
        "term": "Avoid drinking too much alcohol.",
-       "sign_order": "YOU + ALCOHOL + DRINK + TOO-MUCH + AVOID"
+       "sign_order": "YOU + ALCOHOL + DRINK + TOO-MUCH + AVOID",
+       "tagalog": "Iwasan ang sobrang pag-inom ng alak.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__avoid_drinking_too_much_alcohol.mp4"
       },
       {
        "term": "Limit coffee and other drinks with caffeine.",
-       "sign_order": "YOU + COFFEE + CAFFEINE + DRINK + LESS"
+       "sign_order": "YOU + COFFEE + CAFFEINE + DRINK + LESS",
+       "tagalog": "Limitahan ang kape at iba pang inuming may kapeina.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__limit_coffee_and_other_drinks_with_caffeine.mp4"
       },
       {
        "term": "Get enough sleep.",
-       "sign_order": "YOU + SLEEP + ENOUGH"
+       "sign_order": "YOU + SLEEP + ENOUGH",
+       "tagalog": "Matulog nang sapat.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__get_enough_sleep.mp4"
       },
       {
        "term": "Avoid too much stress.",
-       "sign_order": "YOU + STRESS + TOO-MUCH + AVOID"
+       "sign_order": "YOU + STRESS + TOO-MUCH + AVOID",
+       "tagalog": "Iwasan ang sobrang stress.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__avoid_too_much_stress.mp4"
       },
       {
        "term": "Check your blood pressure regularly.",
-       "sign_order": "YOU + BLOOD PRESSURE + CHECK + REGULARLY"
+       "sign_order": "YOU + BLOOD PRESSURE + CHECK + REGULARLY",
+       "tagalog": "Suriin nang regular ang iyong presyon ng dugo.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__check_your_blood_pressure_regularly.mp4"
       },
       {
        "term": "Take your medicine on time.",
-       "sign_order": "YOUR + MEDICINE + TAKE + RIGHT-TIME"
+       "sign_order": "YOUR + MEDICINE + TAKE + RIGHT-TIME",
+       "tagalog": "Inumin ang iyong gamot sa tamang oras.",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__take_your_medicine_on_time.mp4"
       },
       {
-       "term": "Eat Healthy Foods"
+       "term": "Eat Healthy Foods",
+       "tagalog": "Kumain ng Masusustansyang Pagkain",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__eat_healthy_foods.mp4"
       },
       {
-       "term": "Weight Control / Healthy Weight"
+       "term": "Weight Control / Healthy Weight",
+       "tagalog": "Pagkontrol sa Timbang / Malusog na Timbang",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__weight_control_healthy_weight.mp4"
       },
       {
-       "term": "Control Cholesterol & Sugar"
+       "term": "Control Cholesterol & Sugar",
+       "tagalog": "Kontrolin ang Kolesterol at Asukal",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__control_cholesterol_sugar.mp4"
       },
       {
-       "term": "Manage Stress & Rest"
+       "term": "Manage Stress & Rest",
+       "tagalog": "Pamahalaan ang Stress at Magpahinga",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__manage_stress_rest.mp4"
       },
       {
-       "term": "Get Enough Sleep (7–8 Hours)"
+       "term": "Get Enough Sleep (7–8 Hours)",
+       "tagalog": "Matulog nang Sapat na 7–8 Oras",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__get_enough_sleep_78_hours.mp4"
       },
       {
-       "term": "Regular Medical Checkup"
+       "term": "Regular Medical Checkup",
+       "tagalog": "Regular na Medikal na Checkup",
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__regular_medical_checkup.mp4"
       }
      ]
     }

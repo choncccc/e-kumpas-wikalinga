@@ -1,8 +1,6 @@
 import 'dart:io';
 
 import 'package:ekumpas_wikalinga/data/avatar_storage.dart';
-import 'package:ekumpas_wikalinga/data/lesson_models.dart';
-import 'package:ekumpas_wikalinga/data/lesson_repository.dart';
 import 'package:ekumpas_wikalinga/data/photo_picker.dart';
 import 'package:ekumpas_wikalinga/data/user_profile.dart';
 import 'package:ekumpas_wikalinga/data/user_repository.dart';
@@ -10,6 +8,8 @@ import 'package:ekumpas_wikalinga/features/onboarding/onboarding_draft.dart';
 import 'package:ekumpas_wikalinga/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'fakes.dart';
 
 class FakeUserRepository implements UserRepository {
   FakeUserRepository([this.saved]);
@@ -35,24 +35,6 @@ class FakePhotoPicker implements PhotoPicker {
     calls.add(source);
     return result;
   }
-}
-
-class FakeLessonRepository implements LessonRepository {
-  @override
-  Future<List<LessonTopic>> topicsFor(String categoryId) async => const [
-        LessonTopic(id: 1, title: 'Alphabet', signs: [
-          Sign(id: 1, term: 'Letter A'),
-          Sign(id: 2, term: 'Letter B'),
-        ]),
-        LessonTopic(id: 2, title: 'Questions', signs: [
-          Sign(
-            id: 3,
-            term: 'What is your name?',
-            signOrder: 'YOUR + NAME + WHAT?',
-            facialExpression: 'WH question: furrow eyebrows',
-          ),
-        ]),
-      ];
 }
 
 /// The app has looping background animations, so pumpAndSettle never settles.
@@ -87,7 +69,8 @@ void main() {
   });
 
   group('OnboardingDraft validation', () {
-    OnboardingDraft draft() => OnboardingDraft(clock: () => DateTime(2026, 11, 14));
+    OnboardingDraft draft() =>
+        OnboardingDraft(clock: () => DateTime(2026, 11, 14));
 
     test('name', () {
       final d = draft();
@@ -122,14 +105,23 @@ void main() {
     });
   });
 
-  testWidgets('full sign-up flow saves the profile and lands on home', (tester) async {
+  testWidgets('full sign-up flow saves the profile and lands on home', (
+    tester,
+  ) async {
     final repo = FakeUserRepository();
     final picker = FakePhotoPicker('/tmp/picked.jpg');
     // A typical phone screen (360x780), not the 800x600 test default.
     tester.view.physicalSize = const Size(1080, 2340);
     tester.view.devicePixelRatio = 3;
     addTearDown(tester.view.reset);
-    await tester.pumpWidget(EKumpasApp(repository: repo, lessons: FakeLessonRepository(), photoPicker: picker));
+    await tester.pumpWidget(
+      EKumpasApp(
+        repository: repo,
+        lessons: FakeLessonRepository(),
+        study: FakeStudyRepository(),
+        photoPicker: picker,
+      ),
+    );
     await settle(tester);
 
     expect(find.text('Kumusta!'), findsOneWidget);
@@ -201,21 +193,39 @@ void main() {
     });
   });
 
-  testWidgets('returning user skips onboarding', (tester) async {
-    final repo = FakeUserRepository(UserProfile(
-      id: 1,
-      name: 'Yesh Nin',
-      nickname: 'Yesh',
-      birthdate: DateTime(2000, 2, 29),
-      age: 26,
-      createdAt: DateTime(2026),
-    ));
-    final picker = FakePhotoPicker(null);
+  UserProfile yesh() => UserProfile(
+    id: 1,
+    name: 'Yesh Nin',
+    nickname: 'Yesh',
+    birthdate: DateTime(2000, 2, 29),
+    age: 26,
+    createdAt: DateTime(2026),
+  );
+
+  Future<FakeStudyRepository> launchSignedIn(
+    WidgetTester tester, {
+    FakeUserRepository? repo,
+  }) async {
+    final study = FakeStudyRepository();
     tester.view.physicalSize = const Size(1080, 2340);
     tester.view.devicePixelRatio = 3;
     addTearDown(tester.view.reset);
-    await tester.pumpWidget(EKumpasApp(repository: repo, lessons: FakeLessonRepository(), photoPicker: picker));
+    await tester.pumpWidget(
+      EKumpasApp(
+        repository: repo ?? FakeUserRepository(yesh()),
+        lessons: FakeLessonRepository(),
+        study: study,
+        photoPicker: FakePhotoPicker(null),
+      ),
+    );
     await settle(tester);
+    return study;
+  }
+
+  testWidgets('returning user: lessons, bookmarks, search and tabs', (
+    tester,
+  ) async {
+    final study = await launchSignedIn(tester);
 
     expect(find.text('Kumusta!'), findsNothing);
     expect(find.text('YESH'), findsOneWidget);
@@ -228,31 +238,177 @@ void main() {
     await tester.tap(find.text('QUESTIONS'));
     await settle(tester);
     expect(find.text('What is your name?'), findsOneWidget);
-    expect(find.textContaining('YOUR + NAME + WHAT?', findRichText: true), findsOneWidget);
+    expect(
+      find.textContaining('YOUR + NAME + WHAT?', findRichText: true),
+      findsOneWidget,
+    );
+    // The first sign opens by itself and counts as studied.
+    expect(study.viewed.keys, ['foundation/t/What is your name?']);
+
+    await tester.tap(find.bySemanticsLabel('Bookmark What is your name?'));
+    await settle(tester);
+    // The sign stays open: the bookmark tap doesn't toggle the accordion.
+    expect(
+      find.textContaining('YOUR + NAME + WHAT?', findRichText: true),
+      findsOneWidget,
+    );
+    expect(study.bookmarked, ['foundation/t/What is your name?']);
+    expect(
+      find.bySemanticsLabel('Remove What is your name? from bookmarks'),
+      findsOneWidget,
+    );
 
     // Back to home, then the Explore tab via the search bar.
     await tester.tap(find.byIcon(Icons.arrow_back_rounded).last);
     await settle(tester);
     await tester.tap(find.byIcon(Icons.arrow_back_rounded).last);
     await settle(tester);
-    await tester.tap(find.text('Search the terminology here…'));
+    await tester.tap(find.text('Search the terminology here…').first);
     await settle(tester);
-    expect(find.textContaining('Search every sign'), findsOneWidget);
+    expect(find.text('Find any sign, phrase or medical term.'), findsOneWidget);
+    // Empty search browses topics.
+    expect(find.bySemanticsLabel('Alphabet, 2 signs'), findsWidgets);
+
+    await tester.enterText(find.byType(TextField), 'letter');
+    await settle(tester);
+    expect(find.text('2 signs'), findsOneWidget);
+    expect(find.text('Letter B', findRichText: true), findsOneWidget);
+
+    // A result opens its topic with that sign expanded.
+    await tester.tap(find.text('Letter B', findRichText: true));
+    await settle(tester);
+    expect(find.bySemanticsLabel('Letter B'), findsOneWidget);
+    expect(study.viewed.keys, contains('foundation/t/Letter B'));
+    await tester.tap(find.byIcon(Icons.arrow_back_rounded).last);
+    await settle(tester);
+
+    await tester.enterText(find.byType(TextField), 'zzz');
+    await settle(tester);
+    expect(find.textContaining('No signs match'), findsOneWidget);
 
     // Regression: returning to Home must actually show Home again, not leave
     // the previous tab frozen on top of it.
     await tester.tap(find.text('Home'));
     await settle(tester);
-    expect(find.textContaining('Search every sign'), findsNothing);
+    expect(find.textContaining('No signs match'), findsNothing);
     expect(find.text('Welcome!'), findsOneWidget);
 
     await tester.tap(find.text('Bookmark'));
     await settle(tester);
-    expect(find.textContaining('Signs you save'), findsOneWidget);
+    expect(find.text('1 saved sign'), findsOneWidget);
+    expect(find.text('What is your name?', findRichText: true), findsOneWidget);
     expect(find.text('Welcome!'), findsNothing);
+
+    // Removing it from the list offers an undo.
+    await tester.tap(
+      find.bySemanticsLabel('Remove What is your name? from bookmarks'),
+    );
+    await settle(tester);
+    expect(study.bookmarked, isEmpty);
+    expect(find.text('Nothing saved yet'), findsOneWidget);
+    await tester.tap(find.text('Undo'));
+    await settle(tester);
+    expect(study.bookmarked, ['foundation/t/What is your name?']);
+    expect(find.text('1 saved sign'), findsOneWidget);
+
     await tester.tap(find.text('Home'));
     await settle(tester);
-    expect(find.textContaining('Signs you save'), findsNothing);
+    expect(find.text('1 saved sign'), findsNothing);
     expect(find.text('Welcome!'), findsOneWidget);
+  });
+
+  testWidgets('profile shows details and progress, and can be edited', (
+    tester,
+  ) async {
+    final repo = FakeUserRepository(yesh());
+    final study = await launchSignedIn(tester, repo: repo);
+    await study.markViewed('foundation/t/Letter A');
+    await tester.tap(find.text('Profile'));
+    await settle(tester);
+
+    expect(find.text('Yesh Nin'), findsOneWidget);
+    expect(find.text('${yesh().currentAge} years old'), findsOneWidget);
+    expect(find.text('February 29, 2000'), findsOneWidget);
+    expect(find.text('Your Progress'), findsOneWidget);
+    expect(
+      find.text('25%'),
+      findsOneWidget,
+      reason: '1 of 4 fake signs viewed',
+    );
+    expect(find.text('Alphabet'), findsOneWidget, reason: 'recent topic');
+    expect(find.text('signs reviewed'), findsNothing);
+    expect(find.text('sign reviewed'), findsOneWidget);
+
+    await tester.tap(find.bySemanticsLabel('Edit profile'));
+    await settle(tester);
+    expect(find.text('Edit profile'), findsOneWidget);
+    await tester.enterText(find.byType(TextField).at(1), '');
+    await settle(tester);
+    expect(find.text('Enter a nickname.'), findsOneWidget);
+    await tester.enterText(find.byType(TextField).at(1), 'Yeshy');
+    await settle(tester);
+    await tester.tap(find.text('Save changes'));
+    await settle(tester);
+
+    expect(repo.saved?.nickname, 'Yeshy');
+    expect(repo.saved?.name, 'Yesh Nin');
+    expect(repo.saved?.createdAt, DateTime(2026));
+    expect(find.text('Edit profile'), findsNothing);
+    await tester.tap(find.text('Home'));
+    await settle(tester);
+    expect(find.text('YESHY'), findsOneWidget);
+  });
+
+  testWidgets('quiz runs ten questions and saves the score', (tester) async {
+    final study = await launchSignedIn(tester);
+    final quizCard = find.bySemanticsLabel(
+      'Quiz: Test, sign and learn. Sign it Right!',
+    );
+    await tester.drag(
+      find.byType(SingleChildScrollView).first,
+      const Offset(0, -400),
+    );
+    await settle(tester);
+    await tester.tap(quizCard);
+    await settle(tester);
+    expect(find.text('SIGN IT RIGHT'), findsOneWidget);
+
+    // The fakes hold 2 phrases (one question each) + 6 grammar questions.
+    const total = 8;
+    for (var i = 0; i < total; i++) {
+      expect(
+        find.bySemanticsLabel('Question ${i + 1} of $total'),
+        findsOneWidget,
+      );
+      final next = find.text(i == total - 1 ? 'FINISH' : 'NEXT');
+      // Next does nothing until the question is answered.
+      await tester.tap(next);
+      await settle(tester);
+      expect(
+        find.bySemanticsLabel('Question ${i + 1} of $total'),
+        findsOneWidget,
+      );
+
+      final optionA = find.bySemanticsLabel(RegExp(r'^A: '));
+      await tester.ensureVisible(optionA);
+      await tester.tap(optionA);
+      await settle(tester);
+      expect(
+        find.textContaining(
+          RegExp(r'^(Correct!|Not quite\.)'),
+          findRichText: true,
+        ),
+        findsOneWidget,
+      );
+      await tester.tap(next);
+      await settle(tester);
+    }
+
+    expect(study.quizzes, hasLength(1));
+    expect(study.quizzes.single.$2, total);
+    expect(find.text('${study.quizzes.single.$1}/$total'), findsOneWidget);
+    // Every question is reviewed, then the replay button.
+    await tester.scrollUntilVisible(find.text('Play again'), 300);
+    expect(find.text('$total'), findsOneWidget);
   });
 }

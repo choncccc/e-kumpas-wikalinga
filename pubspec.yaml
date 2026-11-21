@@ -38,6 +38,7 @@ dependencies:
   path: ^1.9.1
   image_picker: ^1.2.2
   path_provider: ^2.1.5
+  video_player: ^2.10.1
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +65,13 @@ flutter:
 
   assets:
     - assets/content/
+    # Sign clips and stills, built by tool/build_media.py.
+    - assets/signs/foundation/
+    - assets/signs/basic/
+    - assets/signs/triage/
+    - assets/signs/medical_family/
+    - assets/signs/nutrition/
+    - assets/signs/procedures/
 
   fonts:
     - family: Poppins

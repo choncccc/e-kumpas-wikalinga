@@ -1,20 +1,40 @@
 import 'package:flutter/material.dart';
 
 import '../../data/lesson_repository.dart';
+import '../../data/photo_picker.dart';
+import '../../data/study_repository.dart';
 import '../../data/user_profile.dart';
+import '../../data/user_repository.dart';
 import '../../theme/app_colors.dart';
 import '../../widgets/profile_avatar.dart';
+import '../bookmarks/bookmarks_screen.dart';
+import '../explore/explore_screen.dart';
 import '../home/home_screen.dart';
-import 'coming_soon_tab.dart';
+import '../profile/edit_profile_screen.dart';
+import '../profile/profile_screen.dart';
+import '../game/memory_game_screen.dart';
+import '../quiz/quiz_screen.dart';
 import 'floating_nav_bar.dart';
 
 /// Signed-in shell: the four tabs plus the floating nav bar. Every tab stays
 /// alive (so Home keeps its scroll position) and the active one cross-fades in.
 class AppShell extends StatefulWidget {
-  const AppShell({super.key, required this.profile, required this.lessons});
+  const AppShell({
+    super.key,
+    required this.profile,
+    required this.lessons,
+    required this.study,
+    required this.users,
+    required this.photoPicker,
+    required this.onProfileChanged,
+  });
 
   final UserProfile profile;
   final LessonRepository lessons;
+  final StudyRepository study;
+  final UserRepository users;
+  final PhotoPicker photoPicker;
+  final ValueChanged<UserProfile> onProfileChanged;
 
   @override
   State<AppShell> createState() => _AppShellState();
@@ -24,10 +44,59 @@ class _AppShellState extends State<AppShell> {
   static const home = 0, explore = 1;
 
   int _index = home;
+  final _searchFocus = FocusNode();
+
+  @override
+  void dispose() {
+    _searchFocus.dispose();
+    super.dispose();
+  }
 
   void _select(int i) {
     if (i == _index) return;
+    if (_index == explore) _searchFocus.unfocus();
     setState(() => _index = i);
+  }
+
+  /// The home search bar jumps to Explore with the keyboard up.
+  void _startSearch() {
+    _select(explore);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _searchFocus.requestFocus();
+    });
+  }
+
+  void _openQuiz() => Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (_) => QuizScreen(
+        profile: widget.profile,
+        lessons: widget.lessons,
+        study: widget.study,
+      ),
+    ),
+  );
+
+  void _openGame() => Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (_) => MemoryGameScreen(
+        profile: widget.profile,
+        lessons: widget.lessons,
+        study: widget.study,
+      ),
+    ),
+  );
+
+  Future<void> _editProfile() async {
+    final saved = await Navigator.of(context).push<UserProfile>(
+      MaterialPageRoute(
+        builder: (_) => EditProfileScreen(
+          profile: widget.profile,
+          repository: widget.users,
+          photoPicker: widget.photoPicker,
+        ),
+      ),
+    );
+    if (saved != null) widget.onProfileChanged(saved);
   }
 
   @override
@@ -37,22 +106,27 @@ class _AppShellState extends State<AppShell> {
       HomeScreen(
         profile: profile,
         lessons: widget.lessons,
-        onSearchTap: () => _select(explore),
+        study: widget.study,
+        onSearchTap: _startSearch,
+        onQuizTap: _openQuiz,
+        onGameTap: _openGame,
       ),
-      const ComingSoonTab(
-        icon: Icons.search_rounded,
-        title: 'Explore',
-        message: 'Search every sign and medical term here. Coming soon.',
+      ExploreScreen(
+        lessons: widget.lessons,
+        study: widget.study,
+        searchFocus: _searchFocus,
       ),
-      const ComingSoonTab(
-        icon: Icons.bookmark_rounded,
-        title: 'Bookmarks',
-        message: 'Signs you save will show up here. Coming soon.',
+      BookmarksScreen(
+        lessons: widget.lessons,
+        study: widget.study,
+        onExplore: _startSearch,
       ),
-      const ComingSoonTab(
-        icon: Icons.person_rounded,
-        title: 'Profile',
-        message: 'Your progress and recent lessons. Coming soon.',
+      ProfileScreen(
+        profile: profile,
+        lessons: widget.lessons,
+        study: widget.study,
+        onEdit: _editProfile,
+        onQuiz: _openQuiz,
       ),
     ];
 

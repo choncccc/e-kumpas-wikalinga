@@ -55,14 +55,21 @@ class UserProfile {
     photoPath: map['photo_path'] as String?,
   );
 
-  UserProfile copyWith({String? photoPath}) => UserProfile(
+  UserProfile copyWith({
+    String? name,
+    String? nickname,
+    DateTime? birthdate,
+    int? age,
+    String? photoPath,
+    bool clearPhoto = false,
+  }) => UserProfile(
     id: id,
-    name: name,
-    nickname: nickname,
-    birthdate: birthdate,
-    age: age,
+    name: name ?? this.name,
+    nickname: nickname ?? this.nickname,
+    birthdate: birthdate ?? this.birthdate,
+    age: age ?? this.age,
     createdAt: createdAt,
-    photoPath: photoPath ?? this.photoPath,
+    photoPath: clearPhoto ? null : (photoPath ?? this.photoPath),
   );
 
   static String _isoDate(DateTime d) =>

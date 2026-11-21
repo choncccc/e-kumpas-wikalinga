@@ -46,3 +46,10 @@ app.*.map.json
 
 # Design mockups (large PDF), kept out of the repo
 /prototype/mockups/
+
+# Raw sign recordings (~1.2 GB). tool/build_media.py compresses them into
+# assets/signs/, which is what the app bundles.
+/assets/E-Kumpas Wikalinga Videos/
+
+# Renamed release builds
+/dist/

@@ -77,6 +77,9 @@ abstract final class LearningContent {
     ),
   ];
 
+  static LessonCategory byId(String id) =>
+      categories.firstWhere((c) => c.id == id, orElse: () => categories.first);
+
   static const tips = <SignTip>[
     SignTip(
       'Time Goes First',

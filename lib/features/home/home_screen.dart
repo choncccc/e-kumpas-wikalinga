@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/learning_content.dart';
 import '../../data/lesson_repository.dart';
+import '../../data/study_repository.dart';
 import '../../data/user_profile.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
@@ -19,12 +20,18 @@ class HomeScreen extends StatefulWidget {
     super.key,
     required this.profile,
     required this.lessons,
+    required this.study,
     required this.onSearchTap,
+    required this.onQuizTap,
+    required this.onGameTap,
   });
 
   final UserProfile profile;
   final LessonRepository lessons;
+  final StudyRepository study;
   final VoidCallback onSearchTap;
+  final VoidCallback onQuizTap;
+  final VoidCallback onGameTap;
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -45,21 +52,13 @@ class _HomeScreenState extends State<HomeScreen> {
   void _openCategory(LessonCategory c) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (_) => CategoryScreen(category: c, lessons: widget.lessons),
+        builder: (_) => CategoryScreen(
+          category: c,
+          lessons: widget.lessons,
+          study: widget.study,
+        ),
       ),
     );
-  }
-
-  void _comingSoon(String what) {
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(
-          content: Text('$what is coming soon.'),
-          behavior: SnackBarBehavior.floating,
-          margin: const EdgeInsets.fromLTRB(20, 0, 20, 110),
-        ),
-      );
   }
 
   @override
@@ -176,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   title: 'QUIZ: TEST, SIGN & LEARN',
                                   subtitle: 'Sign it Right!',
                                   placeholderColor: const Color(0xFFC0B373),
-                                  onTap: () => _comingSoon('The quiz'),
+                                  onTap: widget.onQuizTap,
                                 ),
                               ),
                               const SizedBox(height: 12),
@@ -187,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   title: 'GAMES',
                                   subtitle: 'Memory Card Flip',
                                   placeholderColor: const Color(0xFFD9CC45),
-                                  onTap: () => _comingSoon('Memory Card Flip'),
+                                  onTap: widget.onGameTap,
                                 ),
                               ),
                             ],

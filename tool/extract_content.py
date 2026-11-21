@@ -1,8 +1,14 @@
 """Turns prototype/contents/App-Content.pdf into assets/content/lessons.json.
 
+Tagalog translations (and the few lesson changes that came with them) come
+from tool/tagalog.json, a hand transcription of
+prototype/contents/FSL-APP-Content_WithTagalog.pdf.
+
 Run from the project root:  python -I tool/extract_content.py
-Re-run whenever the content PDF changes, then bump AppDatabase's content
-version so installed apps reseed.
+then:                       python -I tool/build_media.py
+(this script drops the media links, build_media.py puts them back).
+Re-run whenever the content changes, then bump
+SqliteLessonRepository.contentVersion so installed apps reseed.
 """
 import json
 import re
@@ -12,6 +18,7 @@ import fitz  # PyMuPDF
 
 SRC = 'prototype/contents/App-Content.pdf'
 OUT = 'assets/content/lessons.json'
+TAGALOG = 'tool/tagalog.json'
 
 # Must match LearningContent ids/titles in lib/data/learning_content.dart.
 CATEGORY_IDS = ['foundation', 'basic', 'triage', 'medical_family', 'nutrition', 'procedures']
@@ -106,15 +113,61 @@ def main():
             # Drop stray empty entries from PDF line noise.
             topic['signs'] = [s for s in topic['signs'] if s['term']]
 
+    apply_tagalog(categories)
+
     with open(OUT, 'w', encoding='utf-8') as f:
         json.dump({'source': SRC, 'categories': categories}, f, ensure_ascii=False, indent=1)
 
     sys.stdout.reconfigure(encoding='utf-8')
     for cat in categories:
         n = sum(len(t['signs']) for t in cat['topics'])
-        print(f"{cat['id']:15} {cat['title']!r}: {len(cat['topics'])} topics, {n} signs")
+        tl = sum(1 for t in cat['topics'] for s in t['signs'] if 'tagalog' in s)
+        print(f"{cat['id']:15} {cat['title']!r}: {len(cat['topics'])} topics, {n} signs, {tl} with Tagalog")
         for t in cat['topics']:
             print(f"    {t['title']!r} ({len(t['signs'])})")
+
+
+def apply_tagalog(categories):
+    """Applies tool/tagalog.json. Every key in it must match a lesson, so a
+    typo or a renamed term fails loudly instead of silently dropping a
+    translation."""
+    with open(TAGALOG, encoding='utf-8') as f:
+        data = json.load(f)
+    by_id = {c['id']: c for c in categories}
+
+    def topic_of(cat_id, title):
+        for t in by_id[cat_id]['topics']:
+            if t['title'] == title:
+                return t
+        raise SystemExit(f'tagalog.json: no topic {cat_id}/{title!r}')
+
+    for cat_id, topics in data['edits'].items():
+        for title, edits in topics.items():
+            signs = topic_of(cat_id, title)['signs']
+            for op, anchor, terms in edits:
+                i = next((i for i, s in enumerate(signs) if s['term'] == anchor), None)
+                if i is None:
+                    raise SystemExit(f'tagalog.json: no sign {anchor!r} in {cat_id}/{title!r}')
+                new = [{'term': t} for t in terms]
+                if op == 'after':
+                    signs[i + 1:i + 1] = new
+                elif op == 'before':
+                    signs[i:i] = new
+                elif op == 'replace':
+                    signs[i:i + 1] = new
+                else:
+                    raise SystemExit(f'tagalog.json: unknown edit {op!r}')
+
+    for cat_id, titles in data['topics'].items():
+        for title, tl in titles.items():
+            topic_of(cat_id, title)['tagalog'] = tl
+
+    for cat_id, terms in data['terms'].items():
+        signs = {s['term']: s for t in by_id[cat_id]['topics'] for s in t['signs']}
+        for term, tl in terms.items():
+            if term not in signs:
+                raise SystemExit(f'tagalog.json: no sign {term!r} in {cat_id}')
+            signs[term]['tagalog'] = tl
 
 
 main()
