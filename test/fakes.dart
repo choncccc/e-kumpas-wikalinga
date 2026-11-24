@@ -73,8 +73,9 @@ class FakeLessonRepository implements LessonRepository {
 class FakeStudyRepository extends StudyRepository {
   final bookmarked = <String>[];
   final viewed = <String, DateTime>{};
-  final quizzes = <(int, int)>[];
+  final quizzes = <(int, int, String?)>[];
   final levels = <int, Duration>{};
+  final log = <ActivityEntry>[];
 
   @override
   Future<Set<String>> bookmarkedKeys() async => bookmarked.toSet();
@@ -122,9 +123,21 @@ class FakeStudyRepository extends StudyRepository {
       viewed.values.where((t) => !t.isBefore(since)).length;
 
   @override
-  Future<void> saveQuizResult(int score, int total) async {
-    quizzes.add((score, total));
+  Future<void> saveQuizResult(int score, int total, {String? quizId}) async {
+    quizzes.add((score, total, quizId));
     notifyListeners();
+  }
+
+  @override
+  Future<Map<String, QuizScore>> bestQuizScores() async {
+    final best = <String, QuizScore>{};
+    for (final (score, total, id) in quizzes) {
+      final b = id == null ? null : best[id];
+      if (id != null && (b == null || score / total > b.score / b.total)) {
+        best[id] = QuizScore(score, total);
+      }
+    }
+    return best;
   }
 
   @override
@@ -147,4 +160,19 @@ class FakeStudyRepository extends StudyRepository {
 
   @override
   Future<Map<int, Duration>> gameLevels() async => Map.of(levels);
+
+  @override
+  Future<void> logActivity(String action, [String? detail]) async => log.add(
+    ActivityEntry(at: DateTime.now(), action: action, detail: detail),
+  );
+
+  @override
+  Future<List<ActivityEntry>> activity({int limit = 2000}) async =>
+      log.reversed.take(limit).toList();
+
+  @override
+  Future<void> clearActivity() async {
+    log.clear();
+    notifyListeners();
+  }
 }

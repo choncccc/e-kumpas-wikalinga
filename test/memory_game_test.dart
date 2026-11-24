@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'fakes.dart';
-import 'quiz_builder_test.dart' show realSigns;
+import 'real_content.dart' show realSigns;
 
 /// Two-pair level for rules tests.
 MemoryLevel _level(int pairs) => MemoryLevel(

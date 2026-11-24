@@ -1,0 +1,1341 @@
+{
+ "source": "prototype/contents/quizzes.pdf (revised quizzes from the client)",
+ "sets": [
+  {
+   "id": "general",
+   "title": "General Quiz",
+   "subtitle": "Everyday signs: letters, greetings, triage, family and lifestyle.",
+   "seconds_per_item": 18,
+   "quizzes": [
+    {
+     "id": "general_1",
+     "number": 1,
+     "title": "Foundational Vocabulary",
+     "items": [
+      {
+       "options": [
+        "Letter A / Letrang A",
+        "Number 1 / Numero 1",
+        "Today / Ngayong Araw",
+        "Red color / Pulang Kulay"
+       ],
+       "answer": 0,
+       "media": "assets/signs/foundation/alphabet__letter_a.jpg"
+      },
+      {
+       "options": [
+        "Number 10 / Numero 10",
+        "Letter Z / Letrang Z",
+        "Tomorrow / Bukas",
+        "Blue color / Kulay Asul"
+       ],
+       "answer": 0,
+       "media": "assets/signs/foundation/numbers__number_10.jpg"
+      },
+      {
+       "options": [
+        "Yesterday / Kahapon",
+        "January / Enero",
+        "Monday / Lunes",
+        "Number 5 / Numero 5"
+       ],
+       "answer": 0,
+       "media": "assets/signs/foundation/time__yesterday.mp4"
+      },
+      {
+       "options": [
+        "Week / Linggo",
+        "Month / Buwan",
+        "Year / Taon",
+        "Hour / Oras"
+       ],
+       "answer": 1,
+       "media": "assets/signs/foundation/dates__month.mp4"
+      },
+      {
+       "options": [
+        "Red / Pula",
+        "Black / Itim",
+        "White / Puti",
+        "Green / Berde"
+       ],
+       "answer": 3,
+       "media": "assets/signs/foundation/colors__green.mp4"
+      },
+      {
+       "options": [
+        "Head / Ulo",
+        "Hand / Kamay",
+        "Foot / Paa",
+        "Chest / Dibdib"
+       ],
+       "answer": 0,
+       "media": "assets/signs/triage/body_parts__head.mp4"
+      },
+      {
+       "options": [
+        "Eye / Mata",
+        "Ear / Tainga",
+        "Nose / Ilong",
+        "Mouth / Bunganga"
+       ],
+       "answer": 2,
+       "media": "assets/signs/triage/body_parts__nose.mp4"
+      },
+      {
+       "options": [
+        "Sight / Paningin",
+        "Hearing / Pandinig",
+        "Touch / Pandama",
+        "Taste / Panlasa"
+       ],
+       "answer": 1,
+       "media": "assets/signs/triage/senses__hearing.mp4"
+      },
+      {
+       "options": [
+        "Number 100 / Numero 100",
+        "Number 50 / Numero 50",
+        "Number 1000 / Numero 1000",
+        "Number 10 / Numero 10"
+       ],
+       "answer": 0,
+       "media": "assets/signs/foundation/numbers__number_100.mp4"
+      },
+      {
+       "options": [
+        "December / Disyembre",
+        "Friday / Biyernes",
+        "July / Hulyo",
+        "August / Agosto"
+       ],
+       "answer": 1,
+       "media": "assets/signs/foundation/dates__friday.mp4"
+      }
+     ]
+    },
+    {
+     "id": "general_2",
+     "number": 2,
+     "title": "Basic Conversational Signs",
+     "items": [
+      {
+       "options": [
+        "Good morning / Magandang umaga",
+        "Hello / Kumusta",
+        "Goodbye / Paalam",
+        "Thank you / Salamat"
+       ],
+       "answer": 1,
+       "media": "assets/signs/basic/common_greetings_introduction__hello.mp4"
+      },
+      {
+       "options": [
+        "Please / Pakiusap",
+        "Thank you / Salamat",
+        "You’re welcome / Walang anuman",
+        "Sorry / Paumanhin"
+       ],
+       "answer": 1,
+       "media": "assets/signs/basic/courtesies__thank_you.mp4"
+      },
+      {
+       "options": [
+        "Yes / Oo",
+        "No / Hindi",
+        "Maybe / Siguro",
+        "Please repeat / Pakiulit"
+       ],
+       "answer": 0,
+       "media": "assets/signs/basic/simple_responses__yes.mp4"
+      },
+      {
+       "options": [
+        "What? / Ano?",
+        "Where? / Saan?",
+        "When? / Kailan?",
+        "Who? / Sino?"
+       ],
+       "answer": 0,
+       "media": "assets/signs/basic/questions__what.mp4"
+      },
+      {
+       "options": [
+        "How many? / Ilan?",
+        "How long? / Gaano katagal?",
+        "Why? / Bakit?",
+        "Which? / Alin?"
+       ],
+       "answer": 0,
+       "media": "assets/signs/basic/questions__how_many.mp4"
+      },
+      {
+       "options": [
+        "What is your name? / Anong pangalan mo?",
+        "Where does it hurt? / Saan ang masakit sa’yo?",
+        "How do you feel? / Anong nararamdaman mo?",
+        "How old are you? / Ilang taon ka na?"
+       ],
+       "answer": 0,
+       "media": "assets/signs/basic/questions__what_is_your_name.mp4"
+      },
+      {
+       "options": [
+        "Excuse me / Paumanhin po",
+        "Sorry / Paumanhin",
+        "I’m fine / Ayos lang ako",
+        "Please wait / Pahintay"
+       ],
+       "answer": 2,
+       "media": "assets/signs/basic/courtesies__i_m_fine.mp4"
+      },
+      {
+       "options": [
+        "I understand / Naintindihan ko",
+        "I don’t understand / Hindi ko naintindihan",
+        "Please repeat / Pakiulit",
+        "Please wait / Pahintay"
+       ],
+       "answer": 1,
+       "media": "assets/signs/basic/simple_responses__i_don_t_understand.mp4"
+      },
+      {
+       "options": [
+        "Nice to meet you / Ikinalulugod kitang makilala",
+        "Take care / Mag-ingat ka",
+        "Welcome / Kalugod-lugod",
+        "Good evening / Magandang gabi"
+       ],
+       "answer": 0,
+       "media": "assets/signs/basic/common_greetings_introduction__nice_to_meet_you.mp4"
+      },
+      {
+       "options": [
+        "What is your occupation? / Anong trabaho mo?",
+        "Why are you here today? / Bakit ka naparito?",
+        "When did it start? / Kailan ito nagsimula?",
+        "How many days? / Ilang araw na?"
+       ],
+       "answer": 0,
+       "media": "assets/signs/basic/questions__what_is_your_occupation.mp4"
+      }
+     ]
+    },
+    {
+     "id": "general_3",
+     "number": 3,
+     "title": "Basic Triage Information",
+     "items": [
+      {
+       "options": [
+        "Pulse Rate / Bilis ng tibok ng puso",
+        "Blood Pressure / Presyon ng dugo",
+        "Temperature / Temperatura",
+        "Respiratory Rate / Bilis ng paghinga"
+       ],
+       "answer": 1,
+       "media": "assets/signs/triage/vital_signs__blood_pressure_bp.mp4"
+      },
+      {
+       "options": [
+        "Fever / Lagnat",
+        "Cough and Cold / Ubo’t sipon",
+        "Headache / Sakit sa ulo",
+        "Stomachache / Sakit sa tiyan"
+       ],
+       "answer": 0,
+       "media": "assets/signs/triage/chief_complaints__fever.mp4"
+      },
+      {
+       "options": [
+        "Nausea / Vomiting / Nasusuka / Nagsusuka",
+        "Diarrhea / Pagtatae",
+        "Bleeding / Pagdurugo",
+        "Body Pain / Fatigue / Sakit sa Katawan / Pagod"
+       ],
+       "answer": 2,
+       "media": "assets/signs/triage/chief_complaints__bleeding_blood.mp4"
+      },
+      {
+       "options": [
+        "Wound / Cut / Injury / Sugat",
+        "Itching / Rashes / Pangangati / Pantal",
+        "Pain / Ache / Sakit",
+        "Fever / Lagnat"
+       ],
+       "answer": 2,
+       "media": "assets/signs/triage/chief_complaints__pain_ache.mp4"
+      },
+      {
+       "options": [
+        "Nurse / Nars",
+        "Doctor / Doktor",
+        "Patient / Pasyente",
+        "Sign Language Interpreter / Tagasalin sa wikang pasenyas"
+       ],
+       "answer": 0,
+       "media": "assets/signs/triage/healthcare_roles_and_areas__nurse.mp4"
+      },
+      {
+       "options": [
+        "Healthcare Worker / Manggagawa sa pangangalagang pangkalusugan",
+        "Doctor / Doktor",
+        "Patient / Pasyente",
+        "Nurse / Nars"
+       ],
+       "answer": 2,
+       "media": "assets/signs/triage/healthcare_roles_and_areas__patient.mp4"
+      },
+      {
+       "options": [
+        "Severe Headache / Lubhang sakit sa ulo",
+        "Shortness of Breath / Pangangapos ng hininga",
+        "Chest Pain / Sakit sa dibdib",
+        "Blurry Vision / Malabong paningin"
+       ],
+       "answer": 2,
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__chest_pain_tightness.mp4"
+      },
+      {
+       "options": [
+        "Speech Difficulty / Hirap sa pagsasalita",
+        "Severe Dizziness / Lubhang pagkahilo",
+        "Swelling of Feet / Pamamaga ng Paa",
+        "Numbness or Face Weakness / Pamamanhid ng mukha"
+       ],
+       "answer": 1,
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__severe_dizziness_loss_of_balance.mp4"
+      },
+      {
+       "options": [
+        "Normal BP Value / Halaga ng normal na presyon ng dugo",
+        "Elevated BP Value / Halaga ng mataas na presyon ng dugo",
+        "Stage 1 High BP / Stage 1 na mataas na presyon ng dugo",
+        "Emergency BP Value / Halaga ng presyon ng dugo na kailangan ng agarang aksyon"
+       ],
+       "answer": 3,
+       "media": "assets/signs/triage/blood_pressure_values__emergency_bp_above_180_120.mp4"
+      },
+      {
+       "options": [
+        "Doctor / Doktor",
+        "Sign Language Interpreter / Tagasalin sa wikang pasenyas",
+        "Nurse / Nars",
+        "Patient / Pasyente"
+       ],
+       "answer": 1,
+       "media": "assets/signs/triage/healthcare_roles_and_areas__sign_language_interpreter.mp4"
+      }
+     ]
+    },
+    {
+     "id": "general_4",
+     "number": 4,
+     "title": "Medical & Family History",
+     "items": [
+      {
+       "options": [
+        "Mother / Nanay",
+        "Father / Tatay",
+        "Sibling / Kapatid",
+        "Grandparent / Lolo o Lola"
+       ],
+       "answer": 0,
+       "media": "assets/signs/medical_family/family_relationships__mother.mp4"
+      },
+      {
+       "options": [
+        "Single / Walang kapareha",
+        "Married / Kasal",
+        "Separated / Hiwalay",
+        "Family / Pamilya"
+       ],
+       "answer": 1,
+       "media": "assets/signs/medical_family/family_relationships__married.mp4"
+      },
+      {
+       "options": [
+        "Healthy / Malusog",
+        "Sick / Sakit",
+        "Hospitalized / Naospital",
+        "Surgery / Operasyon"
+       ],
+       "answer": 1,
+       "media": "assets/signs/medical_family/general_health_history__sick.mp4"
+      },
+      {
+       "options": [
+        "Kidney Disease / Sakit sa bato",
+        "Stroke / Inatake sa utak",
+        "Heart Attack / Atake sa puso",
+        "Diabetes / Diyabetes"
+       ],
+       "answer": 1,
+       "media": "assets/signs/medical_family/hypertension_related_conditions__stroke.mp4"
+      },
+      {
+       "options": [
+        "Maintenance Medicine",
+        "Vitamins / Bitamina",
+        "Painkiller / Pampawala ng sakit",
+        "Vaccination / Pagbabakuna"
+       ],
+       "answer": 1,
+       "media": "assets/signs/medical_family/medications__vitamins.mp4"
+      },
+      {
+       "options": [
+        "Drug Allergy / Alerdyi sa gamot",
+        "Food Allergy / Alerdyi sa pagkain",
+        "Itching / Pangangati",
+        "Swelling / Pamamaga"
+       ],
+       "answer": 1,
+       "media": "assets/signs/medical_family/allergies__food_allergy.mp4"
+      },
+      {
+       "options": [
+        "Rashes / Pantal",
+        "Swelling / Pamamaga",
+        "Itching / Pangangati",
+        "Allergy / Alerdyi"
+       ],
+       "answer": 2,
+       "media": "assets/signs/medical_family/allergies__itching.mp4"
+      },
+      {
+       "options": [
+        "Sibling / Kapatid",
+        "Child / Anak",
+        "Grandparent / Lolo o Lola",
+        "Father / Tatay"
+       ],
+       "answer": 1,
+       "media": "assets/signs/medical_family/family_relationships__child.mp4"
+      },
+      {
+       "options": [
+        "Heart Disease / Sakit sa puso",
+        "Kidney Disease / Sakit sa bato",
+        "Stroke / Inatake sa utak",
+        "Diabetes / Diyabetes"
+       ],
+       "answer": 0,
+       "media": "assets/signs/medical_family/hypertension_related_conditions__heart_disease.mp4"
+      },
+      {
+       "options": [
+        "Surgery / Operasyon",
+        "Hospitalized / Naospital",
+        "Other Illnesses / Iba pang sakit",
+        "Vaccination / Pagbabakuna"
+       ],
+       "answer": 1,
+       "media": "assets/signs/triage/healthcare_roles_and_areas__hospital.mp4"
+      }
+     ]
+    },
+    {
+     "id": "general_5",
+     "number": 5,
+     "title": "Nutritional & Lifestyle History",
+     "items": [
+      {
+       "options": [
+        "Water / Tubig",
+        "Salty Food / Pagkaing maalat",
+        "Oily Food / Pagkaing mamantika",
+        "Sweet Food / Pagkaing matamis"
+       ],
+       "answer": 1,
+       "media": "assets/signs/nutrition/dietary_habits__salty_food.mp4"
+      },
+      {
+       "options": [
+        "Vegetables / Gulay",
+        "Fruits / Prutas",
+        "Sweet Food / Pagkaing matamis",
+        "Oily Food / Pagkaing mamantika"
+       ],
+       "answer": 0,
+       "media": "assets/signs/nutrition/dietary_habits__vegetables.mp4"
+      },
+      {
+       "options": [
+        "Daily Water Intake / Tubig na naiinom kada araw",
+        "Urination Frequency / Dalas ng pag-ihi",
+        "Painful Urination / Masakit na pag-ihi",
+        "Urine Color / Kulay ng ihi"
+       ],
+       "answer": 0,
+       "media": "assets/signs/nutrition/fluid_intake_output__daily_water_intake.mp4"
+      },
+      {
+       "options": [
+        "Excessive Sweating / Sobrang pagpapawis",
+        "Urination Frequency / Dalas ng pag-ihi",
+        "Urine Color / Kulay ng ihi",
+        "Painful Urination / Masakit na pag-ihi"
+       ],
+       "answer": 3,
+       "media": "assets/signs/nutrition/fluid_intake_output__painful_urination.mp4"
+      },
+      {
+       "options": [
+        "Smoking / Vaping / Paninigarilyo",
+        "Alcohol Drinking / Pag-inom ng alak",
+        "Illegal Drugs / Ilegal na droga",
+        "Coffee / Caffeine / Kape"
+       ],
+       "answer": 1,
+       "media": "assets/signs/nutrition/vices_risk_screening__alcohol_drinking.mp4"
+      },
+      {
+       "options": [
+        "Lack of Exercise / Kulang sa ehersisyo",
+        "Poor Sleep / Kulang sa tulog",
+        "High Stress Levels / Mataas na lebel ng stress",
+        "Coffee / Caffeine / Kape"
+       ],
+       "answer": 2,
+       "media": "assets/signs/nutrition/vices_risk_screening__high_stress_levels.mp4"
+      },
+      {
+       "options": [
+        "Blood Test / Pagsusuri ng dugo",
+        "Urine Test / Pagsusuri ng ihi",
+        "ECG / Heart Trace / Pagsusuri sa tibok at kuryente ng puso",
+        "Physical Examination / Pagsusuring pisikal"
+       ],
+       "answer": 2,
+       "media": "assets/signs/procedures/medical_procedures__ecg.mp4"
+      },
+      {
+       "options": [
+        "Check Eyes / Vision Screening / Pagsusuri sa mata",
+        "Take Pulse Rate / Pagkuha sa bilis ng tibok ng puso",
+        "Put Cuff on Arm / Ilagay ang cuff sa braso",
+        "Blood Test / Pagsusuri ng dugo"
+       ],
+       "answer": 2,
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__put_cuff_on_arm.mp4"
+      },
+      {
+       "options": [
+        "Rest for 5 minutes / Magpahinga ng limang minuto",
+        "Empty bladder / Urinate first / Umihi muna",
+        "No coffee / caffeine / Kape",
+        "Keep feet flat on the floor / Panatilihing nakalapat ang mga paa sa sahig"
+       ],
+       "answer": 3,
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__keep_feet_flat_on_the_floor.mp4"
+      },
+      {
+       "options": [
+        "Roll up sleeve / Itupi ang manggas",
+        "Support arm on table / Ipatong ang braso sa mesa",
+        "No smoking before BP / Bawal manigarilyo bago magpakuha ng presyon ng dugo",
+        "No heavy exercise / Bawal ang mabibigat na ehersisyo"
+       ],
+       "answer": 0,
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__bare_the_arm_roll_up_sleeve.mp4"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hypertension",
+   "title": "Hypertension Quiz",
+   "subtitle": "Signs and sentences for checking and caring for high blood pressure.",
+   "seconds_per_item": 30,
+   "quizzes": [
+    {
+     "id": "hypertension_1",
+     "number": 1,
+     "title": null,
+     "items": [
+      {
+       "options": [
+        "Diabetes / Diyabetes",
+        "Stroke",
+        "Hypertension / Mataas na presyon ng dugo",
+        "Allergy / Alerdyi"
+       ],
+       "answer": 2,
+       "media": "assets/signs/medical_family/hypertension_related_conditions__high_blood_pressure_hypertension.mp4"
+      },
+      {
+       "options": [
+        "Temperature / Temperatura",
+        "Blood Pressure / Presyon ng dugo",
+        "Pulse Rate / Bilis ng tibok ng puso",
+        "Respiratory Rate / Bilis ng paghinga"
+       ],
+       "answer": 1,
+       "media": "assets/signs/triage/vital_signs__blood_pressure_bp.mp4"
+      },
+      {
+       "options": [
+        "Chest Pain / Paninikip ng dibdib",
+        "Dizziness / Pagkahilo",
+        "Headache / Sakit ng ulo",
+        "Fever / Lagnat"
+       ],
+       "answer": 1,
+       "media": null
+      },
+      {
+       "options": [
+        "Sugar / Asukal",
+        "Salt / Asin",
+        "Water / Tubig",
+        "Coffee / Kape"
+       ],
+       "answer": 1,
+       "media": null
+      },
+      {
+       "options": [
+        "Rest / Pahinga",
+        "Sleep / Tulog",
+        "Stress",
+        "Exercise / Ehersisyo"
+       ],
+       "answer": 3,
+       "media": null
+      },
+      {
+       "options": [
+        "Vaccine / Bakuna",
+        "Vitamin / Bitamina",
+        "Medicine / Medisina",
+        "Bandage / Benda"
+       ],
+       "answer": 2,
+       "media": null
+      },
+      {
+       "options": [
+        "Doctor / Doktor",
+        "Nurse / Nars",
+        "Patient / Pasyente",
+        "Interpreter / Tagasalin"
+       ],
+       "answer": 0,
+       "media": "assets/signs/triage/healthcare_roles_and_areas__doctor.mp4"
+      },
+      {
+       "options": [
+        "Patient / Pasyente",
+        "Doctor / Doktor",
+        "Nurse / Nars",
+        "Pharmacist"
+       ],
+       "answer": 2,
+       "media": "assets/signs/triage/healthcare_roles_and_areas__nurse.mp4"
+      },
+      {
+       "options": [
+        "Stroke",
+        "Allergy / Alerdyi",
+        "Kidney Disease / Sakit sa bato",
+        "Diabetes / Diyabetes"
+       ],
+       "answer": 0,
+       "media": "assets/signs/medical_family/hypertension_related_conditions__stroke.mp4"
+      },
+      {
+       "options": [
+        "Water / Tubig",
+        "Coffee / Kape",
+        "Juice",
+        "Alcohol / Alak"
+       ],
+       "answer": 3,
+       "media": "assets/signs/nutrition/vices_risk_screening__alcohol_drinking.mp4"
+      },
+      {
+       "options": [
+        "Sleep / Tulog",
+        "Stress",
+        "Work / Trabaho",
+        "Exercise / Ehersisyo"
+       ],
+       "answer": 1,
+       "media": null
+      },
+      {
+       "options": [
+        "Rest / Pahinga",
+        "Tired / Pagod",
+        "Wake / Gising",
+        "Sleep / Tulog"
+       ],
+       "answer": 3,
+       "media": null
+      },
+      {
+       "options": [
+        "Dizziness / Pagkahilo",
+        "Chest Pain / Paninikip ng dibdib",
+        "Headache / Sakit ng ulo",
+        "Stomachache / Sakit ng tiyan"
+       ],
+       "answer": 2,
+       "media": "assets/signs/triage/chief_complaints__headache.mp4"
+      },
+      {
+       "options": [
+        "Kidney",
+        "Lungs / Baga",
+        "Heart / Puso",
+        "Liver / Atay"
+       ],
+       "answer": 2,
+       "media": "assets/signs/triage/body_parts__heart.mp4"
+      },
+      {
+       "options": [
+        "Coffee / Kape",
+        "Cigarette, Vaping / Sigarilyo",
+        "Sugar / Asukal",
+        "Water / Tubig"
+       ],
+       "answer": 1,
+       "media": "assets/signs/nutrition/vices_risk_screening__smoking_vaping.mp4"
+      }
+     ]
+    },
+    {
+     "id": "hypertension_2",
+     "number": 2,
+     "title": null,
+     "items": [
+      {
+       "options": [
+        "I have hypertension / May mataas akong presyon ng dugo",
+        "I take medication / Naggagamot ako",
+        "I feel dizzy / Nahihilo ako",
+        "I drink water / Umiinom ako ng tubig"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_2__q01.mp4"
+      },
+      {
+       "options": [
+        "I have chest pain / Masakit ang dibdib ko",
+        "I take medication / Naggagamot ako",
+        "I feel tired / Pagod ako",
+        "I check my pulse / Tinitingnan ko ang pulso ko"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_2__q02.mp4"
+      },
+      {
+       "options": [
+        "I have a severe headache / Mayroon akong malubhang sakit sa ulo",
+        "I feel short of breath / Nahihirapan akong huminga",
+        "I don’t feel a headache / Hindi masakit ang ulo ko",
+        "I experience numbness / Nakakaranas ako ng pamamanhid"
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/hypertension_2__q03.mp4"
+      },
+      {
+       "options": [
+        "Eat less salty foods / Kumain ng kaunting pagkaing maalat",
+        "Eat more fruits / Kumain ng maraming gulay",
+        "Drink clean water / Uminom ng malinis na tubig",
+        "Exercise daily / Araw-araw na mag-ehersisyo"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_2__q04.mp4"
+      },
+      {
+       "options": [
+        "Stop smoking immediately / Itigil ng agaran ang paninigarilyo",
+        "Drink alcohol occasionally / Pag-inom ng alak paminsan-minsan",
+        "Limit coffee and other drinks with caffeine / Limitahan ang kape at iba pang inuming may caffeine",
+        "Rest for five minutes / Magpahinga ng limang minuto"
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/hypertension_2__q05.mp4"
+      },
+      {
+       "options": [
+        "Check blood pressure regularly / Regular na suriin ang presyon ng dugo",
+        "Take your medicine on time / Inumin ang gamot sa tamang oras",
+        "Avoid drinking alcohol / Iwasan ang pag-inom ng alak",
+        "Keep feet on the floor / Panatilihing nasa sahig ang paa"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_2__q06.mp4"
+      },
+      {
+       "options": [
+        "Family has hypertension / Ang pamilya ay may mataas na presyon ng dugo",
+        "Patient has diabetes / Ang pasyente ay may diyabetes",
+        "Doctor gives advice / Nagbibigay ng payo ang doktor",
+        "Nurse checks pulse / Sinusuri ng nars ang pulso"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_2__q07.mp4"
+      },
+      {
+       "options": [
+        "Roll up your sleeve / Itupi ang manggas",
+        "Rest arm on table / Ipatong ang braso sa mesa",
+        "Stand up straight / Tumayo ng tuwid",
+        "Walk around the room / Maglakad-lakad sa palibot ng kwarto"
+       ],
+       "answer": 1,
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__support_arm_on_table_at_heart_level.mp4"
+      },
+      {
+       "options": [
+        "High stress levels / Mataas na lebel ng stress",
+        "Poor sleep quality / Kulang sa tulog",
+        "Exercise regularly / Regular na pag-ehersisyo",
+        "Heavy physical work / Mabigat na gawaing pisikal"
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/hypertension_2__q09.mp4"
+      },
+      {
+       "options": [
+        "Normal blood pressure / Normal na presyon ng dugo",
+        "Stage one pressure / Unang stage ng presyon",
+        "Emergency reading",
+        "Elevated reading"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_2__q10.mp4"
+      },
+      {
+       "options": [
+        "Painful urination / Masakit na pag-ihi",
+        "Excessive sweating / Sobrang pagpapawis",
+        "Blurry vision / Malabong paningin",
+        "Slurred speech sign / Senyales ng malabong pagsasalita"
+       ],
+       "answer": 2,
+       "media": "assets/signs/medical_family/general_health_history__blurred_vision.mp4"
+      },
+      {
+       "options": [
+        "Wash your hands / Hugasan ang mga kamay",
+        "Manage stress and rest / Pamahalaan ang stress at magpahinga",
+        "Clean your clinic / Linisan ang iyong klinika",
+        "Prepare equipment / Ihanda ang mga kagamitan"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_2__q12.mp4"
+      },
+      {
+       "options": [
+        "Take blood test / Magpa-blood test",
+        "Do urine test / Magpa-urinalysis",
+        "Check eye vision / Suriin ang paningin",
+        "Take pulse rate / Sukatin ang pulso"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_2__q13.mp4"
+      },
+      {
+       "options": [
+        "Consult a doctor / Kumonsulta sa doktor",
+        "Ask a pharmacist / Magtanong sa parmasyutiko",
+        "Call an interpreter / Tumawag ng tagasalin",
+        "Visit a dentist / Magpatingin sa dentista"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_2__q14.mp4"
+      },
+      {
+       "options": [
+        "Normal blood pressure / Normal ang presyon ng dugo. Ikalawang antas ng altapresyon.",
+        "Stage two high blood pressure / Ikalawang antas ng altapresyon",
+        "Critical emergency value / Kritikal na antas na nangangailangan ng agarang atensyon",
+        "Elevated reading level / Mas mataas sa normal ang presyon ng dugo"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_2__q15.mp4"
+      }
+     ]
+    },
+    {
+     "id": "hypertension_3",
+     "number": 3,
+     "title": null,
+     "items": [
+      {
+       "options": [
+        "I am taking losartan / Naggagamot ako ng losartan",
+        "I feel chest pain / Nakakaranas ako ng pananakit ng dibdib",
+        "My head hurts badly / Lubhang masakit ang ulo ko",
+        "I ate salty foods / Kumain ako ng maalat na pagkain"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_3__q01.mp4"
+      },
+      {
+       "options": [
+        "I take amlodipine daily / Naggagamot ako ng amlodipine araw-araw",
+        "I don’t take any medication as I only have 120/80 BP / Hindi ako naggagamot dahil nasa normal na 120/80 ang BP ko",
+        "I have a family history of stroke / May historya ang pamilya ko ng stroke",
+        "My blood pressure is extremely high / Lubhang mataas ang aking presyon ng dugo"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_3__q02.mp4"
+      },
+      {
+       "options": [
+        "Do not stop taking your medicine without asking your doctor / Huwag itigil ang pag-inom ng iyong gamot nang hindi nagtatanong sa iyong doktor",
+        "Do you take other medicines or herbal supplements? / Umiinom ka ba ng ibang gamot o halamang gamot/herbal?",
+        "Did you take your medicine? / Nainom mo na ba ang gamot mo?",
+        "Do you have other illnesses? / Mayroon ka bang ibang sakit?"
+       ],
+       "answer": 0,
+       "media": "assets/signs/medical_family/medications__do_not_stop_taking_your_medicine_without_asking_your_doctor.mp4"
+      },
+      {
+       "options": [
+        "My blood pressure is normal today / Normal ang presyon ng dugo ko ngayon",
+        "I have a family history of hypertension / May historya ang pamilya ko ng stroke",
+        "Nobody in my family is sick / Wala sa aking pamilya ang may sakit",
+        "My parents both have diabetes / Parehas na may diyabetes ang aking mga magulang"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_3__q04.mp4"
+      },
+      {
+       "options": [
+        "I love working long hours / Mahilig akong magtrabaho nang mahabang oras",
+        "I used to get tired and always stressed / Dati, madali akong mapagod at palaging nai-stress",
+        "I sleep eight hours every night / Natutulog ako nang walong oras kada gabi",
+        "I feel very energetic and happy / Pakiramdam ko ay masigla ako at masaya"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_3__q05.mp4"
+      },
+      {
+       "options": [
+        "The clinic machine is broken / Sira ang makina sa klinika",
+        "My blood pressure reached 180 / Umabot ng 180 ang presyon ko ng dugo",
+        "My last BP result is 120/80 / Ang huling kuha ng presyon ko ng dugo ay 120/89",
+        "I forgot my reading results / Nalimutan ko ang resulta ng pagbasa"
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/hypertension_3__q06.mp4"
+      },
+      {
+       "options": [
+        "My age is fifty years old / Ang taon ko ay limampu",
+        "I am thirty years old / Ako ay tatlumpung taong gulang",
+        "I was born in nineteen hundred / Pinanganak ako noong 1900",
+        "My room number is twelve / Ang silid ko ay numero labindalawa"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_3__q07.mp4"
+      },
+      {
+       "options": [
+        "I didn’t have time to rest / Wala akong oras para magpahinga",
+        "Rest for five minutes / Magpahinga ng limang minuto",
+        "Wait for thirty minutes / Maghintay ng trenta minutos",
+        "I am going to sleep / Matutulog na ako"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_3__q08.mp4"
+      },
+      {
+       "options": [
+        "I have allergies / May alerdyi ako",
+        "Drink eight glasses of water / Uminom ng walong baso ng tubig",
+        "I didn’t drink enough water / Hindi sapat ang nainom kong tubig",
+        "I eat eight times a day / Kumakain ako ng walong beses kada araw"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_3__q09.mp4"
+      },
+      {
+       "options": [
+        "When were you diagnosed with hypertension? / Kailan ka nasuring may altapresyon?",
+        "Have you ever been hospitalized? / Naospital ka na ba dati?",
+        "Did you take your medicine? / Nainom mo na ba ang gamot mo?",
+        "Have you undergone surgery? / Naoperahan ka na ba?"
+       ],
+       "answer": 2,
+       "media": "assets/signs/medical_family/medications__did_you_take_your_medicine.mp4"
+      },
+      {
+       "options": [
+        "My blood pressure reading is one hundred thirty / Ang presyon ng dugo ko ay nasa isang daan at tatlumpu",
+        "My blood pressure is one twenty over eighty / Ang presyon ng dugo ko ay nasa isang daan at dalawampu sa walumpu",
+        "My reading is one forty over ninety / Ang presyon ng dugo ko ay nasa isang daan at apatnapu",
+        "My emergency level is one eighty"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_3__q11.mp4"
+      },
+      {
+       "options": [
+        "Exercise for ten minutes / Mag-ehersisyo nang sampung minuto",
+        "Exercise for twenty minutes / Mag-ehersisyo nang dalawampung minuto",
+        "Exercise for thirty minutes / Mag-ehersisyo nang tatlumpung minuto",
+        "Exercise for sixty minutes / Mag-ehersisyo nang animnapung minuto"
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/hypertension_3__q12.mp4"
+      },
+      {
+       "options": [
+        "I sleep four hours a night / Natutulog ako nang apat na oras gabi-gabi",
+        "I sleep five hours a night / Natutulog ako nang limang oras gabi-gabi",
+        "I sleep six hours a night / Natutulog ako nang anim na oras gabi-gabi",
+        "I sleep seven to eight hours a night / Natutulog ako nang walong oras gabi-gabi"
+       ],
+       "answer": 3,
+       "media": "assets/quizzes/hypertension_3__q13.mp4"
+      },
+      {
+       "options": [
+        "I take one pill every morning / Umiinom ako ng isang tableta tuwing umaga",
+        "I take two pills every evening / Umiinom ako ng dalawang tableta tuwing gabi",
+        "I take three pills at noon / Umiinom ako ng tatlong tableta tuwing tanghali",
+        "I take four pills before sleep / Umiinom ako ng apat na tableta bago matulog"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_3__q14.mp4"
+      },
+      {
+       "options": [
+        "Control Cholesterol & Sugar / Kontrolin ang Kolesterol at Asukal",
+        "My heart rate is seventy-two beats per minute / Ang tibok ng puso ko ay pitumpung beses bawat minuto",
+        "Check Heart Rate / Suriin ang Bilis ng Tibok ng Puso",
+        "My heart rate is ninety beats per minute / Ang tibok ng puso ay siyamnapung beses bawat minuto"
+       ],
+       "answer": 2,
+       "media": "assets/signs/procedures/medical_procedures__take_pulse_check_heart_rate.mp4"
+      }
+     ]
+    },
+    {
+     "id": "hypertension_4",
+     "number": 4,
+     "title": null,
+     "items": [
+      {
+       "options": [
+        "Eat less salty foods / Kumain ng kaunting pagkaing maalat.",
+        "Eat more fresh fruits / Kumain ng mas maraming sariwang prutas.",
+        "Drink cold water now / Uminom ng malamig na tubig ngayon.",
+        "Take your pills early / Inumin nang maaga ang iyong mga gamot."
+       ],
+       "answer": 0,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__eat_less_salty_food.mp4"
+      },
+      {
+       "options": [
+        "Measure your daily body weight / Sukatin ang iyong timbang araw-araw.",
+        "Visit your local doctor weekly / Magpatingin sa iyong doktor bawat linggo.",
+        "Check your blood pressure regularly / Regular na suriin ang iyong presyon ng dugo.",
+        "Record your pulse rate often / Regular na itala ang iyong pulso."
+       ],
+       "answer": 2,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__check_your_blood_pressure_regularly.mp4"
+      },
+      {
+       "options": [
+        "Swallow your vitamin capsules / Lunukin ang iyong mga kapsula ng bitamina.",
+        "Take your medicine on time / Inumin ang iyong gamot sa tamang oras.",
+        "Stop buying prescription drugs / Itigil ang pagbili ng mga niresetang gamot.",
+        "Share pills with your family / Ibahagi ang iyong mga gamot sa iyong pamilya."
+       ],
+       "answer": 1,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__take_your_medicine_on_time.mp4"
+      },
+      {
+       "options": [
+        "Boil fresh drinking water / Pakuluan ang sariwang tubig na maiinom.",
+        "Pour water in glasses / Ibuhos ang tubig sa mga baso.",
+        "Drink plenty of water every day / Uminom ng maraming tubig araw-araw.",
+        "Avoid fluid consumption / Iwasan ang pag-inom ng tubig."
+       ],
+       "answer": 2,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__drink_plenty_of_water_every_day.mp4"
+      },
+      {
+       "options": [
+        "Run fast around the room / Tumakbo nang mabilis sa paligid ng silid.",
+        "Urinate first before checking blood pressure / Umihi muna bago sukatin ang presyon ng dugo.",
+        "Stand up from the chair / Tumayo mula sa upuan.",
+        "Walk outside the clinic / Maglakad sa labas ng klinika."
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_4__q05.mp4"
+      },
+      {
+       "options": [
+        "Do you experience chest pain? / Nakakaranas ka ba ng pananakit ng dibdib?",
+        "Does your stomach hurt badly? / Matindi ba ang sakit ng iyong tiyan?",
+        "Are you feeling any nausea? / Nakakaramdam ka ba ng pagduduwal?",
+        "Is your shoulder feeling stiff? / Naninigas ba ang iyong balikat?"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_4__q06.mp4"
+      },
+      {
+       "options": [
+        "Does anyone in your family have high blood pressure? / Mayroon bang miyembro ng iyong pamilya na may altapresyon?",
+        "Is anyone in your house a nurse? / May nars ba sa inyong bahay?",
+        "Does your mother have diabetes? / May diyabetes ba ang iyong ina?",
+        "Do your children live with you? / Nakatira ba kasama mo ang iyong mga anak?"
+       ],
+       "answer": 0,
+       "media": "assets/signs/medical_family/family_relationships__does_anyone_in_your_family_have_high_blood_pressure.mp4"
+      },
+      {
+       "options": [
+        "Buy more coffee beans / Bumili ng mas maraming butil ng kape.",
+        "Limit your caffeine intake / Limitahan ang pag-inom ng mga inuming may caffeine.",
+        "Drink energy drinks daily / Uminom ng energy drinks araw-araw.",
+        "Avoid hot chocolate cups / Iwasan ang pag-inom ng mainit na tsokolate."
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_4__q08.mp4"
+      },
+      {
+       "options": [
+        "Exercise regularly / Regular na mag-ehersisyo.",
+        "Sit down and relax muscles / Umupo at magrelaks ng mga kalamnan.",
+        "Sleep throughout the afternoon / Matulog buong hapon.",
+        "Walk slowly in the garden / Dahan-dahang maglakad sa hardin."
+       ],
+       "answer": 0,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__exercise_regularly.mp4"
+      },
+      {
+       "options": [
+        "Start smoking cigarettes today / Simulan ang paninigarilyo ngayon.",
+        "Stop smoking and vaping / Itigil ang paninigarilyo at paggamit ng vape.",
+        "Buy electronic vape items / Bumili ng mga vape.",
+        "Try tobacco with friends / Subukan ang tabako kasama ang mga kaibigan."
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_4__q10.mp4"
+      },
+      {
+       "options": [
+        "Stay awake all night working / Magpuyat buong gabi sa pagtatrabaho.",
+        "Get enough sleep / Matulog nang sapat.",
+        "Wake up early in morning / Gumising nang maaga sa umaga.",
+        "Sleep only during daytime / Matulog lamang sa araw."
+       ],
+       "answer": 1,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__get_enough_sleep.mp4"
+      },
+      {
+       "options": [
+        "Create more daily stress / Dagdagan ang stress sa araw-araw.",
+        "Ignore your heavy workload / Huwag pansinin ang mabigat na gawain.",
+        "Manage stress and rest / Pamahalaan ang stress at magpahinga.",
+        "Worry about your schedule / Mag-alala tungkol sa iyong iskedyul."
+       ],
+       "answer": 2,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__manage_stress_rest.mp4"
+      },
+      {
+       "options": [
+        "Do you have a severe headache? / Matindi ba ang sakit ng iyong ulo?",
+        "Are your eyes feeling blurry? / Malabo ba ang iyong paningin?",
+        "Does your throat feel scratchy? / Makati o masakit ba ang iyong lalamunan?",
+        "Is your skin feeling itchy? / Makati ba ang iyong balat?"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_4__q13.mp4"
+      },
+      {
+       "options": [
+        "Are you feeling hungry now? / Gutom ka ba ngayon?",
+        "Are you dizzy? / Nahihilo ka ba?",
+        "Are you feeling very sleepy? / Inaantok ka ba nang sobra?",
+        "Do you feel cold today? / Nilalamig ka ba ngayon?"
+       ],
+       "answer": 1,
+       "media": "assets/signs/triage/chief_complaints__are_you_dizzy.mp4"
+      },
+      {
+       "options": [
+        "Let your arms hang loose / Hayaan ang iyong mga braso na nakalaylay at nakakarelaks.",
+        "Rest arm on table at heart level / Ipatong at suportahan ang iyong braso sa mesa, kapantay ng iyong puso.",
+        "Raise arm above your head / Itaas ang iyong braso sa ibabaw ng iyong ulo.",
+        "Put arm inside your pocket / Ilagay ang iyong braso sa loob ng iyong bulsa."
+       ],
+       "answer": 1,
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__support_arm_on_table_at_heart_level.mp4"
+      }
+     ]
+    },
+    {
+     "id": "hypertension_5",
+     "number": 5,
+     "title": null,
+     "items": [
+      {
+       "options": [
+        "Avoid eating salty and processed foods to protect your heart. / Iwasan ang pagkain ng maalat at mga pagkaing naproseso upang mapangalagaan ang iyong puso.",
+        "Take your prescribed maintenance medicine on time every day. / Inumin ang iyong mga maintenance na gamot sa tamang oras araw-araw.",
+        "Rest quietly for five minutes before your blood pressure check. / Magpahinga nang tahimik sa loob ng limang minuto bago sukatin ang iyong presyon ng dugo.",
+        "Rest your arm comfortably on the table at heart level. / Ilagay at ipahinga nang maayos ang iyong braso sa mesa, kapantay ng iyong puso."
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_5__q01.mp4"
+      },
+      {
+       "options": [
+        "Does anyone in your immediate family have high blood pressure? / Mayroon bang miyembro ng iyong malapit na pamilya na may altapresyon?",
+        "Check your blood pressure regularly. / Regular na suriin ang iyong presyon ng dugo.",
+        "Seek immediate medical help if you experience sudden chest pain. / Agad na humingi ng tulong medikal kung makaranas ng biglaang pananakit ng dibdib.",
+        "Do not stop taking your medicine without asking your doctor first. / Huwag ihinto ang pag-inom ng iyong gamot nang hindi muna kumukonsulta sa doktor."
+       ],
+       "answer": 1,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__check_your_blood_pressure_regularly.mp4"
+      },
+      {
+       "options": [
+        "Take your medicine on time. / Inumin ang iyong gamot sa tamang oras.",
+        "Keep your feet flat on the floor during blood pressure checks. / Panatilihing nakalapat ang iyong mga paa sa sahig habang sinusukat ang presyon ng dugo.",
+        "Limit your daily coffee and other caffeinated drink consumption. / Limitahan ang pag-inom ng kape at iba pang inuming may caffeine araw-araw.",
+        "Get enough quality sleep of seven to eight hours every night. / Matulog nang sapat at magkaroon ng de-kalidad na tulog na pito hanggang walong oras bawat gabi."
+       ],
+       "answer": 0,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__take_your_medicine_on_time.mp4"
+      },
+      {
+       "options": [
+        "Drink plenty of clean water every single day without fail. / Uminom ng sapat na malinis na tubig araw-araw.",
+        "Exercise regularly to help lower and control your blood pressure. / Regular na mag-ehersisyo upang makatulong na mapababa at makontrol ang presyon ng iyong dugo.",
+        "Seek immediate medical help if you experience sudden chest pain. / Agad na humingi ng tulong medikal kung makaranas ng biglaang pananakit ng dibdib.",
+        "Find time to relax and effectively manage your daily stress. / Maglaan ng oras para magpahinga at maayos na pamahalaan ang pang-araw-araw na stress."
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/hypertension_5__q04.mp4"
+      },
+      {
+       "options": [
+        "Stop smoking cigarettes and using electronic vape products. / Itigil ang paninigarilyo at paggamit ng mga vape.",
+        "Rest quietly for five minutes before your blood pressure check. / Magpahinga nang tahimik sa loob ng limang minuto bago sukatin ang iyong presyon ng dugo.",
+        "Do you experience severe dizziness or sudden loss of balance? / Nakakaranas ka ba ng matinding pagkahilo o biglaang pagkawala ng balanse?",
+        "Avoid drinking too much alcohol to protect your heart and liver. / Iwasan ang labis na pag-inom ng alak upang mapangalagaan ang iyong puso at atay."
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_5__q05.mp4"
+      },
+      {
+       "options": [
+        "Are you currently taking any herbal supplements for your condition? / Kasalukuyan ka bang umiinom ng mga halamang gamot o herbal supplements para sa iyong kondisyon?",
+        "Do you experience a severe, throbbing, or pounding headache? / Nakakaranas ka ba ng matindi, tumitibok, o pumipintig na sakit ng ulo?",
+        "Do you know the warning signs that need immediate medical attention? / Alam mo ba ang mga babalang palatandaan na nangangailangan ng agarang medikal na atensyon?",
+        "Does anyone in your immediate family have high blood pressure? / Mayroon bang miyembro ng iyong malapit na pamilya na may altapresyon?"
+       ],
+       "answer": 2,
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__do_you_know_the_warning_signs_that_need_immediate_medical_at.mp4"
+      },
+      {
+       "options": [
+        "Keep your feet flat on the floor during blood pressure checks. / Panatilihing nakalapat ang iyong mga paa sa sahig habang sinusukat ang presyon ng dugo.",
+        "Avoid eating salty and processed foods to protect your heart. / Iwasan ang pagkain ng maalat at mga pagkaing naproseso upang mapangalagaan ang iyong puso.",
+        "Limit coffee and other drinks with caffeine. / Limitahan ang pag-inom ng kape at iba pang inuming may caffeine.",
+        "Support your arm comfortably on the table at heart level. / Ilagay at ipahinga nang maayos ang iyong braso sa mesa, kapantay ng iyong puso."
+       ],
+       "answer": 2,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__limit_coffee_and_other_drinks_with_caffeine.mp4"
+      },
+      {
+       "options": [
+        "Exercise regularly to help lower and control your blood pressure. / Regular na mag-ehersisyo upang makatulong na mapababa at makontrol ang presyon ng iyong dugo.",
+        "Take your prescribed maintenance medicine on time every day. / Inumin ang iyong mga maintenance na gamot sa tamang oras araw-araw.",
+        "Rest quietly for five minutes before your blood pressure check. / Magpahinga nang tahimik sa loob ng limang minuto bago sukatin ang iyong presyon ng dugo.",
+        "Do not stop taking your medicine without asking your doctor first. / Huwag ihinto ang pag-inom ng iyong gamot nang hindi muna kumukonsulta sa doktor."
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/hypertension_5__q08.mp4"
+      },
+      {
+       "options": [
+        "Drink plenty of clean water every single day without fail. / Uminom ng sapat na malinis na tubig araw-araw.",
+        "Stop smoking cigarettes and using electronic vape products. / Itigil ang paninigarilyo at paggamit ng mga vape.",
+        "Check your blood pressure regularly using a home device. / Regular na suriin ang iyong presyon ng dugo gamit ang isang blood pressure monitor sa bahay.",
+        "Find time to relax and effectively manage your daily stress. / Maglaan ng oras para magpahinga at maayos na pamahalaan ang pang-araw-araw na stress."
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_5__q09.mp4"
+      },
+      {
+       "options": [
+        "Seek immediate medical help if you experience sudden chest pain. / Agad na humingi ng tulong medikal kung makaranas ng biglaang pananakit ng dibdib.",
+        "Avoid drinking too much alcohol to protect your heart and liver. / Iwasan ang labis na pag-inom ng alak upang mapangalagaan ang iyong puso at atay.",
+        "Get enough quality sleep of seven to eight hours every night. / Matulog nang sapat at magkaroon ng de-kalidad na tulog na pito hanggang walong oras bawat gabi.",
+        "Does anyone in your immediate family have high blood pressure? / Mayroon bang miyembro ng iyong malapit na pamilya na may altapresyon?"
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/hypertension_5__q10.mp4"
+      },
+      {
+       "options": [
+        "Do you experience severe dizziness or sudden loss of balance? / Nakakaranas ka ba ng matinding pagkahilo o biglaang pagkawala ng balanse?",
+        "Limit your daily coffee and other caffeinated drink consumption. / Limitahan ang pag-inom ng kape at iba pang inuming may caffeine araw-araw.",
+        "Keep your feet flat on the floor during blood pressure checks. / Panatilihing nakalapat ang iyong mga paa sa sahig habang sinusukat ang presyon ng dugo.",
+        "Find time to relax and effectively manage your daily stress. / Maglaan ng oras para magpahinga at maayos na pamahalaan ang pang-araw-araw na stress."
+       ],
+       "answer": 3,
+       "media": "assets/quizzes/hypertension_5__q11.mp4"
+      },
+      {
+       "options": [
+        "Do you know the warning signs that need immediate medical attention? / Alam mo ba ang mga babalang palatandaan na nangangailangan ng agarang medikal na atensyon?",
+        "Do you experience a severe, throbbing, or pounding headache? / Nakakaranas ka ba ng matindi, tumitibok, o pumipintig na sakit ng ulo?",
+        "Does anyone in your immediate family have high blood pressure? / Mayroon bang miyembro ng iyong malapit na pamilya na may altapresyon?",
+        "Are you experiencing blurry vision or sudden difficulty speaking? / Nakakaranas ka ba ng malabong paningin o biglaang hirap sa pagsasalita?"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/hypertension_5__q12.mp4"
+      },
+      {
+       "options": [
+        "Support your arm comfortably on the table at heart level. / Ilagay at ipahinga nang maayos ang iyong braso sa mesa, kapantay ng iyong puso.",
+        "Do not stop taking your medicine without asking your doctor first. / Huwag ihinto ang pag-inom ng iyong gamot nang hindi muna kumukonsulta sa doktor.",
+        "Do you experience severe dizziness or sudden loss of balance? / Nakakaranas ka ba ng matinding pagkahilo o biglaang pagkawala ng balanse?",
+        "Avoid eating salty and processed foods to protect your heart. / Iwasan ang pagkain ng maalat at mga pagkaing naproseso upang mapangalagaan ang iyong puso."
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/hypertension_5__q13.mp4"
+      },
+      {
+       "options": [
+        "Drink plenty of clean water every single day without fail. / Uminom ng sapat na malinis na tubig araw-araw.",
+        "Exercise regularly to help lower and control your blood pressure. / Regular na mag-ehersisyo upang makatulong na mapababa at makontrol ang presyon ng iyong dugo.",
+        "Keep your weight in control / Panatilihin ang tamang timbang ng iyong katawan.",
+        "Check your blood pressure regularly using a home device. / Regular na suriin ang iyong presyon ng dugo gamit ang isang blood pressure monitor sa bahay."
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/hypertension_5__q14.mp4"
+      },
+      {
+       "options": [
+        "Stop smoking cigarettes and using electronic vape products. / Itigil ang paninigarilyo at paggamit ng mga vape.",
+        "Get enough quality sleep of seven to eight hours every night. / Matulog nang sapat at magkaroon ng de-kalidad na tulog na pito hanggang walong oras bawat gabi.",
+        "Avoid drinking too much alcohol to protect your heart and liver. / Iwasan ang labis na pag-inom ng alak upang mapangalagaan ang iyong puso at atay.",
+        "Do not stop taking your medicine without asking your doctor first. / Huwag ihinto ang pag-inom ng iyong gamot nang hindi muna kumukonsulta sa doktor."
+       ],
+       "answer": 3,
+       "media": "assets/quizzes/hypertension_5__q15.mp4"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

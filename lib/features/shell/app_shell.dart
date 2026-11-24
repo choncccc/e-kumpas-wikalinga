@@ -13,7 +13,7 @@ import '../home/home_screen.dart';
 import '../profile/edit_profile_screen.dart';
 import '../profile/profile_screen.dart';
 import '../game/memory_game_screen.dart';
-import '../quiz/quiz_screen.dart';
+import '../quiz/quiz_list_screen.dart';
 import 'floating_nav_bar.dart';
 
 /// Signed-in shell: the four tabs plus the floating nav bar. Every tab stays
@@ -52,8 +52,11 @@ class _AppShellState extends State<AppShell> {
     super.dispose();
   }
 
+  static const _tabNames = ['Home', 'Explore', 'Bookmarks', 'Profile'];
+
   void _select(int i) {
     if (i == _index) return;
+    widget.study.logActivity('Switched tab', _tabNames[i]);
     if (_index == explore) _searchFocus.unfocus();
     setState(() => _index = i);
   }
@@ -68,16 +71,15 @@ class _AppShellState extends State<AppShell> {
 
   void _openQuiz() => Navigator.of(context).push(
     MaterialPageRoute(
-      builder: (_) => QuizScreen(
-        profile: widget.profile,
-        lessons: widget.lessons,
-        study: widget.study,
-      ),
+      settings: const RouteSettings(name: 'Quiz list'),
+      builder: (_) =>
+          QuizListScreen(profile: widget.profile, study: widget.study),
     ),
   );
 
   void _openGame() => Navigator.of(context).push(
     MaterialPageRoute(
+      settings: const RouteSettings(name: 'Memory Card Flip'),
       builder: (_) => MemoryGameScreen(
         profile: widget.profile,
         lessons: widget.lessons,
@@ -89,6 +91,7 @@ class _AppShellState extends State<AppShell> {
   Future<void> _editProfile() async {
     final saved = await Navigator.of(context).push<UserProfile>(
       MaterialPageRoute(
+        settings: const RouteSettings(name: 'Edit profile'),
         builder: (_) => EditProfileScreen(
           profile: widget.profile,
           repository: widget.users,
@@ -96,7 +99,10 @@ class _AppShellState extends State<AppShell> {
         ),
       ),
     );
-    if (saved != null) widget.onProfileChanged(saved);
+    if (saved != null) {
+      widget.study.logActivity('Saved profile changes');
+      widget.onProfileChanged(saved);
+    }
   }
 
   @override

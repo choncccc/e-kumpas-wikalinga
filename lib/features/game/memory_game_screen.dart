@@ -91,6 +91,10 @@ class _MemoryGameScreenState extends State<MemoryGameScreen> {
       l.number == 1 || _best.containsKey(l.number - 1);
 
   void _startLevel(MemoryLevel level) {
+    widget.study.logActivity(
+      'Started memory game level',
+      'Level ${level.number}: ${level.title}',
+    );
     _clock?.cancel();
     _hide?.cancel();
     setState(() {

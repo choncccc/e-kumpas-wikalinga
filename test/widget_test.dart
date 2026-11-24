@@ -359,7 +359,9 @@ void main() {
     expect(find.text('YESHY'), findsOneWidget);
   });
 
-  testWidgets('quiz runs ten questions and saves the score', (tester) async {
+  testWidgets('General Quiz 1 runs its ten questions and saves the score', (
+    tester,
+  ) async {
     final study = await launchSignedIn(tester);
     final quizCard = find.bySemanticsLabel(
       'Quiz: Test, sign and learn. Sign it Right!',
@@ -372,9 +374,21 @@ void main() {
     await tester.tap(quizCard);
     await settle(tester);
     expect(find.text('SIGN IT RIGHT'), findsOneWidget);
+    expect(find.text('General Quiz'), findsOneWidget);
+    // Hypertension Quiz 1 still lacks six recordings, so it can't start yet.
+    await tester.scrollUntilVisible(
+      find.textContaining('Videos coming soon (6 of 15'),
+      300,
+    );
+    expect(find.text('Hypertension Quiz'), findsOneWidget);
+    await tester.drag(find.byType(ListView), const Offset(0, 3000));
+    await settle(tester);
 
-    // The fakes hold 2 phrases (one question each) + 6 grammar questions.
-    const total = 8;
+    await tester.tap(find.text('Foundational Vocabulary'));
+    await settle(tester);
+    expect(find.text('General Quiz 1'), findsOneWidget);
+
+    const total = 10;
     for (var i = 0; i < total; i++) {
       expect(
         find.bySemanticsLabel('Question ${i + 1} of $total'),
@@ -405,10 +419,58 @@ void main() {
     }
 
     expect(study.quizzes, hasLength(1));
-    expect(study.quizzes.single.$2, total);
-    expect(find.text('${study.quizzes.single.$1}/$total'), findsOneWidget);
+    final (score, outOf, quizId) = study.quizzes.single;
+    expect((outOf, quizId), (total, 'general_1'));
+    expect(find.text('$score/$total'), findsOneWidget);
     // Every question is reviewed, then the replay button.
     await tester.scrollUntilVisible(find.text('Play again'), 300);
     expect(find.text('$total'), findsOneWidget);
+
+    // Back on the list, the quiz shows its best score.
+    await tester.tap(find.text('Back to quizzes'));
+    await settle(tester);
+    expect(find.text('Best score $score/$total'), findsOneWidget);
+
+    // Every step landed in the activity log.
+    final actions = study.log.map((e) => e.action).toList();
+    expect(actions.first, 'App opened');
+    expect(actions, containsAllInOrder(['Opened Quiz list', 'Opened Quiz']));
+    expect(
+      study.log.firstWhere((e) => e.action == 'Opened Quiz').detail,
+      'General Quiz 1: Foundational Vocabulary',
+    );
+    expect(
+      actions.where((a) => a == 'Answered quiz question'),
+      hasLength(total),
+    );
+    expect(
+      study.log.lastWhere((e) => e.action == 'Finished quiz').detail,
+      'General Quiz 1: $score/$total',
+    );
+  });
+
+  testWidgets('the activity log opens from the Profile tab', (tester) async {
+    final study = await launchSignedIn(tester);
+    await tester.tap(find.text('Profile'));
+    await settle(tester);
+    expect(study.log.last.action, 'Switched tab');
+    expect(study.log.last.detail, 'Profile');
+
+    final card = find.bySemanticsLabel('Open activity log');
+    await tester.scrollUntilVisible(card, 300);
+    await tester.tap(card);
+    await settle(tester);
+    expect(find.text('Activity log'), findsOneWidget);
+    expect(find.text('Today'), findsOneWidget);
+    expect(find.text('App opened'), findsOneWidget);
+    expect(find.text('Switched tab'), findsOneWidget);
+    expect(find.text('Opened Activity log'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Clear log'));
+    await settle(tester);
+    await tester.tap(find.text('Clear'));
+    await settle(tester);
+    expect(study.log, isEmpty);
+    expect(find.textContaining('Nothing logged yet'), findsOneWidget);
   });
 }

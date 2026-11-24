@@ -202,9 +202,14 @@ void main() {
     expect(await study.signsViewedSince(DateTime(2026, 11, 16)), 0);
 
     expect(await study.quizStats(), isNull);
-    await study.saveQuizResult(6, 10);
-    await study.saveQuizResult(9, 10);
-    await study.saveQuizResult(4, 10);
+    expect(await study.bestQuizScores(), isEmpty);
+    await study.saveQuizResult(6, 10, quizId: 'general_1');
+    await study.saveQuizResult(9, 10, quizId: 'general_1');
+    await study.saveQuizResult(4, 10, quizId: 'general_2');
+    final best = await study.bestQuizScores();
+    expect(best.keys, unorderedEquals(['general_1', 'general_2']));
+    expect((best['general_1']!.score, best['general_1']!.total), (9, 10));
+    expect((best['general_2']!.score, best['general_2']!.total), (4, 10));
     final stats = (await study.quizStats())!;
     expect((stats.taken, stats.bestScore, stats.lastScore), (3, 9, 4));
     expect(notified, greaterThan(0));
@@ -288,6 +293,77 @@ void main() {
     expect(numbers.firstWhere((t) => t.title == 'Numbers').tagalog, 'Numero');
     await study.setBookmarked(all[5].sign.key, true);
     expect(await study.bookmarks(), hasLength(1));
+    await study.saveQuizResult(7, 15, quizId: 'hypertension_2');
+    expect((await study.bestQuizScores()).keys, ['hypertension_2']);
     study.dispose();
+  });
+
+  test('upgrades a v6 database: quiz results gain a quiz id', () async {
+    final path = '${dir.path}/v6.db';
+    final old = await databaseFactory.openDatabase(
+      path,
+      options: OpenDatabaseOptions(
+        version: 6,
+        onCreate: (db, _) => db.execute('''CREATE TABLE quiz_result (
+            id INTEGER PRIMARY KEY AUTOINCREMENT, taken_at TEXT NOT NULL,
+            score INTEGER NOT NULL, total INTEGER NOT NULL)'''),
+      ),
+    );
+    await old.insert('quiz_result', {
+      'taken_at': '2026-11-01T09:00:00',
+      'score': 8,
+      'total': 10,
+    });
+    await old.close();
+
+    final db = await open(path).database;
+    expect(await db.getVersion(), AppDatabase.version);
+    final rows = await db.query('quiz_result');
+    expect(rows.single['score'], 8);
+    expect(rows.single.containsKey('quiz_id'), isTrue);
+    expect(rows.single['quiz_id'], isNull);
+  });
+
+  test('activity log: newest first, capped, cleared', () async {
+    final path = '${dir.path}/log.db';
+    var now = DateTime(2026, 11, 22, 9);
+    final study = SqliteStudyRepository(repoAt(path), clock: () => now);
+    await study.logActivity('App opened');
+    now = now.add(const Duration(seconds: 5));
+    await study.markViewed('triage/Vital Signs/Blood Pressure / BP');
+    await study.setBookmarked('triage/Vital Signs/Blood Pressure / BP', true);
+
+    final log = await study.activity();
+    expect(log.map((e) => e.action), [
+      'Bookmarked sign',
+      'Viewed sign',
+      'App opened',
+    ]);
+    expect(log.first.detail, 'Blood Pressure / BP · Vital Signs');
+    expect(log.first.at, now);
+    expect(await study.activity(limit: 1), hasLength(1));
+
+    await study.clearActivity();
+    expect(await study.activity(), isEmpty);
+    study.dispose();
+  });
+
+  test('upgrades a v7 database: adds the activity log', () async {
+    final path = '${dir.path}/v7.db';
+    final old = await databaseFactory.openDatabase(
+      path,
+      options: OpenDatabaseOptions(
+        version: 7,
+        onCreate: (db, _) => db.execute(
+          'CREATE TABLE app_meta (key TEXT PRIMARY KEY, value TEXT NOT NULL)',
+        ),
+      ),
+    );
+    await old.close();
+
+    final db = await open(path).database;
+    expect(await db.getVersion(), AppDatabase.version);
+    await db.insert('activity_log', {'at': '2026-11-22', 'action': 'x'});
+    expect(await db.query('activity_log'), hasLength(1));
   });
 }

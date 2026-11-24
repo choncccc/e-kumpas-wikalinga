@@ -11,7 +11,8 @@ Run from the project root, after tool/extract_content.py:
     pip install imageio-ffmpeg      (once; ships its own ffmpeg)
     python -I tool/build_media.py   [--check]  (--check: match only, no encode)
 
-Already-built outputs are skipped, so re-running is cheap. Files are matched
+Already-built outputs are skipped, so re-running is cheap. After changing a
+clip's entry in tool/media_fixes.py, delete its output so it is rebuilt. Files are matched
 by name: the English (or Tagalog) half of "Arm_ Braso.mov" against the term
 and its Tagalog. MANUAL covers names that don't match that way. Anything left
 over on either side is listed at the end.
@@ -22,6 +23,9 @@ import re
 import subprocess
 import sys
 import unicodedata
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from media_fixes import FIXES  # noqa: E402
 
 SRC = 'assets/E-Kumpas Wikalinga Videos/E-Kumpas Wikalinga Videos'
 OUT = 'assets/signs'
@@ -177,17 +181,32 @@ def slug(s):
     return re.sub(r'[^a-z0-9]+', '_', s).strip('_')[:60]
 
 
-def encode(ffmpeg, src, dst):
+def is_image(path):
+    return os.path.splitext(path)[1].lower() in IMAGE_EXT
+
+
+def encode(ffmpeg, src, dst, fix=None):
+    """Compresses one recording. [fix] (from media_fixes.FIXES) trims the
+    clip or crops clutter off its sides."""
+    fix = fix or {}
     tmp = dst + '.part'
-    if os.path.splitext(src)[1].lower() in IMAGE_EXT:
-        args = ['-vf', 'scale=720:-2', '-q:v', '4', '-f', 'mjpeg']
+    crop = ''
+    if 'crop' in fix:
+        left, right, top, bottom = (*fix['crop'], 0, 0)[:4]
+        crop = (f'crop=iw*{1 - left - right:.4f}:ih*{1 - top - bottom:.4f}:'
+                f'iw*{left:.4f}:ih*{top:.4f},')
+    start = fix.get('start', 0)
+    seek = ['-ss', str(start)] if start else []
+    trim = ['-t', f"{fix['end'] - start:.3f}"] if 'end' in fix else []
+    if dst.endswith('.jpg'):
+        args = ['-vf', f'{crop}scale=720:-2', '-frames:v', '1', '-q:v', '4', '-f', 'mjpeg']
     else:
         # Muted, 640 px wide H.264 that every Android/iOS decoder plays.
-        args = ['-map', '0:v:0', '-an', '-vf', 'scale=640:-2,fps=30',
+        args = ['-map', '0:v:0', '-an', *trim, '-vf', f'{crop}scale=640:-2,fps=30',
                 '-c:v', 'libx264', '-profile:v', 'main', '-pix_fmt', 'yuv420p',
                 '-crf', '28', '-preset', 'slow', '-movflags', '+faststart',
                 '-f', 'mp4']
-    subprocess.run([ffmpeg, '-v', 'error', '-y', '-i', src, *args, tmp], check=True)
+    subprocess.run([ffmpeg, '-v', 'error', '-y', *seek, '-i', src, *args, tmp], check=True)
     os.replace(tmp, dst)
 
 
@@ -201,13 +220,11 @@ def poster(ffmpeg, video, dst):
     os.replace(tmp, dst)
 
 
-def main():
-    sys.stdout.reconfigure(encoding='utf-8')
-    check_only = '--check' in sys.argv
-    with open(LESSONS, encoding='utf-8') as f:
-        lessons = json.load(f)
-
-    plan = []  # (sign, src, dst)
+def match(lessons):
+    """Pairs every lesson sign with its recording. Sets sign['media'] and
+    returns (plan, missing, leftover), plan being (sign, src_rel, dst) with
+    src_rel relative to SRC."""
+    plan = []  # (sign, src_rel, dst)
     used = set()
     missing = []
     for cat in lessons['categories']:
@@ -247,10 +264,10 @@ def main():
                 if src_rel in used:
                     raise SystemExit(f'{src_rel} matched twice; add a MANUAL entry.')
                 used.add(src_rel)
-                ext = '.jpg' if os.path.splitext(src_rel)[1].lower() in IMAGE_EXT else '.mp4'
+                ext = '.jpg' if is_image(src_rel) else '.mp4'
                 dst = f'{OUT}/{cat["id"]}/{slug(topic["title"])}__{slug(sign["term"])}{ext}'
                 sign['media'] = dst
-                plan.append((sign, os.path.join(root, src_rel), dst))
+                plan.append((sign, f'{FOLDERS[cat["id"]]}/{src_rel}', dst))
 
     leftover = []
     for cat_id, folder in FOLDERS.items():
@@ -260,6 +277,15 @@ def main():
                 rel = os.path.relpath(os.path.join(d, n), root).replace('\\', '/')
                 if rel not in used and f'{folder}/{rel}' not in UNUSED:
                     leftover.append(f'{folder}/{rel}')
+    return plan, missing, leftover
+
+
+def main():
+    sys.stdout.reconfigure(encoding='utf-8')
+    check_only = '--check' in sys.argv
+    with open(LESSONS, encoding='utf-8') as f:
+        lessons = json.load(f)
+    plan, missing, leftover = match(lessons)
 
     print(f'{len(plan)} signs matched, {len(missing)} without media, '
           f'{len(leftover)} recordings unused')
@@ -280,7 +306,7 @@ def main():
         os.makedirs(os.path.dirname(dst), exist_ok=True)
         if not os.path.exists(dst):
             print(f'[{i}/{len(plan)}] {dst}', flush=True)
-            encode(ffmpeg, src, dst)
+            encode(ffmpeg, os.path.join(SRC, src), dst, FIXES.get(src))
         jpg = dst[:-4] + '.jpg'
         if dst.endswith('.mp4') and not os.path.exists(jpg):
             poster(ffmpeg, dst, jpg)
@@ -297,4 +323,5 @@ def main():
     print(f'Wrote {len(wanted)} files, {total / 1e6:.1f} MB, and updated {LESSONS}')
 
 
-main()
+if __name__ == '__main__':
+    main()

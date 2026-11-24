@@ -53,3 +53,8 @@ app.*.map.json
 
 # Renamed release builds
 /dist/
+
+# Compressed sign/quiz videos the app bundles (~32 MB). Rebuild them from the
+# raw recordings with tool/build_media.py and tool/build_quizzes.py.
+/assets/signs/**/*.mp4
+/assets/quizzes/**/*.mp4

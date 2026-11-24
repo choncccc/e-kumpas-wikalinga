@@ -127,6 +127,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               tint: _tints[i % _tints.length],
                               onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
+                                  settings: RouteSettings(
+                                    name: 'Topic',
+                                    arguments: topics[i].title,
+                                  ),
                                   builder: (_) => TopicScreen(
                                     category: category,
                                     topic: topics[i],

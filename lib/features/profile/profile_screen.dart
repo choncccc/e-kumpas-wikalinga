@@ -15,6 +15,7 @@ import '../../widgets/profile_avatar.dart';
 import '../../widgets/staggered_entrance.dart';
 import '../lessons/sign_entry_tile.dart' show openTopic;
 import '../onboarding/widgets/step_parts.dart' show formatLongDate;
+import 'activity_log_screen.dart';
 
 /// Profile tab from the mockup: photo with the nickname arched over it, the
 /// learner's details, progress per category, recent topics and today's stats.
@@ -233,6 +234,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       topicId: r.topicId,
                     ),
                   ),
+                  const SizedBox(height: 14),
+                  _ActivityCard(
+                    onOpen: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        settings: const RouteSettings(name: 'Activity log'),
+                        builder: (_) => ActivityLogScreen(study: widget.study),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -390,6 +400,61 @@ class _Card extends StatelessWidget {
           const SizedBox(height: 10),
           child,
         ],
+      ),
+    );
+  }
+}
+
+class _ActivityCard extends StatelessWidget {
+  const _ActivityCard({required this.onOpen});
+
+  final VoidCallback onOpen;
+
+  @override
+  Widget build(BuildContext context) {
+    return _Card(
+      title: 'Activity log',
+      child: Semantics(
+        button: true,
+        label: 'Open activity log',
+        excludeSemantics: true,
+        child: Pressable(
+          onTap: onOpen,
+          scale: 0.97,
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(6, 6, 14, 6),
+            decoration: BoxDecoration(
+              color: AppColors.teal,
+              borderRadius: BorderRadius.circular(28),
+            ),
+            child: const Row(
+              children: [
+                CircleAvatar(
+                  radius: 22,
+                  backgroundColor: AppColors.sage,
+                  child: Icon(
+                    Icons.history_rounded,
+                    color: AppColors.white,
+                    size: 24,
+                  ),
+                ),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    'When the app was opened, and every lesson, sign, quiz '
+                    'and game tapped',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 13.5,
+                      color: AppColors.white,
+                    ),
+                  ),
+                ),
+                Icon(Icons.chevron_right_rounded, color: AppColors.white),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

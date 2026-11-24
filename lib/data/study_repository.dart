@@ -24,14 +24,33 @@ abstract class StudyRepository extends ChangeNotifier {
   /// Distinct signs viewed at or after [since].
   Future<int> signsViewedSince(DateTime since);
 
-  Future<void> saveQuizResult(int score, int total);
+  /// Records a finished quiz. [quizId] names which one (e.g. "general_1").
+  Future<void> saveQuizResult(int score, int total, {String? quizId});
   Future<QuizStats?> quizStats();
+
+  /// Best score on each quiz, by quiz id.
+  Future<Map<String, QuizScore>> bestQuizScores();
 
   /// Records a cleared Memory Card Flip level, keeping the fastest time.
   Future<void> saveGameLevel(int level, Duration time);
 
   /// Best clear time per cleared level (levels start at 1).
   Future<Map<int, Duration>> gameLevels();
+
+  /// Adds a line to the activity log. Doesn't notify listeners: it is written
+  /// on nearly every tap and nothing needs to redraw for it.
+  Future<void> logActivity(String action, [String? detail]);
+
+  /// The activity log, newest first.
+  Future<List<ActivityEntry>> activity({int limit = 2000});
+  Future<void> clearActivity();
+
+  /// "Blood Pressure / BP · Vital Signs" for a sign key.
+  static String describeSign(String signKey) {
+    final parts = signKey.split('/');
+    if (parts.length < 3) return signKey;
+    return '${parts.sublist(2).join('/')} · ${parts[1]}';
+  }
 }
 
 class SqliteStudyRepository extends StudyRepository {
@@ -70,6 +89,10 @@ class SqliteStudyRepository extends StudyRepository {
 
   @override
   Future<void> setBookmarked(String signKey, bool bookmarked) async {
+    logActivity(
+      bookmarked ? 'Bookmarked sign' : 'Removed bookmark',
+      StudyRepository.describeSign(signKey),
+    );
     final db = await _db;
     if (bookmarked) {
       await db.insert('bookmark', {
@@ -84,6 +107,7 @@ class SqliteStudyRepository extends StudyRepository {
 
   @override
   Future<void> markViewed(String signKey) async {
+    logActivity('Viewed sign', StudyRepository.describeSign(signKey));
     final db = await _db;
     final now = _now();
     // Insert-or-ignore then update, not an UPSERT: older Android SQLite
@@ -163,14 +187,30 @@ class SqliteStudyRepository extends StudyRepository {
   }
 
   @override
-  Future<void> saveQuizResult(int score, int total) async {
+  Future<void> saveQuizResult(int score, int total, {String? quizId}) async {
     final db = await _db;
     await db.insert('quiz_result', {
       'taken_at': _now(),
       'score': score,
       'total': total,
+      'quiz_id': quizId,
     });
     notifyListeners();
+  }
+
+  @override
+  Future<Map<String, QuizScore>> bestQuizScores() async {
+    final db = await _db;
+    final rows = await db.rawQuery(
+      'SELECT quiz_id, score, total FROM quiz_result '
+      'WHERE quiz_id IS NOT NULL '
+      'ORDER BY CAST(score AS REAL) / total ASC',
+    );
+    // Ascending, so each quiz's best row is the one written last.
+    return {
+      for (final r in rows)
+        r['quiz_id'] as String: QuizScore(r['score'] as int, r['total'] as int),
+    };
   }
 
   @override
@@ -199,6 +239,11 @@ class SqliteStudyRepository extends StudyRepository {
 
   @override
   Future<void> saveGameLevel(int level, Duration time) async {
+    final secs = (time.inSeconds % 60).toString().padLeft(2, '0');
+    logActivity(
+      'Cleared memory game level',
+      'Level $level in ${time.inMinutes}:$secs',
+    );
     final db = await _db;
     final seconds = time.inSeconds;
     // Insert-or-ignore then keep the faster time (no UPSERT on old SQLite).
@@ -225,5 +270,55 @@ class SqliteStudyRepository extends StudyRepository {
       for (final r in rows)
         r['level'] as int: Duration(seconds: r['best_seconds'] as int),
     };
+  }
+
+  /// Oldest rows are dropped past this many, so the log can't grow forever.
+  static const activityLimit = 10000;
+
+  @override
+  Future<void> logActivity(String action, [String? detail]) async {
+    try {
+      final db = await _db;
+      await db.insert('activity_log', {
+        'at': _now(),
+        'action': action,
+        'detail': detail,
+      });
+      if (action == 'App opened') {
+        await db.rawDelete(
+          'DELETE FROM activity_log WHERE id <= '
+          '(SELECT MAX(id) FROM activity_log) - ?',
+          [activityLimit],
+        );
+      }
+    } catch (e) {
+      // Callers don't wait on this; a failed log line must never break a tap.
+      debugPrint('Activity log write failed: $e');
+    }
+  }
+
+  @override
+  Future<List<ActivityEntry>> activity({int limit = 2000}) async {
+    final db = await _db;
+    final rows = await db.query(
+      'activity_log',
+      orderBy: 'id DESC',
+      limit: limit,
+    );
+    return [
+      for (final r in rows)
+        ActivityEntry(
+          at: DateTime.parse(r['at'] as String),
+          action: r['action'] as String,
+          detail: r['detail'] as String?,
+        ),
+    ];
+  }
+
+  @override
+  Future<void> clearActivity() async {
+    final db = await _db;
+    await db.delete('activity_log');
+    notifyListeners();
   }
 }

@@ -35,6 +35,7 @@ class _ExploreScreenState extends State<ExploreScreen>
     with BookmarkedKeys<ExploreScreen> {
   final _query = TextEditingController();
   Timer? _debounce;
+  Timer? _logSearch;
 
   /// The query [_results] belong to; null while nothing has been searched.
   String? _resultsFor;
@@ -54,6 +55,7 @@ class _ExploreScreenState extends State<ExploreScreen>
   @override
   void dispose() {
     _debounce?.cancel();
+    _logSearch?.cancel();
     _query.dispose();
     super.dispose();
   }
@@ -65,6 +67,7 @@ class _ExploreScreenState extends State<ExploreScreen>
 
   void _onQueryChanged() {
     _debounce?.cancel();
+    _logSearch?.cancel();
     final q = _query.text.trim();
     if (q.isEmpty) {
       setState(() {
@@ -74,6 +77,11 @@ class _ExploreScreenState extends State<ExploreScreen>
       return;
     }
     _debounce = Timer(const Duration(milliseconds: 180), () => _search(q));
+    // Log the finished word, not every keystroke.
+    _logSearch = Timer(
+      const Duration(milliseconds: 1500),
+      () => widget.study.logActivity('Searched', q),
+    );
   }
 
   Future<void> _search(String q) async {

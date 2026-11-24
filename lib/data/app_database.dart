@@ -15,7 +15,7 @@ class AppDatabase {
   final String? _path;
 
   static const _fileName = 'ekumpas_wikalinga.db';
-  static const version = 6;
+  static const version = 8;
 
   Database? _db;
 
@@ -45,6 +45,7 @@ class AppDatabase {
         ''');
         await _createLessonTables(db);
         await _createStudyTables(db);
+        await _createActivityTable(db);
       },
       onUpgrade: (db, oldVersion, newVersion) async {
         if (oldVersion < 2) {
@@ -61,6 +62,10 @@ class AppDatabase {
         }
         if (oldVersion < 4) await _createStudyTables(db);
         if (oldVersion >= 4 && oldVersion < 6) await _createGameTable(db);
+        if (oldVersion >= 4 && oldVersion < 7) {
+          await db.execute('ALTER TABLE quiz_result ADD COLUMN quiz_id TEXT');
+        }
+        if (oldVersion < 8) await _createActivityTable(db);
         if (oldVersion >= 3 && oldVersion < 5) {
           // Filled in by the reseed that contentVersion 3 triggers.
           await db.execute('ALTER TABLE lesson_topic ADD COLUMN tagalog TEXT');
@@ -120,6 +125,17 @@ class AppDatabase {
   static Future<void> _createSignKeyIndex(Database db) =>
       db.execute('CREATE UNIQUE INDEX idx_sign_key ON sign(sign_key)');
 
+  /// What the learner opened and tapped, newest rows last. Shown on the
+  /// Profile tab; never leaves the device.
+  static Future<void> _createActivityTable(Database db) => db.execute('''
+    CREATE TABLE activity_log (
+      id     INTEGER PRIMARY KEY AUTOINCREMENT,
+      at     TEXT NOT NULL,
+      action TEXT NOT NULL,
+      detail TEXT
+    )
+  ''');
+
   /// Memory Card Flip: one row per level the learner has cleared.
   static Future<void> _createGameTable(Database db) => db.execute('''
     CREATE TABLE game_level (
@@ -154,7 +170,8 @@ class AppDatabase {
         id       INTEGER PRIMARY KEY AUTOINCREMENT,
         taken_at TEXT    NOT NULL,
         score    INTEGER NOT NULL,
-        total    INTEGER NOT NULL
+        total    INTEGER NOT NULL,
+        quiz_id  TEXT
       )
     ''');
   }

@@ -117,6 +117,24 @@ class RecentTopic {
   final DateTime lastViewed;
 }
 
+/// One line of the on-device activity log: something the learner opened or
+/// tapped, e.g. ("Opened Topic", "Vital Signs").
+class ActivityEntry {
+  const ActivityEntry({required this.at, required this.action, this.detail});
+
+  final DateTime at;
+  final String action;
+  final String? detail;
+}
+
+/// A score on one quiz.
+class QuizScore {
+  const QuizScore(this.score, this.total);
+
+  final int score;
+  final int total;
+}
+
 /// Summary of finished quizzes.
 class QuizStats {
   const QuizStats({

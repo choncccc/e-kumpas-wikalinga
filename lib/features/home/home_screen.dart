@@ -52,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _openCategory(LessonCategory c) {
     Navigator.of(context).push(
       MaterialPageRoute(
+        settings: RouteSettings(name: 'Category', arguments: c.title),
         builder: (_) => CategoryScreen(
           category: c,
           lessons: widget.lessons,

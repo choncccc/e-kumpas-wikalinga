@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../data/lesson_repository.dart';
+import '../../data/quiz_content.dart';
 import '../../data/study_repository.dart';
 import '../../data/user_profile.dart';
 import '../../theme/app_colors.dart';
@@ -13,36 +12,40 @@ import '../../widgets/pressable.dart';
 import '../../widgets/profile_avatar.dart';
 import '../../widgets/sign_media.dart';
 import '../lessons/category_screen.dart' show LessonBackButton;
-import 'quiz_builder.dart';
+import 'quiz_question.dart';
 
-/// "Sign it Right!" quiz from the mockup: ten questions against the clock,
-/// instant feedback on each, then a review of every answer.
+/// "Sign it Right!" quiz from the mockup: one of the client's fixed quizzes
+/// against the clock, instant feedback on each question, then a review of
+/// every answer.
 class QuizScreen extends StatefulWidget {
   const QuizScreen({
     super.key,
     required this.profile,
-    required this.lessons,
     required this.study,
-    this.random,
-    this.timeLimit = const Duration(minutes: 3),
+    required this.quizSet,
+    required this.quiz,
+    this.timeLimit,
   });
 
   final UserProfile profile;
-  final LessonRepository lessons;
   final StudyRepository study;
-  final Random? random;
-  final Duration timeLimit;
+  final QuizSet quizSet;
+  final QuizDef quiz;
+
+  /// Defaults to the set's time per question times the question count.
+  final Duration? timeLimit;
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  List<QuizQuestion>? _questions;
+  late final List<QuizQuestion> _questions = [
+    for (final item in widget.quiz.items) QuizQuestion.fromItem(item),
+  ];
   List<int?> _answers = const [];
   int _index = 0;
   bool _finished = false;
-  Object? _error;
   Timer? _timer;
   late Duration _remaining;
 
@@ -58,27 +61,23 @@ class _QuizScreenState extends State<QuizScreen> {
     super.dispose();
   }
 
-  Future<void> _start() async {
+  Duration get _timeLimit =>
+      widget.timeLimit ?? widget.quizSet.timeLimitFor(widget.quiz);
+
+  void _start() {
     _timer?.cancel();
-    setState(() {
-      _questions = null;
-      _error = null;
-    });
-    try {
-      final signs = await widget.lessons.allSigns();
-      final questions = QuizBuilder(signs, random: widget.random).build();
-      if (!mounted) return;
-      setState(() {
-        _questions = questions;
-        _answers = List.filled(questions.length, null);
-        _index = 0;
-        _finished = false;
-        _remaining = widget.timeLimit;
-      });
-      _timer = Timer.periodic(const Duration(seconds: 1), (_) => _tick());
-    } catch (e) {
-      if (mounted) setState(() => _error = e);
-    }
+    _answers = List.filled(_questions.length, null);
+    _index = 0;
+    _finished = false;
+    _remaining = _timeLimit;
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) => _tick());
+  }
+
+  String get _name => '${widget.quizSet.title} ${widget.quiz.number}';
+
+  void _restart() {
+    widget.study.logActivity('Restarted quiz', _name);
+    setState(_start);
   }
 
   void _tick() {
@@ -93,7 +92,7 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   int get _score {
-    final q = _questions!;
+    final q = _questions;
     var n = 0;
     for (var i = 0; i < q.length; i++) {
       if (_answers[i] == q[i].correct) n++;
@@ -103,13 +102,18 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void _answer(int option) {
     if (_answers[_index] != null || _finished) return;
-    final right = option == _questions![_index].correct;
+    final right = option == _questions[_index].correct;
+    widget.study.logActivity(
+      'Answered quiz question',
+      '$_name, question ${_index + 1}: ${String.fromCharCode(65 + option)} '
+          '(${right ? 'correct' : 'wrong'})',
+    );
     right ? HapticFeedback.lightImpact() : HapticFeedback.heavyImpact();
     setState(() => _answers[_index] = option);
   }
 
   void _next() {
-    if (_index == _questions!.length - 1) {
+    if (_index == _questions.length - 1) {
       _finish();
     } else {
       setState(() => _index++);
@@ -124,27 +128,30 @@ class _QuizScreenState extends State<QuizScreen> {
     if (_finished) return;
     _timer?.cancel();
     setState(() => _finished = true);
-    widget.study.saveQuizResult(_score, _questions!.length);
+    widget.study.logActivity(
+      'Finished quiz',
+      '$_name: $_score/${_questions.length}'
+          '${_remaining == Duration.zero ? ' (time ran out)' : ''}',
+    );
+    widget.study.saveQuizResult(
+      _score,
+      _questions.length,
+      quizId: widget.quiz.id,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final questions = _questions;
     final Widget body;
-    if (_error != null) {
-      body = const Center(child: Text('Couldn’t build a quiz right now.'));
-    } else if (questions == null) {
-      body = const Center(
-        child: CircularProgressIndicator(color: AppColors.teal),
-      );
-    } else if (_finished) {
+    if (_finished) {
       body = _Results(
         key: const ValueKey('results'),
         questions: questions,
         answers: _answers,
         score: _score,
         timedOut: _remaining == Duration.zero,
-        onAgain: _start,
+        onAgain: _restart,
         onDone: () => Navigator.of(context).maybePop(),
       );
     } else {
@@ -165,7 +172,11 @@ class _QuizScreenState extends State<QuizScreen> {
       backgroundColor: AppColors.white,
       body: Column(
         children: [
-          _Header(profile: widget.profile),
+          QuizHeader(
+            profile: widget.profile,
+            title: '${widget.quizSet.title} ${widget.quiz.number}',
+            subtitle: widget.quiz.title,
+          ),
           Expanded(
             child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 380),
@@ -189,10 +200,19 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 }
 
-class _Header extends StatelessWidget {
-  const _Header({required this.profile});
+/// Avatar, title and the mustard "SIGN IT RIGHT" bar, shared by the quiz
+/// list and the quiz itself.
+class QuizHeader extends StatelessWidget {
+  const QuizHeader({
+    super.key,
+    required this.profile,
+    required this.title,
+    this.subtitle,
+  });
 
   final UserProfile profile;
+  final String title;
+  final String? subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -214,13 +234,35 @@ class _Header extends StatelessWidget {
                 ring: false,
               ),
               const SizedBox(width: 8),
-              const Text(
-                'Quiz',
-                style: TextStyle(
-                  fontFamily: AppFonts.display,
-                  fontWeight: FontWeight.w900,
-                  fontSize: 28,
-                  color: AppColors.ink,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        title,
+                        style: const TextStyle(
+                          fontFamily: AppFonts.display,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 28,
+                          color: AppColors.ink,
+                        ),
+                      ),
+                    ),
+                    if (subtitle != null)
+                      Text(
+                        subtitle!,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.teal,
+                        ),
+                      ),
+                  ],
                 ),
               ),
             ],
@@ -501,36 +543,6 @@ class _QuestionBody extends StatelessWidget {
               asset: q.media,
               label: 'Sign to identify',
               borderRadius: 22,
-            ),
-          ),
-        ],
-        if (q.subject != null) ...[
-          const SizedBox(height: 14),
-          Container(
-            constraints: const BoxConstraints(minHeight: 110),
-            alignment: Alignment.center,
-            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(22),
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.seafoam.withValues(alpha: 0.2),
-                  blurRadius: 14,
-                  offset: const Offset(0, 6),
-                ),
-              ],
-            ),
-            child: Text(
-              '“${q.subject}”',
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontFamily: AppFonts.display,
-                fontWeight: FontWeight.w700,
-                fontSize: 22,
-                color: AppColors.teal,
-                height: 1.25,
-              ),
             ),
           ),
         ],
@@ -977,7 +989,7 @@ class _Results extends StatelessWidget {
         TextButton(
           onPressed: onDone,
           child: const Text(
-            'Back to home',
+            'Back to quizzes',
             style: TextStyle(color: AppColors.teal),
           ),
         ),
@@ -1026,15 +1038,6 @@ class _ReviewRow extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                q.subject == null ? q.prompt : '“${q.subject}”',
-                style: const TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 13.5,
-                  color: AppColors.ink,
-                ),
-              ),
-              const SizedBox(height: 4),
               if (answer == null)
                 const _AnswerChip(text: 'No answer', right: false)
               else if (!right)

@@ -29,6 +29,7 @@ Future<void> openTopic(
   }
   await Navigator.of(context).push(
     MaterialPageRoute(
+      settings: RouteSettings(name: 'Topic', arguments: topic.title),
       builder: (_) => TopicScreen(
         category: LearningContent.byId(categoryId),
         topic: topic,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'data/activity_observer.dart';
 import 'data/lesson_repository.dart';
 import 'data/photo_picker.dart';
 import 'data/study_repository.dart';
@@ -51,6 +52,7 @@ class EKumpasApp extends StatelessWidget {
       title: 'e-Kumpas Wikalinga',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
+      navigatorObservers: [ActivityObserver(study)],
       home: LaunchGate(
         repository: repository,
         lessons: lessons,
@@ -89,6 +91,7 @@ class _LaunchGateState extends State<LaunchGate> {
   @override
   void initState() {
     super.initState();
+    widget.study.logActivity('App opened');
     _load();
   }
 
