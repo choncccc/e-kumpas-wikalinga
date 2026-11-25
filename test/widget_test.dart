@@ -375,12 +375,9 @@ void main() {
     await settle(tester);
     expect(find.text('SIGN IT RIGHT'), findsOneWidget);
     expect(find.text('General Quiz'), findsOneWidget);
-    // Hypertension Quiz 1 still lacks six recordings, so it can't start yet.
-    await tester.scrollUntilVisible(
-      find.textContaining('Videos coming soon (6 of 15'),
-      300,
-    );
-    expect(find.text('Hypertension Quiz'), findsOneWidget);
+    // Every quiz has its recordings now, Hypertension Quiz 1 included.
+    await tester.scrollUntilVisible(find.text('Hypertension Quiz'), 300);
+    expect(find.textContaining('Videos coming soon'), findsNothing);
     await tester.drag(find.byType(ListView), const Offset(0, 3000));
     await settle(tester);
 
@@ -427,6 +424,7 @@ void main() {
     expect(find.text('$total'), findsOneWidget);
 
     // Back on the list, the quiz shows its best score.
+    await tester.scrollUntilVisible(find.text('Back to quizzes'), 300);
     await tester.tap(find.text('Back to quizzes'));
     await settle(tester);
     expect(find.text('Best score $score/$total'), findsOneWidget);

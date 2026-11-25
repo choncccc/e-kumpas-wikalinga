@@ -9,7 +9,7 @@ import '../../theme/app_theme.dart';
 import '../../widgets/pressable.dart';
 import 'quiz_screen.dart';
 
-/// Picks a quiz: the General and Hypertension sets, five quizzes each, with
+/// Picks a quiz: the General and Hypertension sets, with
 /// the learner's best score on every one.
 class QuizListScreen extends StatefulWidget {
   const QuizListScreen({

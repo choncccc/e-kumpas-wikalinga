@@ -159,3 +159,28 @@ for _path, _fix in [
      {'end': 5.6}),                     # idle tail, starts moving
 ]:
     FIXES.setdefault(_path, {}).update(_fix)
+
+# ---- Client's list (2026-11-25): cut the idle lead-in and tail so each
+# clip is just the sign. Picked at 0.1 s steps; later entries override the
+# earlier end times above, and the selfie crop is kept.
+for _path, _fix in [
+    ('Medical and Family Hx/Family Relationship/DOES ANYONE IN YOUR FAMILY HAVE HIGH BLOOD PRESSURE_ _ Meron bang may mataas na alta-presyon sa pamilya niyo__.mov',
+     {'start': 0.4, 'end': 9.4}),
+    ('Medical and Family Hx/General Health History/do you have other illness_.MOV',
+     {'start': 1.4, 'end': 7.6}),
+    ('Medical and Family Hx/Medications/are you taking your medicine for hpt_.MOV',
+     {'start': 1.9, 'end': 11.3}),
+    ('Procedures & Health Adv/Pre-Measurment Instructions/PUT CUFF ON ARM _ILAGAY ANG BP CUFF SA BRASO.mov',
+     {'start': 0.2, 'end': 5.0}),       # mouthing before, arm drops after
+    ('Convo/Common Greetings & Introduction/Good Afternoon_ Magandang Hapon.mov',
+     {'start': 1.3, 'end': 4.5}),
+    ('Convo/Common Greetings & Introduction/Good Evening_ Magandang Gabi.mov',
+     {'start': 0.7, 'end': 3.6}),       # arms swing out at the end
+    ('Convo/Courtesis/Please _ Pakiusap.mov',
+     {'start': 0.8, 'end': 3.3}),       # laughs at the end
+    ('Convo/Questions/What Is Your Work_ _ Anong trabaho mo__.mov',
+     {'start': 0.9, 'end': 3.7}),
+    ('Medical and Family Hx/Medications/Pain killer_ Pampawala ng sakit.mov',
+     {'start': 0.7, 'end': 3.1}),
+]:
+    FIXES.setdefault(_path, {}).update(_fix)

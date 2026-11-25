@@ -1,5 +1,9 @@
 import '../../data/lesson_models.dart';
 
+/// Clock for a level: five minutes for level 1, one more for each level
+/// after (client request, Nov 2026).
+Duration levelTimeLimit(int level) => Duration(minutes: 4 + level);
+
 /// One pair in a level: the lesson sign whose recording goes on the blue
 /// card, and optionally shorter wording for the green card.
 class MemoryItem {

@@ -4,7 +4,7 @@
   {
    "id": "general",
    "title": "General Quiz",
-   "subtitle": "Everyday signs: letters, greetings, triage, family and lifestyle.",
+   "subtitle": "Everyday signs: letters, greetings, triage, family, lifestyle and procedures.",
    "seconds_per_item": 18,
    "quizzes": [
     {
@@ -541,6 +541,113 @@
        "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__bare_the_arm_roll_up_sleeve.mp4"
       }
      ]
+    },
+    {
+     "id": "general_6",
+     "number": 6,
+     "title": "Procedures & Health Advice",
+     "items": [
+      {
+       "options": [
+        "Keep feet flat on the floor / Ilapat nang maayos ang mga paa sa sahig",
+        "Rest for 5 minutes / Magpahinga nang 5 minuto",
+        "Put cuff on arm / Isuot ang cuff sa braso",
+        "Empty bladder / Umihi muna"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/general_6__q01.mp4"
+      },
+      {
+       "options": [
+        "No smoking (30 mins before) / Walang paninigarilyo 30 minuto bago kunin ang BP",
+        "No heavy exercise (30 mins before) / Walang mabigat na ehersisyo 30 minuto bago kunin ang BP",
+        "No coffee / caffeine (30 mins before) / Walang kape / kapeina 30 minuto bago kunin ang BP",
+        "Rest for 5 minutes / Magpahinga nang 5 minuto"
+       ],
+       "answer": 2,
+       "media": "assets/signs/procedures/pre_measurement_instructions_bp_taking__no_coffee_caffeine_30_mins_before.mp4"
+      },
+      {
+       "options": [
+        "Put cuff on arm / Isuot ang cuff sa braso",
+        "Bare the arm / Roll up sleeve / Itupi ang manggas",
+        "Support arm on table at heart level / Ipatong ang braso sa mesa",
+        "Keep feet flat on the floor / Ilapat nang maayos ang mga paa sa sahig"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/general_6__q03.mp4"
+      },
+      {
+       "options": [
+        "Urine Test / Pagsusuri sa Ihi",
+        "Laboratory / Laboratoryo",
+        "ECG / Pagsusuri sa Tibok ng Puso",
+        "Blood Test / Pagsusuri sa Dugo"
+       ],
+       "answer": 3,
+       "media": "assets/signs/procedures/medical_procedures__blood_test.mp4"
+      },
+      {
+       "options": [
+        "Physical Examination / Pisikal na Eksaminasyon",
+        "Check Eyes / Vision Screening / Pagsusuri sa Paningin",
+        "Take Pulse / Check Heart Rate / Suriin ang Bilis ng Tibok ng Puso",
+        "Laboratory / Laboratoryo"
+       ],
+       "answer": 1,
+       "media": "assets/quizzes/general_6__q05.mp4"
+      },
+      {
+       "options": [
+        "Blood Test / Pagsusuri sa Dugo",
+        "Urine Test / Pagsusuri sa Ihi",
+        "Physical Examination / Pisikal na Eksaminasyon",
+        "ECG / Pagsusuri sa Tibok ng Puso"
+       ],
+       "answer": 2,
+       "media": "assets/quizzes/general_6__q06.mp4"
+      },
+      {
+       "options": [
+        "Eat less salty food / Kumain ng mas kaunting maalat na pagkain",
+        "Drink plenty of water every day / Uminom ng maraming tubig araw-araw",
+        "Eat more fruits and vegetables / Kumain ng mas maraming prutas at gulay",
+        "Eat healthy foods / Kumain ng masusustansyang pagkain"
+       ],
+       "answer": 0,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__eat_less_salty_food.mp4"
+      },
+      {
+       "options": [
+        "Get enough sleep / Matulog nang sapat",
+        "Exercise regularly / Mag-ehersisyo nang regular",
+        "Avoid too much stress / Iwasan ang sobrang stress",
+        "Weight control / Healthy weight / Pagkontrol sa timbang"
+       ],
+       "answer": 1,
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__exercise_regularly.mp4"
+      },
+      {
+       "options": [
+        "Regular medical checkup / Regular na medikal na checkup",
+        "Check your blood pressure regularly / Suriin nang regular ang iyong presyon ng dugo",
+        "Control cholesterol and sugar / Kontrolin ang kolesterol at asukal",
+        "Take your medicine on time / Inumin ang iyong gamot sa tamang oras"
+       ],
+       "answer": 3,
+       "media": "assets/quizzes/general_6__q09.mp4"
+      },
+      {
+       "options": [
+        "Avoid drinking too much alcohol / Iwasan ang sobrang pag-inom ng alak",
+        "Limit coffee and other drinks with caffeine / Limitahan ang kape at iba pang inuming may kapeina",
+        "Drink plenty of water every day / Uminom ng maraming tubig araw-araw",
+        "Avoid too much stress / Iwasan ang sobrang stress"
+       ],
+       "answer": 0,
+       "media": "assets/quizzes/general_6__q10.mp4"
+      }
+     ]
     }
    ]
   },
@@ -578,12 +685,12 @@
       {
        "options": [
         "Chest Pain / Paninikip ng dibdib",
-        "Dizziness / Pagkahilo",
-        "Headache / Sakit ng ulo",
+        "Severe Dizziness / Lubhang pagkahilo",
+        "Headache / Sakit ng Ulo",
         "Fever / Lagnat"
        ],
        "answer": 1,
-       "media": null
+       "media": "assets/signs/triage/red_flag_symptoms_hypertension__severe_dizziness_loss_of_balance.mp4"
       },
       {
        "options": [
@@ -593,27 +700,27 @@
         "Coffee / Kape"
        ],
        "answer": 1,
-       "media": null
+       "media": "assets/signs/nutrition/dietary_habits__salty_food.mp4"
       },
       {
        "options": [
         "Rest / Pahinga",
         "Sleep / Tulog",
         "Stress",
-        "Exercise / Ehersisyo"
+        "Exercise regularly / Ehersisyo"
        ],
        "answer": 3,
-       "media": null
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__exercise_regularly.mp4"
       },
       {
        "options": [
         "Vaccine / Bakuna",
         "Vitamin / Bitamina",
-        "Medicine / Medisina",
+        "Maintenance Medicine / Medisina",
         "Bandage / Benda"
        ],
        "answer": 2,
-       "media": null
+       "media": "assets/signs/medical_family/medications__maintenance_medicine.mp4"
       },
       {
        "options": [
@@ -650,7 +757,7 @@
         "Water / Tubig",
         "Coffee / Kape",
         "Juice",
-        "Alcohol / Alak"
+        "Alcohol drinking / Pag-inom ng alak"
        ],
        "answer": 3,
        "media": "assets/signs/nutrition/vices_risk_screening__alcohol_drinking.mp4"
@@ -658,22 +765,22 @@
       {
        "options": [
         "Sleep / Tulog",
-        "Stress",
+        "Manage stress and rest / Pamamahala sa stress at pahinga",
         "Work / Trabaho",
         "Exercise / Ehersisyo"
        ],
        "answer": 1,
-       "media": null
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__manage_stress_rest.mp4"
       },
       {
        "options": [
         "Rest / Pahinga",
         "Tired / Pagod",
         "Wake / Gising",
-        "Sleep / Tulog"
+        "Get enough sleep / Matulog nang sapat"
        ],
        "answer": 3,
-       "media": null
+       "media": "assets/signs/procedures/hypertension_prevention_nursing_advice__get_enough_sleep.mp4"
       },
       {
        "options": [
@@ -698,7 +805,7 @@
       {
        "options": [
         "Coffee / Kape",
-        "Cigarette, Vaping / Sigarilyo",
+        "Smoking / Paninigarilyo",
         "Sugar / Asukal",
         "Water / Tubig"
        ],

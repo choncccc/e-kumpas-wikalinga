@@ -58,7 +58,7 @@ class QuizDef {
   bool get isReady => missingMedia == 0;
 }
 
-/// General or Hypertension: five quizzes each.
+/// General (one quiz per lesson category) or Hypertension.
 class QuizSet {
   const QuizSet({
     required this.id,

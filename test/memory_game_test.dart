@@ -188,7 +188,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Level I'), findsOneWidget);
     expect(find.text('Tap a card to start the clock'), findsOneWidget);
-    expect(find.text('Time Remaining: 2:00'), findsOneWidget);
+    expect(find.text('Time Remaining: 5:00'), findsOneWidget);
 
     // The same seed deals the same board, so the test knows where pairs are.
     final levels = resolveMemoryLevels(
@@ -224,7 +224,8 @@ void main() {
     await tester.tap(find.textContaining('Next: Level II'));
     await tester.pumpAndSettle();
     expect(find.text('Level II'), findsOneWidget);
-    expect(find.text('Time Remaining: 2:00'), findsOneWidget);
+    // A minute more on each level.
+    expect(find.text('Time Remaining: 6:00'), findsOneWidget);
   });
 
   testWidgets('long-press shows a face-up sign card large', (tester) async {

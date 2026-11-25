@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,7 +17,8 @@ import 'quiz_question.dart';
 
 /// "Sign it Right!" quiz from the mockup: one of the client's fixed quizzes
 /// against the clock, instant feedback on each question, then a review of
-/// every answer.
+/// every answer. Questions and their options are reshuffled every time the
+/// quiz is started or retaken (client request, Nov 2026).
 class QuizScreen extends StatefulWidget {
   const QuizScreen({
     super.key,
@@ -25,6 +27,7 @@ class QuizScreen extends StatefulWidget {
     required this.quizSet,
     required this.quiz,
     this.timeLimit,
+    this.random,
   });
 
   final UserProfile profile;
@@ -35,14 +38,16 @@ class QuizScreen extends StatefulWidget {
   /// Defaults to the set's time per question times the question count.
   final Duration? timeLimit;
 
+  /// Source for the shuffle; tests pass a seeded one.
+  final Random? random;
+
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  late final List<QuizQuestion> _questions = [
-    for (final item in widget.quiz.items) QuizQuestion.fromItem(item),
-  ];
+  late final Random _random = widget.random ?? Random();
+  List<QuizQuestion> _questions = const [];
   List<int?> _answers = const [];
   int _index = 0;
   bool _finished = false;
@@ -66,6 +71,10 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void _start() {
     _timer?.cancel();
+    _questions = [
+      for (final item in widget.quiz.items)
+        QuizQuestion.fromItem(item, random: _random),
+    ]..shuffle(_random);
     _answers = List.filled(_questions.length, null);
     _index = 0;
     _finished = false;

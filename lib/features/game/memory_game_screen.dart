@@ -17,8 +17,8 @@ import 'memory_game.dart';
 import 'memory_levels.dart';
 
 /// Memory Card Flip from the mockup: match each blue sign card with the
-/// green card that says what it means, ten pairs per level, two minutes on
-/// the clock. Clearing a level unlocks the next one.
+/// green card that says what it means, ten pairs per level, five minutes on
+/// the clock for level 1 and a minute more for each level after. Clearing a level unlocks the next one.
 class MemoryGameScreen extends StatefulWidget {
   const MemoryGameScreen({
     super.key,
@@ -26,7 +26,7 @@ class MemoryGameScreen extends StatefulWidget {
     required this.lessons,
     required this.study,
     this.random,
-    this.timeLimit = const Duration(minutes: 2),
+    this.timeLimit,
     this.levelSpecs = memoryLevelSpecs,
   });
 
@@ -34,7 +34,8 @@ class MemoryGameScreen extends StatefulWidget {
   final LessonRepository lessons;
   final StudyRepository study;
   final Random? random;
-  final Duration timeLimit;
+  /// Same clock for every level (tests); by default see [levelTimeLimit].
+  final Duration? timeLimit;
   final List<(String, List<MemoryItem>)> levelSpecs;
 
   @override
@@ -51,6 +52,7 @@ class _MemoryGameScreenState extends State<MemoryGameScreen> {
   Map<int, Duration> _best = const {};
   MemoryGame? _game;
   late Duration _remaining;
+  late Duration _limit;
   bool _started = false;
   bool _newBest = false;
   Timer? _clock;
@@ -99,7 +101,8 @@ class _MemoryGameScreenState extends State<MemoryGameScreen> {
     _hide?.cancel();
     setState(() {
       _game = MemoryGame(level, random: widget.random);
-      _remaining = widget.timeLimit;
+      _limit = widget.timeLimit ?? levelTimeLimit(level.number);
+      _remaining = _limit;
       _started = false;
       _newBest = false;
       _phase = _Phase.playing;
@@ -151,7 +154,7 @@ class _MemoryGameScreenState extends State<MemoryGameScreen> {
 
   Future<void> _clear(MemoryGame game) async {
     _clock?.cancel();
-    final time = widget.timeLimit - _remaining;
+    final time = _limit - _remaining;
     final number = game.level.number;
     final previous = _best[number];
     setState(() {
@@ -295,7 +298,7 @@ class _MemoryGameScreenState extends State<MemoryGameScreen> {
                               cleared: _phase == _Phase.cleared,
                               found: game.found.length,
                               total: game.level.pairs.length,
-                              time: widget.timeLimit - _remaining,
+                              time: _limit - _remaining,
                               tries: game.tries,
                               newBest: _newBest,
                               best: _best[game.level.number],
@@ -640,6 +643,10 @@ void _showLarge(
 /// White margin between a card's border and its picture or text.
 const _mediaInset = 5.0;
 
+/// How far sign cards zoom in: shows the middle ~60% of the frame, which
+/// keeps the signer's hands in view in the recordings.
+const _cardZoom = 1.6;
+
 const _blue = [Color(0xFF62D2D6), Color(0xFF2F8FA0)];
 const _green = [Color(0xFFA6DFA3), Color(0xFF6DB582)];
 
@@ -724,16 +731,24 @@ class _CardFront extends StatelessWidget {
             borderRadius: BorderRadius.circular(7),
             child: ColoredBox(
               color: panel,
+              // Zoomed in on the signer (client request): fitted whole, the
+              // landscape clips left her tiny on these tall cards.
               child: matched
-                  ? Image.asset(
-                      pair.sign.poster!,
-                      fit: BoxFit.contain,
-                      errorBuilder: (_, _, _) => const SizedBox.shrink(),
+                  ? ClipRect(
+                      child: Transform.scale(
+                        scale: _cardZoom,
+                        child: Image.asset(
+                          pair.sign.poster!,
+                          fit: BoxFit.contain,
+                          errorBuilder: (_, _, _) => const SizedBox.shrink(),
+                        ),
+                      ),
                     )
                   : SignMedia(
                       asset: pair.sign.media,
                       label: 'Sign card',
                       showControls: false,
+                      zoom: _cardZoom,
                       // The panel already provides the backdrop.
                       color: Colors.transparent,
                     ),

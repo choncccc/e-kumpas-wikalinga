@@ -1,11 +1,11 @@
 {
  "source": "prototype/contents/quizzes.pdf (revised quizzes from the client)",
- "note": "clip: glob under assets/E-Kumpas Wikalinga Videos/E-Kumpas Wikalinga Videos_v2, or null while the recording is missing. answer: A-D as in the PDF. tool/build_quizzes.py turns this into assets/content/quizzes.json.",
+ "note": "clip: glob under assets/E-Kumpas Wikalinga Videos/E-Kumpas Wikalinga Videos_v2, or null while the recording is missing. answer: A-D as in the PDF. tool/build_quizzes.py turns this into assets/content/quizzes.json. Hypertension Quiz 1 follows the revised key (new hypertension quiz 1/2.jpg, Nov 2026). General Quiz 6 (Procedures) was written from the lesson signs, not the PDF.",
  "sets": [
   {
    "id": "general",
    "title": "General Quiz",
-   "subtitle": "Everyday signs: letters, greetings, triage, family and lifestyle.",
+   "subtitle": "Everyday signs: letters, greetings, triage, family, lifestyle and procedures.",
    "seconds_per_item": 18,
    "quizzes": [
     {
@@ -82,6 +82,21 @@
       {"options": ["Rest for 5 minutes / Magpahinga ng limang minuto", "Empty bladder / Urinate first / Umihi muna", "No coffee / caffeine / Kape", "Keep feet flat on the floor / Panatilihing nakalapat ang mga paa sa sahig"], "answer": "D", "clip": "Quizzes (1-5)/Quiz 5/Copy of KEEP FEET FLAT ON FLOOR _ PANATILIHING PATAG ANG MGA PAA SA SAHIG.mov"},
       {"options": ["Roll up sleeve / Itupi ang manggas", "Support arm on table / Ipatong ang braso sa mesa", "No smoking before BP / Bawal manigarilyo bago magpakuha ng presyon ng dugo", "No heavy exercise / Bawal ang mabibigat na ehersisyo"], "answer": "A", "clip": "Quizzes (1-5)/Quiz 5/Copy of BARE THE ARM_ROLL UP SLEEVE _ ITAAS ANG MANGGAS.mov"}
      ]
+    },
+    {
+     "title": "Procedures & Health Advice",
+     "items": [
+      {"options": ["Keep feet flat on the floor / Ilapat nang maayos ang mga paa sa sahig", "Rest for 5 minutes / Magpahinga nang 5 minuto", "Put cuff on arm / Isuot ang cuff sa braso", "Empty bladder / Umihi muna"], "answer": "B", "clip": "Procedures & Health Adv/Pre-Measurment Instructions/Rest for 5 min _ MAGPAHINGA NG 5 MINUTO.mov"},
+      {"options": ["No smoking (30 mins before) / Walang paninigarilyo 30 minuto bago kunin ang BP", "No heavy exercise (30 mins before) / Walang mabigat na ehersisyo 30 minuto bago kunin ang BP", "No coffee / caffeine (30 mins before) / Walang kape / kapeina 30 minuto bago kunin ang BP", "Rest for 5 minutes / Magpahinga nang 5 minuto"], "answer": "C", "clip": "Procedures & Health Adv/Pre-Measurment Instructions/No coffee 30 min before _ BAWAL MAGKAPE BAGO ANG 30 MINUTO.mov"},
+      {"options": ["Put cuff on arm / Isuot ang cuff sa braso", "Bare the arm / Roll up sleeve / Itupi ang manggas", "Support arm on table at heart level / Ipatong ang braso sa mesa", "Keep feet flat on the floor / Ilapat nang maayos ang mga paa sa sahig"], "answer": "A", "clip": "Procedures & Health Adv/Pre-Measurment Instructions/PUT CUFF ON ARM _ILAGAY ANG BP CUFF SA BRASO.mov"},
+      {"options": ["Urine Test / Pagsusuri sa Ihi", "Laboratory / Laboratoryo", "ECG / Pagsusuri sa Tibok ng Puso", "Blood Test / Pagsusuri sa Dugo"], "answer": "D", "clip": "Procedures & Health Adv/Medical Procedures/BLOOD TEST _ PAGSUSURI NG DUGO.mov"},
+      {"options": ["Physical Examination / Pisikal na Eksaminasyon", "Check Eyes / Vision Screening / Pagsusuri sa Paningin", "Take Pulse / Check Heart Rate / Suriin ang Bilis ng Tibok ng Puso", "Laboratory / Laboratoryo"], "answer": "B", "clip": "Procedures & Health Adv/Medical Procedures/Check Eyes, Vision Screening _ MAGPACHECK-UP NG MATA.mov"},
+      {"options": ["Blood Test / Pagsusuri sa Dugo", "Urine Test / Pagsusuri sa Ihi", "Physical Examination / Pisikal na Eksaminasyon", "ECG / Pagsusuri sa Tibok ng Puso"], "answer": "C", "clip": "Procedures & Health Adv/Medical Procedures/Physical Examination _ PISIKAL NA PAGSUSURI.mov"},
+      {"options": ["Eat less salty food / Kumain ng mas kaunting maalat na pagkain", "Drink plenty of water every day / Uminom ng maraming tubig araw-araw", "Eat more fruits and vegetables / Kumain ng mas maraming prutas at gulay", "Eat healthy foods / Kumain ng masusustansyang pagkain"], "answer": "A", "clip": "Procedures & Health Adv/Hypertension Prevention & Nursing Advice/eat less salty food _ BAWASAN ANG PAGKAIN NG MAALAT NA PAGKAIN.mov"},
+      {"options": ["Get enough sleep / Matulog nang sapat", "Exercise regularly / Mag-ehersisyo nang regular", "Avoid too much stress / Iwasan ang sobrang stress", "Weight control / Healthy weight / Pagkontrol sa timbang"], "answer": "B", "clip": "Procedures & Health Adv/Hypertension Prevention & Nursing Advice/exercise regularly _ MAG-EHERSISYO ARAW-ARAW.mov"},
+      {"options": ["Regular medical checkup / Regular na medikal na checkup", "Check your blood pressure regularly / Suriin nang regular ang iyong presyon ng dugo", "Control cholesterol and sugar / Kontrolin ang kolesterol at asukal", "Take your medicine on time / Inumin ang iyong gamot sa tamang oras"], "answer": "D", "clip": "Procedures & Health Adv/Hypertension Prevention & Nursing Advice/Take your medication on time _ INUMIN ANG GAMOT SA TAMANG ORAS.mov"},
+      {"options": ["Avoid drinking too much alcohol / Iwasan ang sobrang pag-inom ng alak", "Limit coffee and other drinks with caffeine / Limitahan ang kape at iba pang inuming may kapeina", "Drink plenty of water every day / Uminom ng maraming tubig araw-araw", "Avoid too much stress / Iwasan ang sobrang stress"], "answer": "A", "clip": "Procedures & Health Adv/Hypertension Prevention & Nursing Advice/Avoid drinking too much alcohol.mov"}
+     ]
     }
    ]
   },
@@ -96,19 +111,19 @@
      "items": [
       {"options": ["Diabetes / Diyabetes", "Stroke", "Hypertension / Mataas na presyon ng dugo", "Allergy / Alerdyi"], "answer": "C", "clip": "Medical and Family Hx/Hypertension-Related Conditions/High blood pressure _ MATAAS NA BLOOD PRESSURE _ MATAAS NA PRESYON SA DUGO.mov"},
       {"options": ["Temperature / Temperatura", "Blood Pressure / Presyon ng dugo", "Pulse Rate / Bilis ng tibok ng puso", "Respiratory Rate / Bilis ng paghinga"], "answer": "B", "clip": "Med & Triage/Vital Signs/Blood pressure_ Presyon ng Dugo.mov"},
-      {"options": ["Chest Pain / Paninikip ng dibdib", "Dizziness / Pagkahilo", "Headache / Sakit ng ulo", "Fever / Lagnat"], "answer": "B", "clip": null},
-      {"options": ["Sugar / Asukal", "Salt / Asin", "Water / Tubig", "Coffee / Kape"], "answer": "B", "clip": null},
-      {"options": ["Rest / Pahinga", "Sleep / Tulog", "Stress", "Exercise / Ehersisyo"], "answer": "D", "clip": null},
-      {"options": ["Vaccine / Bakuna", "Vitamin / Bitamina", "Medicine / Medisina", "Bandage / Benda"], "answer": "C", "clip": null},
+      {"options": ["Chest Pain / Paninikip ng dibdib", "Severe Dizziness / Lubhang pagkahilo", "Headache / Sakit ng Ulo", "Fever / Lagnat"], "answer": "B", "clip": "Med & Triage/Red-Flag Symptoms (Hypertension)/Severe Dizziness_ Lubhang pagkahilo.mov"},
+      {"options": ["Sugar / Asukal", "Salt / Asin", "Water / Tubig", "Coffee / Kape"], "answer": "B", "clip": "Nutritional and Lifestyle Hx/Dietary Habits/Pagkaing maalat_salty food.mov"},
+      {"options": ["Rest / Pahinga", "Sleep / Tulog", "Stress", "Exercise regularly / Ehersisyo"], "answer": "D", "clip": "Procedures & Health Adv/Hypertension Prevention & Nursing Advice/exercise regularly _ MAG-EHERSISYO ARAW-ARAW.mov"},
+      {"options": ["Vaccine / Bakuna", "Vitamin / Bitamina", "Maintenance Medicine / Medisina", "Bandage / Benda"], "answer": "C", "clip": "Medical and Family Hx/Medications/Maintenance Medicine.mov"},
       {"options": ["Doctor / Doktor", "Nurse / Nars", "Patient / Pasyente", "Interpreter / Tagasalin"], "answer": "A", "clip": "Med & Triage/Healthcare Roles & Areas/Doctor_ Doktor.mov"},
       {"options": ["Patient / Pasyente", "Doctor / Doktor", "Nurse / Nars", "Pharmacist"], "answer": "C", "clip": "Med & Triage/Healthcare Roles & Areas/Nurse_ Nars.mov"},
       {"options": ["Stroke", "Allergy / Alerdyi", "Kidney Disease / Sakit sa bato", "Diabetes / Diyabetes"], "answer": "A", "clip": "Medical and Family Hx/Hypertension-Related Conditions/Stroke _ INATAKE SA UTAK.mov"},
-      {"options": ["Water / Tubig", "Coffee / Kape", "Juice", "Alcohol / Alak"], "answer": "D", "clip": "Nutritional and Lifestyle Hx/Vices & Risk Screening/pag-inom ng alak _ alcohol drnking.mov"},
-      {"options": ["Sleep / Tulog", "Stress", "Work / Trabaho", "Exercise / Ehersisyo"], "answer": "B", "clip": null},
-      {"options": ["Rest / Pahinga", "Tired / Pagod", "Wake / Gising", "Sleep / Tulog"], "answer": "D", "clip": null},
+      {"options": ["Water / Tubig", "Coffee / Kape", "Juice", "Alcohol drinking / Pag-inom ng alak"], "answer": "D", "clip": "Nutritional and Lifestyle Hx/Vices & Risk Screening/pag-inom ng alak _ alcohol drnking.mov"},
+      {"options": ["Sleep / Tulog", "Manage stress and rest / Pamamahala sa stress at pahinga", "Work / Trabaho", "Exercise / Ehersisyo"], "answer": "B", "clip": "Procedures & Health Adv/Hypertension Prevention & Nursing Advice/Manage Stress and Rest _ PAMAMAHALA SA STRESS AT PAHINGA.mov"},
+      {"options": ["Rest / Pahinga", "Tired / Pagod", "Wake / Gising", "Get enough sleep / Matulog nang sapat"], "answer": "D", "clip": "Procedures & Health Adv/Hypertension Prevention & Nursing Advice/Get enough sleep _ Matulog nang sapat_.mov"},
       {"options": ["Dizziness / Pagkahilo", "Chest Pain / Paninikip ng dibdib", "Headache / Sakit ng ulo", "Stomachache / Sakit ng tiyan"], "answer": "C", "clip": "Med & Triage/Chief Complains/Headache_ Sakit sa ulo.mov"},
       {"options": ["Kidney", "Lungs / Baga", "Heart / Puso", "Liver / Atay"], "answer": "C", "clip": "Med & Triage/Body Parts/heart.MOV"},
-      {"options": ["Coffee / Kape", "Cigarette, Vaping / Sigarilyo", "Sugar / Asukal", "Water / Tubig"], "answer": "B", "clip": "Nutritional and Lifestyle Hx/Vices & Risk Screening/paninigarilyo _ smoking.mov"}
+      {"options": ["Coffee / Kape", "Smoking / Paninigarilyo", "Sugar / Asukal", "Water / Tubig"], "answer": "B", "clip": "Nutritional and Lifestyle Hx/Vices & Risk Screening/paninigarilyo _ smoking.mov"}
      ]
     },
     {

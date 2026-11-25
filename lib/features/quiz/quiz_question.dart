@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import '../../data/quiz_content.dart';
 
 /// One question as the quiz screen shows it.
@@ -12,9 +14,13 @@ class QuizQuestion {
   });
 
   /// "What sign language is being demonstrated?" for a quiz item, as worded
-  /// in the client's quizzes. Options stay in their A–D order.
-  factory QuizQuestion.fromItem(QuizItem item) {
+  /// in the client's quizzes. With [random] the options are dealt in a new
+  /// order (so a retake isn't just the same letters again); without it they
+  /// stay in the answer key's A–D order.
+  factory QuizQuestion.fromItem(QuizItem item, {Random? random}) {
     final answer = item.options[item.answer];
+    final options = [...item.options];
+    if (random != null) options.shuffle(random);
     final still = item.media?.endsWith('.jpg') ?? false;
     return QuizQuestion(
       prompt: 'What sign language is being demonstrated?',
@@ -22,8 +28,8 @@ class QuizQuestion {
           ? 'Look closely at the handshape.'
           : 'Watch the sign carefully.',
       media: item.media,
-      options: item.options,
-      correct: item.answer,
+      options: options,
+      correct: options.indexOf(answer),
       explanation: 'The answer is “$answer”.',
     );
   }

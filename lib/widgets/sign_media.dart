@@ -19,6 +19,7 @@ class SignMedia extends StatefulWidget {
     this.color = AppColors.seafoam,
     this.borderRadius = 0,
     this.showControls = true,
+    this.zoom = 1,
   });
 
   /// Asset path, or null when the sign has no recording yet.
@@ -32,6 +33,11 @@ class SignMedia extends StatefulWidget {
 
   /// Speed chip and paused indicator. Taps still pause either way.
   final bool showControls;
+
+  /// Enlarges the picture about its centre, cropping the edges, for small
+  /// boxes where the signer would otherwise be tiny (game cards). Never
+  /// zooms past filling the box.
+  final double zoom;
 
   @override
   State<SignMedia> createState() => _SignMediaState();
@@ -128,6 +134,27 @@ class _SignMediaState extends State<SignMedia> {
     borderRadius: widget.borderRadius,
   );
 
+  /// [child] fitted whole, then scaled up by [SignMedia.zoom], capped where
+  /// a picture of [aspect] (width / height, when known) would fill the box.
+  Widget _zoomed(Widget child, double? aspect) {
+    if (widget.zoom <= 1) return child;
+    return LayoutBuilder(
+      builder: (context, box) {
+        var scale = widget.zoom;
+        if (aspect != null && aspect > 0 && box.hasBoundedHeight) {
+          final boxAspect = box.maxWidth / box.maxHeight;
+          final fill = aspect > boxAspect
+              ? aspect / boxAspect
+              : boxAspect / aspect;
+          if (fill < scale) scale = fill;
+        }
+        return ClipRect(
+          child: Transform.scale(scale: scale, child: child),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final asset = widget.asset;
@@ -141,10 +168,13 @@ class _SignMediaState extends State<SignMedia> {
         label: widget.label,
         child: ColoredBox(
           color: backdrop,
-          child: Image.asset(
-            asset,
-            fit: BoxFit.contain,
-            errorBuilder: (_, _, _) => _placeholder(),
+          child: _zoomed(
+            Image.asset(
+              asset,
+              fit: BoxFit.contain,
+              errorBuilder: (_, _, _) => _placeholder(),
+            ),
+            null,
           ),
         ),
       );
@@ -163,11 +193,14 @@ class _SignMediaState extends State<SignMedia> {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                Center(
-                  child: AspectRatio(
-                    aspectRatio: v.value.aspectRatio,
-                    child: VideoPlayer(v),
+                _zoomed(
+                  Center(
+                    child: AspectRatio(
+                      aspectRatio: v.value.aspectRatio,
+                      child: VideoPlayer(v),
+                    ),
                   ),
+                  v.value.aspectRatio,
                 ),
                 if (widget.showControls) ...[
                   AnimatedOpacity(
