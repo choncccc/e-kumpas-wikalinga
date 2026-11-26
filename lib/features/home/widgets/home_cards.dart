@@ -135,14 +135,16 @@ class _TileFace extends StatelessWidget {
 }
 
 /// Card with an image slot and a cream caption pill (the Quiz and Games
-/// cards), or just the image slot when [title] is null. The image is a
-/// placeholder until the real artwork is added.
+/// cards), or just the image slot when [title] is null. Shows [image] or
+/// [art] when given, otherwise a placeholder.
 class FeatureCard extends StatelessWidget {
   const FeatureCard({
     super.key,
     required this.semanticLabel,
     this.placeholderColor = AppColors.seafoam,
     this.placeholderLabel,
+    this.image,
+    this.art,
     this.title,
     this.subtitle,
     this.onTap,
@@ -151,9 +153,24 @@ class FeatureCard extends StatelessWidget {
   final String semanticLabel;
   final Color placeholderColor;
   final String? placeholderLabel;
+
+  /// Asset path of a cover photo for the image slot.
+  final String? image;
+
+  /// Drawn artwork for the image slot (see card_art.dart), used when there
+  /// is no [image].
+  final Widget? art;
   final String? title;
   final String? subtitle;
   final VoidCallback? onTap;
+
+  Widget _placeholder() => MediaPlaceholder(
+    color: placeholderColor,
+    label: placeholderLabel,
+    compact: title != null,
+    // With a caption, keep the icon clear of the pill.
+    iconAlignment: title == null ? Alignment.center : Alignment.topRight,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -169,15 +186,16 @@ class FeatureCard extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              MediaPlaceholder(
-                color: placeholderColor,
-                label: placeholderLabel,
-                compact: title != null,
-                // With a caption, keep the icon clear of the pill.
-                iconAlignment: title == null
-                    ? Alignment.center
-                    : Alignment.topRight,
-              ),
+              if (image != null)
+                Image.asset(
+                  image!,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, _, _) => _placeholder(),
+                )
+              else if (art != null)
+                art!
+              else
+                _placeholder(),
               if (title != null)
                 Align(
                   alignment: Alignment.bottomLeft,

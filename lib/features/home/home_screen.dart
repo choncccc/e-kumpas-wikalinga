@@ -6,15 +6,16 @@ import '../../data/study_repository.dart';
 import '../../data/user_profile.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
-import '../../widgets/media_placeholder.dart';
 import '../../widgets/profile_avatar.dart';
 import '../../widgets/staggered_entrance.dart';
 import '../lessons/category_screen.dart';
+import '../procedure/bp_procedure_screen.dart';
+import 'widgets/card_art.dart';
 import 'widgets/home_cards.dart';
 import 'widgets/tips_card.dart';
 
 /// Home dashboard from the mockup: greeting, search, the six lesson
-/// categories, then the photo / quiz / games cards beside the tips card.
+/// categories, then the BP procedure / quiz / games cards beside the tips card.
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
@@ -49,6 +50,13 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
+  void _openProcedure() => Navigator.of(context).push(
+    MaterialPageRoute(
+      settings: const RouteSettings(name: 'BP Procedure'),
+      builder: (_) => const BpProcedureScreen(),
+    ),
+  );
+
   void _openCategory(LessonCategory c) {
     Navigator.of(context).push(
       MaterialPageRoute(
@@ -79,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: Stack(
           children: [
-            // Header band with a parallax image slot behind the greeting.
+            // Header band with a faint parallax photo behind the greeting.
             Positioned(
               top: 0,
               left: 0,
@@ -98,16 +106,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: ColoredBox(
                     color: AppColors.mist,
-                    child: Padding(
-                      // Keep the corner icon below the status bar.
-                      padding: EdgeInsets.only(top: topInset),
-                      child: const Opacity(
-                        opacity: 0.55,
-                        child: MediaPlaceholder(
-                          color: AppColors.cloud,
-                          compact: true,
-                          iconAlignment: Alignment.topRight,
-                        ),
+                    // Faint, so the greeting stays readable over it.
+                    child: Opacity(
+                      opacity: 0.25,
+                      child: Image.asset(
+                        'assets/art/home/header.jpg',
+                        fit: BoxFit.cover,
+                        errorBuilder: (_, _, _) => const SizedBox.shrink(),
                       ),
                     ),
                   ),
@@ -160,11 +165,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              const Expanded(
+                              Expanded(
                                 flex: 4,
                                 child: FeatureCard(
-                                  semanticLabel: 'Blood pressure check photo',
+                                  semanticLabel:
+                                      'BP Procedure: how to take blood '
+                                      'pressure, step by step',
+                                  image: 'assets/procedure/bp_cover.jpg',
+                                  title: 'BP PROCEDURE',
+                                  subtitle: 'How to take BP',
                                   placeholderColor: AppColors.aqua,
+                                  onTap: _openProcedure,
                                 ),
                               ),
                               const SizedBox(height: 12),
@@ -173,6 +184,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: FeatureCard(
                                   semanticLabel:
                                       'Quiz: Test, sign and learn. Sign it Right!',
+                                  art: const CardArt(
+                                    color: Color(0xFFC0B373),
+                                    backdropIcon: Icons.quiz_rounded,
+                                    motif: QuizMotif(),
+                                  ),
                                   title: 'QUIZ: TEST, SIGN & LEARN',
                                   subtitle: 'Sign it Right!',
                                   placeholderColor: const Color(0xFFC0B373),
@@ -184,6 +200,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 flex: 3,
                                 child: FeatureCard(
                                   semanticLabel: 'Games: Memory Card Flip',
+                                  art: const CardArt(
+                                    color: Color(0xFFD9CC45),
+                                    backdropIcon: Icons.style_rounded,
+                                    motif: MemoryMotif(),
+                                  ),
                                   title: 'GAMES',
                                   subtitle: 'Memory Card Flip',
                                   placeholderColor: const Color(0xFFD9CC45),

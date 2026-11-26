@@ -58,3 +58,9 @@ app.*.map.json
 # raw recordings with tool/build_media.py and tool/build_quizzes.py.
 /assets/signs/**/*.mp4
 /assets/quizzes/**/*.mp4
+/assets/procedure/*.mp4
+
+# Client's raw drop: BP procedure recordings (tool/build_procedure.py
+# compresses them into assets/procedure/) and original images (the ones used
+# are copied into assets/art/).
+/assets/IMAGES/

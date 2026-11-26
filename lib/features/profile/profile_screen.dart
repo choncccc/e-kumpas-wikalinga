@@ -9,7 +9,6 @@ import '../../data/study_repository.dart';
 import '../../data/user_profile.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
-import '../../widgets/media_placeholder.dart';
 import '../../widgets/pressable.dart';
 import '../../widgets/profile_avatar.dart';
 import '../../widgets/staggered_entrance.dart';
@@ -112,14 +111,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     left: 0,
                     right: 0,
                     height: top + band,
-                    child: const ColoredBox(
+                    child: ColoredBox(
                       color: AppColors.mist,
+                      // Same faint photo as the Home header.
                       child: Opacity(
-                        opacity: 0.55,
-                        child: MediaPlaceholder(
-                          color: AppColors.cloud,
-                          compact: true,
-                          iconAlignment: Alignment.bottomRight,
+                        opacity: 0.25,
+                        child: Image.asset(
+                          'assets/art/home/header.jpg',
+                          fit: BoxFit.cover,
+                          errorBuilder: (_, _, _) => const SizedBox.shrink(),
                         ),
                       ),
                     ),

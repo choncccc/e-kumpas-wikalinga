@@ -6,7 +6,6 @@ import '../../data/lesson_repository.dart';
 import '../../data/study_repository.dart';
 import '../../theme/app_colors.dart';
 import '../../theme/app_theme.dart';
-import '../../widgets/media_placeholder.dart';
 import '../../widgets/pressable.dart';
 import '../../widgets/staggered_entrance.dart';
 import 'topic_screen.dart';
@@ -125,6 +124,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                             child: _TopicCard(
                               topic: topics[i],
                               tint: _tints[i % _tints.length],
+                              image: _art[i % _art.length],
                               onTap: () => Navigator.of(context).push(
                                 MaterialPageRoute(
                                   settings: RouteSettings(
@@ -153,6 +153,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
   }
 
   // Card tints from the mockup's topic photos (sage, olive, seafoam, mist).
+  // Hand-sign artwork behind the topic cards, cycled in order.
+  static final _art = [
+    for (var n = 1; n <= 6; n++) 'assets/art/categories/hands_$n.jpg',
+  ];
+
   static const _tints = [
     Color(0xFFC6D79C),
     Color(0xFFA3954A),
@@ -165,11 +170,13 @@ class _TopicCard extends StatelessWidget {
   const _TopicCard({
     required this.topic,
     required this.tint,
+    required this.image,
     required this.onTap,
   });
 
   final LessonTopic topic;
   final Color tint;
+  final String image;
   final VoidCallback onTap;
 
   @override
@@ -193,10 +200,13 @@ class _TopicCard extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                MediaPlaceholder(
+                ColoredBox(
                   color: tint,
-                  compact: true,
-                  iconAlignment: Alignment.topRight,
+                  child: Image.asset(
+                    image,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, _, _) => const SizedBox.shrink(),
+                  ),
                 ),
                 Align(
                   alignment: const Alignment(0, 0.15),
